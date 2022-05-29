@@ -16,7 +16,7 @@ export class LoginService {
       password: password
     }
 
-    return this.http.post(`${this.uri}/login`, data)
+    return this.http.post(`${this.uri}/login/login`, data)
   }
   
 }
