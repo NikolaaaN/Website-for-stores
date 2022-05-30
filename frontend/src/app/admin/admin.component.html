@@ -1,0 +1,15 @@
+<table id="listaKompanija">
+        <tr>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Address</th>
+        </tr>
+        <tr *ngFor="let n of allCompanies">
+            <td>{{n.companyName}}</td>
+            <td>{{n.fullName}}</td>
+            <td>
+                <!-- <button (click)="delete(n.id)">Delete</button> -->
+            </td>
+        </tr>
+    
+    </table>

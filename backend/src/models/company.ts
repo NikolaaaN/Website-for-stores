@@ -1,4 +1,3 @@
-import { FILE } from 'dns'
 import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema

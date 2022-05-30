@@ -58,6 +58,6 @@ export class LoginController{
             if (err) console.log("Error")
             res.json(user);
         })
-
+ 
     }
 }

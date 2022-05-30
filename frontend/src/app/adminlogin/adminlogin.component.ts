@@ -23,7 +23,7 @@ export class AdminloginComponent implements OnInit {
   login(){
     this.adminLoginService.login(this.username, this.password).subscribe((user: User) => {
       if (!user) this.message = "Failed to login"
-      else this.message = "Logged in"
+      else this.router.navigate(['admin'])
     })
   }
 

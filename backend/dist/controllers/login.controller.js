@@ -54,7 +54,6 @@ class LoginController {
     adminLogin(req, res) {
         let username = req.body.username;
         let password = req.body.password;
-        console.log(username, password);
         user_1.default.findOne({ 'username': username, 'password': password, 'type': 3 }, (err, user) => {
             if (err)
                 console.log("Error");

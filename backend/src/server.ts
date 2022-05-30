@@ -1,7 +1,8 @@
-import express from 'express';
+import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-import loginRouter from './routers/login.routes';
+import loginRouter from './routers/login.routes'
+import companyRouter from './routers/company.routes'
 
 
 const app = express()
@@ -17,6 +18,7 @@ connection.once('open', () => {
 const router = express.Router()
 
 router.use('/users', loginRouter)
+router.use('/companies', companyRouter)
 
 
 app.use('/', router)
