@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   login(){
     this.loginService.login(this.username, this.password).subscribe((user: User) =>{
       if (user != null){
-        if (user.type == 1) console.log("afsa")
+        if (user.type == 1) this.router.navigate(['company'])
         if (user.type == 2) console.log("afsa")
         if (user.type == 3) console.log("afsa")
 
