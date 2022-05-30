@@ -1,4 +1,4 @@
-export class Companies{
+export class Company{
     fullName : string
     username : string
     password : string

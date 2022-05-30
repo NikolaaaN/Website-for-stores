@@ -25,14 +25,19 @@ export class LoginComponent implements OnInit {
       if (user != null){
         if (user.type == 1) this.router.navigate(['company'])
         if (user.type == 2) console.log("afsa")
-        if (user.type == 3) console.log("afsa")
+        if (user.type == 3) this.message = "Login using the admin page"
 
       }
       else{
         this.message = "Wrong username or password"
       }
     })
-    
   }
+    
+  register(){
+    this.router.navigate(['register']);
+  }
+    
+ 
 
 }

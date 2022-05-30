@@ -1,0 +1,40 @@
+<div class="register">
+    <table>
+
+        <tr>
+            Username: <input type="text" [(ngModel)]="username">
+        </tr>
+        <tr>
+            Password: <input type="password" [(ngModel)]="password">
+        </tr>
+        <tr>
+            Phone: <input type="text" [(ngModel)]="phone">
+        </tr>
+        <tr>
+            Email: <input type="text" [(ngModel)]="email">
+        </tr>
+        <tr>
+            Company name: <input type="text" [(ngModel)]="companyName">
+        </tr>
+        <tr>
+            Address: <input type="text" [(ngModel)]="address">
+        </tr>
+        <tr>
+            Tax ID: <input type="text" [(ngModel)]="taxID">
+        </tr>
+        <tr>
+            Company ID: <input type="text" [(ngModel)]="companyID">
+        </tr>
+        <tr>
+            Owner fullname: <input type="text" [(ngModel)]="fullName">
+        </tr>
+        <tr>
+            Image:<input type="file" (change)="onFileSelected($event)">
+        </tr>
+        <tr>
+            <button (click)="register()">Register</button>
+        </tr>
+    </table>
+    {{message}}
+    <button (click)="login()">back to login</button>
+</div>

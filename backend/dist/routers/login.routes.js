@@ -7,5 +7,7 @@ const express_1 = __importDefault(require("express"));
 const login_controller_1 = require("../controllers/login.controller");
 const loginRouter = express_1.default.Router();
 loginRouter.route('/login').post((req, res) => new login_controller_1.LoginController().login(req, res));
+loginRouter.route('/register').post((req, res) => new login_controller_1.LoginController().register(req, res));
+loginRouter.route('/adminlogin').post((req, res) => new login_controller_1.LoginController().adminLogin(req, res));
 exports.default = loginRouter;
 //# sourceMappingURL=login.routes.js.map

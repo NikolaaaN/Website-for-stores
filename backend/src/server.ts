@@ -16,7 +16,7 @@ connection.once('open', () => {
 
 const router = express.Router()
 
-router.use('/login', loginRouter)
+router.use('/users', loginRouter)
 
 
 app.use('/', router)
