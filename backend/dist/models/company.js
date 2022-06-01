@@ -38,6 +38,24 @@ let Company = new Schema({
     },
     image: {
         type: String
+    },
+    category: {
+        type: String
+    },
+    code: {
+        type: String
+    },
+    tax: {
+        type: Boolean
+    },
+    bankAccount: {
+        type: Array
+    },
+    storageNumber: {
+        type: Number
+    },
+    cashRegisterNumber: {
+        type: Number
     }
 });
 exports.default = mongoose_1.default.model('CompanyModel', Company, 'companies');

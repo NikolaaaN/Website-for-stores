@@ -9,6 +9,9 @@ import { CompanyComponent } from './company/company.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminComponent } from './admin/admin.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { CompanydetailsComponent } from './companydetails/companydetails.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AdminComponent } from './admin/admin.component';
     CompanyComponent,
     RegisterComponent,
     AdminloginComponent,
-    AdminComponent
+    AdminComponent,
+    HeaderComponent,
+    FooterComponent,
+    CompanydetailsComponent
   ],
   imports: [
     BrowserModule,

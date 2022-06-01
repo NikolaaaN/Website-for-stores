@@ -1,0 +1,29 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+nav{
+    display: inline-block;
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+h1{
+    margin: 20px;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    display: inline-block;
+    color: white;
+    font-size: 17px;
+    padding: 7px;
+    text-transform:  uppercase;
+}

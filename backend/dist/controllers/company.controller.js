@@ -8,11 +8,36 @@ const company_1 = __importDefault(require("../models/company"));
 class CompanyController {
     getAllCompanies(req, res) {
         company_1.default.find({}, (err, companies) => {
-            console.log("ovde sam ");
             if (err)
                 console.log(err);
             else
                 res.json(companies);
+        });
+    }
+    getStatus(req, res) {
+        let username = req.body.username;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            if (err)
+                console.log("Error");
+            else
+                res.json(company.status);
+        });
+    }
+    submitDetails(req, res) {
+        let username = req.body.username;
+        let category = req.body.category;
+        let code = req.body.code;
+        let pdv = req.body.pdv;
+        let bankAccount = req.body.bankAccount;
+        let noOfStorages = req.body.noOfStorages;
+        let noOfCashRegisters = req.body.noOfCashRegisters;
+        console.log(username + "safasf");
+        company_1.default.updateOne({ 'username': username }, { 'category': category, 'code': code, 'pdv': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan" }, (err, resp) => {
+            if (err)
+                console.log(err);
+            else {
+                res.json({ 'message': 'ok' });
+            }
         });
     }
 }

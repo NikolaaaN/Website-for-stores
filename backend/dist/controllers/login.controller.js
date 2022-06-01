@@ -10,6 +10,7 @@ class LoginController {
     login(req, res) {
         let username = req.body.username;
         let password = req.body.password;
+        let status = "";
         user_1.default.findOne({ 'username': username, 'password': password }, (err, user) => {
             if (err)
                 console.log("Error");
@@ -38,7 +39,7 @@ class LoginController {
             address: address,
             taxID: taxID,
             companyID: companyID,
-            status: "neaktivan",
+            status: "novo",
             image: file
         });
         company_1.default.countDocuments({ 'username': username }, (err, count) => {

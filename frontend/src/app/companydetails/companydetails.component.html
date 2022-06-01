@@ -1,0 +1,30 @@
+<div class="details">
+    <table>
+        <tr>
+            Category:<select [(ngModel)]="category">
+                <option value="prodavnica">prodavnica</option>
+                <option value="ugostiteljski">Ugostiteljski objekat</option>
+            </select>
+        </tr>
+        <tr>
+            Work Code: <input type="text" [(ngModel)]="code">
+        </tr>
+        <tr>
+            PDV: <input type="checkbox" [(ngModel)] = "pdv">
+        </tr>
+        <tr>
+            bank account: <input type="text" [(ngModel)] = "bankAccount">
+        </tr>
+        <tr>
+            number of storages: <input type="number" [(ngModel)] = "noOfStorages">
+        </tr>
+        <tr>
+            number of cash registers: <input type="number" [(ngModel)] = "noOfCashRegisters">
+        </tr>
+        <tr>
+            <button (click)="submit()">Submit</button>
+        </tr>
+
+    </table>
+    <p id="message">{{message}}</p>
+</div>
