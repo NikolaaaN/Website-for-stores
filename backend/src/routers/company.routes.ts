@@ -15,4 +15,12 @@ companyRouter.route('/details').post(
     (req, res) => new CompanyController().submitDetails(req, res)
 )
 
+companyRouter.route('/getDetails').post(
+    (req, res) => new CompanyController().getDetails(req, res)
+)
+
+companyRouter.route('/delete').post(
+    (req, res) => new CompanyController().delete(req, res)
+)
+
 export default companyRouter

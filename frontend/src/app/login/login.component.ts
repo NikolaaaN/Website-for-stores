@@ -28,9 +28,8 @@ export class LoginComponent implements OnInit {
       if (user != null){
         if (user.type == 1) { 
           this.companyService.getCompanyStatus(user.username).subscribe((status: string) => {
-            console.log(status)
+            sessionStorage.setItem('username', this.username)
             if (status=="novo") {//promeni u pending kada dodas da administrator prihvata registraciju kompanije sto ce da promeni status iz novo u pending
-              sessionStorage.setItem('username', this.username)
               this.router.navigate(['company/details'])
             }
             else if (status == "aktivan") this.router.navigate(['company'])

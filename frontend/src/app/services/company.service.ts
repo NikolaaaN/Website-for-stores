@@ -31,4 +31,18 @@ export class CompanyService {
     }
     return this.http.post('http://localhost:4000/companies/details', data)
   }
+
+  getCompanyDetails(username){
+    const data={
+      username: username
+    }
+    return this.http.post('http://localhost:4000/companies/getDetails', data)
+  }
+
+  deleteCompany(username){
+    const data = {
+      username: username
+    }
+    return this.http.post('http://localhost:4000/companies/delete', data)
+  }
 }

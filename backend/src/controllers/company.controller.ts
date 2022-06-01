@@ -37,4 +37,22 @@ export class CompanyController{
         })
     }
 
+    getDetails(req: express.Request, res: express.Response){
+        let username = req.body.username
+
+        Company.findOne({'username' : username}, (err, resp) => {
+            if (err) console.log("Error")
+            else res.json(resp)
+        })
+    }
+
+    delete(req: express.Request, res: express.Response){
+        let username = req.body.username
+
+        Company.deleteOne({'username': username}, (err, resp) =>{
+            if (err) console.log("Error")
+            else res.json("deleted")
+        })
+    }
+
 }

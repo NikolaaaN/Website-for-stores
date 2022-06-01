@@ -31,13 +31,31 @@ class CompanyController {
         let bankAccount = req.body.bankAccount;
         let noOfStorages = req.body.noOfStorages;
         let noOfCashRegisters = req.body.noOfCashRegisters;
-        console.log(username + "safasf");
         company_1.default.updateOne({ 'username': username }, { 'category': category, 'code': code, 'pdv': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan" }, (err, resp) => {
             if (err)
                 console.log(err);
             else {
                 res.json({ 'message': 'ok' });
             }
+        });
+    }
+    getDetails(req, res) {
+        let username = req.body.username;
+        company_1.default.findOne({ 'username': username }, (err, resp) => {
+            if (err)
+                console.log("Error");
+            else
+                res.json(resp);
+        });
+    }
+    delete(req, res) {
+        console.log("delete");
+        let username = req.body.username;
+        company_1.default.deleteOne({ 'username': username }, (err, resp) => {
+            if (err)
+                console.log("Error");
+            else
+                res.json("deleted");
         });
     }
 }

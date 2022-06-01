@@ -8,4 +8,10 @@ export class Company{
     address : string
     taxID : string
     companyID : string
+    category: string
+    code: string
+    pdv: boolean
+    bankAccount: string
+    noOfStorages: number
+    noOfCashRegisters: number
 }

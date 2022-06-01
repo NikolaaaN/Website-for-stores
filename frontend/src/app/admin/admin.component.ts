@@ -20,4 +20,12 @@ export class AdminComponent implements OnInit {
 
   allCompanies: Company[] = []
 
+  delete(username){
+    this.companyService.deleteCompany(username).subscribe((message: string) => {
+      if (message == "deleted") this.companyService.getAllCompanies().subscribe((data: Company[]) => {
+        this.allCompanies = data;
+      })
+    })
+  }
+
 }

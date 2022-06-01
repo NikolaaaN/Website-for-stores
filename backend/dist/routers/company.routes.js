@@ -9,5 +9,7 @@ const companyRouter = express_1.default.Router();
 companyRouter.route('/allcompanies').get((req, res) => new company_controller_1.CompanyController().getAllCompanies(req, res));
 companyRouter.route('/status').post((req, res) => new company_controller_1.CompanyController().getStatus(req, res));
 companyRouter.route('/details').post((req, res) => new company_controller_1.CompanyController().submitDetails(req, res));
+companyRouter.route('/getDetails').post((req, res) => new company_controller_1.CompanyController().getDetails(req, res));
+companyRouter.route('/delete').post((req, res) => new company_controller_1.CompanyController().delete(req, res));
 exports.default = companyRouter;
 //# sourceMappingURL=company.routes.js.map

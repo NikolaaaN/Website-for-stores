@@ -1,1 +1,31 @@
-<p>company works!</p>
+<body>
+    <div id="wrapper">
+
+        <div id="menu">
+            <ul>
+                <li (click)="details()">Company details</li>
+                <li>Orderers</li>
+                <li>Goods and services</li>
+                <li>Article category</li>
+                <li>Table layout</li>
+                <li>Accounts</li>
+                <li>Fiscal review</li>
+            </ul>
+        </div>
+        <div id="content">
+            <label>category: {{category}}</label>
+            <br/>
+            <label>code: {{code}}</label>
+            <br/>
+            <label>pdv: {{pdv}}</label>
+            <br/>
+            <label>bankAccount: {{bankAccount}}</label>
+            <br/>
+            <label>number of storages: {{noOfStorages}}</label>
+            <br/>
+            <label>number of cash reigisters: {{noOfCashRegisters}}</label>
+        </div>
+    </div>
+
+
+</body>
