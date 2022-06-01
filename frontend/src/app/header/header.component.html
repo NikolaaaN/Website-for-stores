@@ -1,10 +1,14 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-    
     <nav>
-        <h1>Fiskalizacija Srbija</h1>
+        <input type="checkbox" id="check">
+        <label class="logo">eFiskalizacija</label>
         <ul>
-            <li>Home</li>
-            <li>Login</li>
+            <li><p class="active">Home</p></li>
+            <li (click)="login()"><p class="active">Login</p></li>
+            <li (click)="signUp()"><p class="active">SignUp</p></li>
         </ul>
     </nav>
 </body>
