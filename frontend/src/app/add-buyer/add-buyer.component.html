@@ -1,0 +1,34 @@
+<div id="wrapper">
+    <div id="menu">
+        <ul>
+            <li>Company details</li>
+            <li (click)="addCompany()">Add company</li>
+            <li (click)="addBuyer()">Add buyers</li>
+            <li>Daily reviews</li>
+        </ul>
+    </div>
+    <div id="content">
+        <table >
+
+            <tr>
+                Username: <input type="text" [(ngModel)]="username">
+            </tr>
+            <tr>
+                Password: <input type="password" [(ngModel)]="password">
+            </tr>
+            <tr>
+                Name: <input type="text" [(ngModel)]="name">
+            </tr>
+            <tr>
+                Phone: <input type="text" [(ngModel)]="phone">
+            </tr>
+            <tr>
+                ID card number: <input type="text" [(ngModel)]="idCard">
+            </tr>
+            <tr>
+                <button (click)="submitCustomer()">Submit</button>
+            </tr>
+           
+        </table>
+    </div>
+</div>

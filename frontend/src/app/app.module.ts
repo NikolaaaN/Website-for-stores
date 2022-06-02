@@ -12,6 +12,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
+import { AddcompanyComponent } from './addcompany/addcompany.component';
+import { AddBuyerComponent } from './add-buyer/add-buyer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CompanydetailsComponent } from './companydetails/companydetails.compone
     AdminComponent,
     HeaderComponent,
     FooterComponent,
-    CompanydetailsComponent
+    CompanydetailsComponent,
+    AddcompanyComponent,
+    AddBuyerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,32 @@
 <table id="listaKompanija">
-        <tr>
-            <th>Name</th>
-            <th>Owner</th>
-            <th>Address</th>
-        </tr>
-        <tr *ngFor="let n of allCompanies">
-            <td>{{n.companyName}}</td>
-            <td>{{n.fullName}}</td>
-            <td>
-                <button (click)="delete(n.username)">Delete</button>
-            </td>
-            <td>
-                <button>Change</button>
-            </td>
-        </tr>
+    <div id="wrapper">
+        <div id="menu">
+            <ul>
+                <li>Company details</li>
+                <li (click)="addCompany()">Add company</li>
+                <li (click)="addBuyer()">Add buyers</li>
+                <li>Daily reviews</li>
+            </ul>
+        </div>
+        <div id="content">
+            <tr>
+                <th>Name</th>
+                <th>Owner</th>
+                <th>Address</th>
+            </tr>
+            <tr *ngFor="let n of allCompanies">
+                <td>{{n.companyName}}</td>
+                <td>{{n.fullName}}</td>
+                <td>
+                    <button (click)="delete(n.username)">Delete</button>
+                </td>
+                <td>
+                    <div>
+                        <button  *ngIf="n.status == 'aktivan' || n.status == 'novo';  else  elseBlock"  (click)= 'changeStatus(n.status, n.username)'>Deactivate</button>
+                        <ng-template #elseBlock> <button (click)= 'changeStatus(n.status, n.username)'>Activate</button> </ng-template>
+                     </div>
+                </td>
+            </tr>
+        </div>
+    </div>
     </table>

@@ -55,4 +55,16 @@ export class CompanyController{
         })
     }
 
+    setStatus(req: express.Request, res: express.Response){
+        let status = req.body.status
+        let username = req.body.username
+        Company.updateOne({'username': username}, {'status': status}, (err, resp) => {
+            
+            if(err) console.log(err)
+            else {
+                res.json('updated')
+            }
+        })
+    }
+
 }

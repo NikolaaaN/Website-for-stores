@@ -45,4 +45,12 @@ export class CompanyService {
     }
     return this.http.post('http://localhost:4000/companies/delete', data)
   }
+
+  setStatus(status, username){
+    const data = {
+      status: status,
+      username: username
+    }
+    return this.http.post('http://localhost:4000/companies/setstatus', data)
+  }
 }

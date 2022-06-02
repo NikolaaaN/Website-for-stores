@@ -22,14 +22,8 @@ ul li:hover{
         background: #1b9bff;
         transition: .5s;
 }
-
-label{
-    display: inline-block;
-    padding: 10px;
-    font-size: 20px;
-}
 #wrapper {
-    width: 600px;
+    width: 700px;
     overflow: hidden; /* will contain if #first is longer than #second */
 }
 #menu {

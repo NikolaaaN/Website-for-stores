@@ -49,13 +49,23 @@ class CompanyController {
         });
     }
     delete(req, res) {
-        console.log("delete");
         let username = req.body.username;
         company_1.default.deleteOne({ 'username': username }, (err, resp) => {
             if (err)
                 console.log("Error");
             else
                 res.json("deleted");
+        });
+    }
+    setStatus(req, res) {
+        let status = req.body.status;
+        let username = req.body.username;
+        company_1.default.updateOne({ 'username': username }, { 'status': status }, (err, resp) => {
+            if (err)
+                console.log(err);
+            else {
+                res.json('updated');
+            }
         });
     }
 }

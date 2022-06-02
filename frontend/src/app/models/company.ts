@@ -11,6 +11,7 @@ export class Company{
     category: string
     code: string
     pdv: boolean
+    status: string
     bankAccount: string
     noOfStorages: number
     noOfCashRegisters: number

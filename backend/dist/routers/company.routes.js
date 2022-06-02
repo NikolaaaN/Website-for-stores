@@ -11,5 +11,6 @@ companyRouter.route('/status').post((req, res) => new company_controller_1.Compa
 companyRouter.route('/details').post((req, res) => new company_controller_1.CompanyController().submitDetails(req, res));
 companyRouter.route('/getDetails').post((req, res) => new company_controller_1.CompanyController().getDetails(req, res));
 companyRouter.route('/delete').post((req, res) => new company_controller_1.CompanyController().delete(req, res));
+companyRouter.route('/setstatus').post((req, res) => new company_controller_1.CompanyController().setStatus(req, res));
 exports.default = companyRouter;
 //# sourceMappingURL=company.routes.js.map

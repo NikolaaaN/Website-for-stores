@@ -23,4 +23,8 @@ companyRouter.route('/delete').post(
     (req, res) => new CompanyController().delete(req, res)
 )
 
+companyRouter.route('/setstatus').post(
+    (req, res) => new CompanyController().setStatus(req, res)
+)
+
 export default companyRouter
