@@ -15,4 +15,12 @@ loginRouter.route('/adminlogin').post(
     (req, res) => new LoginController().adminLogin(req, res)
 )
 
+loginRouter.route('/create').post(
+    (req, res) => new LoginController().createUser(req, res)
+)
+
+loginRouter.route('/addcustomer').post(
+    (req, res) => new LoginController().createCustomer(req, res)
+)
+
 export default loginRouter

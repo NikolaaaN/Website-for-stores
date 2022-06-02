@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoginController = void 0;
 const user_1 = __importDefault(require("../models/user"));
 const company_1 = __importDefault(require("../models/company"));
+const customer_1 = __importDefault(require("../models/customer"));
 class LoginController {
     login(req, res) {
         let username = req.body.username;
@@ -59,6 +60,43 @@ class LoginController {
             if (err)
                 console.log("Error");
             res.json(user);
+        });
+    }
+    createUser(req, res) {
+        let username = req.body.username;
+        let password = req.body.password;
+        let type = req.body.type;
+        user_1.default.countDocuments({ 'username': username }, (err, count) => {
+            if (count > 0) {
+                res.json();
+            }
+            else {
+                user_1.default.create({ 'username': username, 'password': password, 'type': type }, (err, user) => {
+                    if (err)
+                        console.log("Error");
+                    res.json(user);
+                });
+            }
+        });
+    }
+    createCustomer(req, res) {
+        let username = req.body.username;
+        let password = req.body.password;
+        let name = req.body.name;
+        let phone = req.body.phone;
+        let idCard = req.body.idCard;
+        customer_1.default.countDocuments({ 'username': username }, (err, count) => {
+            if (count > 0) {
+                res.json();
+            }
+            else {
+                customer_1.default.create({ 'username': username, 'password': password, 'name': name, 'phone': phone, 'idCard': idCard }, (err, customer) => {
+                    if (err)
+                        console.log("Error adding customer to db");
+                    else
+                        res.json(customer);
+                });
+            }
         });
     }
 }

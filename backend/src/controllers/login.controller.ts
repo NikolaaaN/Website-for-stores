@@ -1,6 +1,7 @@
 import express from 'express'
 import UserModel from '../models/user'
 import CompanyModel from '../models/company'
+import CustomerModel from '../models/customer'
 
 
 
@@ -62,5 +63,43 @@ export class LoginController{
             res.json(user);
         })
  
+    }
+
+    createUser(req: express.Request, res: express.Response){
+        let username = req.body.username;
+        let password = req.body.password;
+        let type = req.body.type;
+        UserModel.countDocuments({'username': username}, (err, count) => {
+            if (count > 0){
+                res.json();
+            }else{
+                UserModel.create({'username': username, 'password':password, 'type': type}, (err, user) =>{
+                    if (err) console.log("Error")
+                    res.json(user);
+                })
+            }
+        })  
+
+        
+    }
+
+    createCustomer(req: express.Request, res: express.Response){
+        let username = req.body.username;
+        let password = req.body.password;
+        let name = req.body.name;
+        let phone = req.body.phone
+        let idCard = req.body.idCard
+        CustomerModel.countDocuments({'username': username}, (err, count) => {
+            if (count > 0){
+                res.json();
+            }else{
+                CustomerModel.create({'username': username, 'password': password, 'name': name, 'phone': phone, 'idCard': idCard}, (err,customer) => {
+                    if(err) console.log("Error adding customer to db")
+                    else res.json(customer)
+                })
+            }
+        })
+
+        
     }
 }

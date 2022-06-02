@@ -5,7 +5,7 @@
             Username: <input type="text" [(ngModel)]="username">
         </tr>
         <tr>
-            Password: <input type="password" [(ngModel)]="password">
+            Password: <input type="password" [(ngModel)]="password" pattern="(?=.*[a-z]).{8,12}">
         </tr>
         <tr>
             Phone: <input type="text" [(ngModel)]="phone">
