@@ -2,28 +2,56 @@
     <div id="wrapper">
 
         <div id="menu">
-            <ul>
-                <li (click)="details()">Company details</li>
-                <li>Orderers</li>
-                <li>Goods and services</li>
-                <li>Article category</li>
-                <li>Table layout</li>
-                <li>Accounts</li>
-                <li>Fiscal review</li>
+            <ul id="menuList">
+                <li (click)="details()" class="menuItems">Company details</li>
+                <li class="menuItems">Orderers</li>
+                <li class="menuItems">Goods and services</li>
+                <li class="menuItems">Article category</li>
+                <li class="menuItems">Table layout</li>
+                <li class="menuItems">Accounts</li>
+                <li class="menuItems">Fiscal review</li>
             </ul>
         </div>
         <div id="content">
-            <label>category: {{category}}</label>
-            <br/>
-            <label>code: {{code}}</label>
-            <br/>
-            <label>pdv: {{pdv}}</label>
-            <br/>
-            <label>bankAccount: {{bankAccount}}</label>
-            <br/>
-            <label>number of storages: {{noOfStorages}}</label>
-            <br/>
-            <label>number of cash reigisters: {{noOfCashRegisters}}</label>
+
+            <ul class="nav">
+                <li class="nav-item" *ngFor="let m of menuLists">
+                    <span (click)="setSelectedItem(m)">{{m}}</span>
+                </li>
+            
+            </ul>
+
+            <ng-container *ngIf="selected === 'opste informacije'">
+
+                <label>category: {{category}}</label>
+                <br/>
+                <label>code: {{code}}</label>
+                <br/>
+                <label>pdv: {{pdv}}</label>
+                <br/>
+                <label>bankAccount: {{bankAccount}}</label>
+                <br/>
+                <label>number of storages: {{noOfStorages}}</label>
+                <br/>
+                <label>number of cash reigisters: {{noOfCashRegisters}}</label>
+
+            </ng-container>
+            <ng-container *ngIf="selected === 'detalji'">
+                detalji
+
+                <label>category: {{category}}</label>
+                <br/>
+                <label>code: {{code}}</label>
+                <br/>
+                <label>pdv: {{pdv}}</label>
+                <br/>
+                <label>bankAccount: {{bankAccount}}</label>
+                <br/>
+                <label>number of storages: {{noOfStorages}}</label>
+                <br/>
+                <label>number of cash reigisters: {{noOfCashRegisters}}</label>
+
+            </ng-container>
         </div>
     </div>
 

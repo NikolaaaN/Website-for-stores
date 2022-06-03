@@ -20,7 +20,7 @@
             Address: <input type="text" [(ngModel)]="address">
         </tr>
         <tr>
-            Tax ID: <input type="text" [(ngModel)]="taxID">
+            Tax ID: <input type="text" [(ngModel)]="taxID" pattern="(?=.*[1-9]).{9,9}">
         </tr>
         <tr>
             Company ID: <input type="text" [(ngModel)]="companyID">

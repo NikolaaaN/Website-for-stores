@@ -11,6 +11,9 @@ export class CompanyComponent implements OnInit {
 
   constructor(private companyService: CompanyService) { }
 
+  menuLists= ['opste informacije', 'detalji']
+  selected = 'opste informacije'
+
   ngOnInit(): void {
     this.companyService.getCompanyDetails(sessionStorage.getItem('username')).subscribe( (company: Company) => {
       console.log(company)
@@ -32,6 +35,10 @@ export class CompanyComponent implements OnInit {
 
   details(){
     
+  }
+
+  setSelectedItem(item){
+    this.selected = item
   }
 
 }

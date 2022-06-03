@@ -3,7 +3,7 @@ body{
     padding: 0;
     display: flex;
 }
-ul{
+ul#menuList{
     margin: 0;
     padding: 0;
     position: absolute;
@@ -12,13 +12,13 @@ ul{
     text-align: center;
     
 }
-ul li{
+ul li.menuItems{
     margin-top: 20px;
     font-size: 17px;
     padding: 20px;
     text-transform:  uppercase;
 }
-ul li:hover{
+ul li.menuItems:hover{
         background: #1b9bff;
         transition: .5s;
 }
@@ -29,15 +29,43 @@ label{
     font-size: 20px;
 }
 #wrapper {
-    width: 600px;
-    overflow: hidden; /* will contain if #first is longer than #second */
+    width: 700px;
+    overflow: hidden; 
 }
 #menu {
     width: 300px;
-    float:left; /* add this */
+    float:left; 
     
 }
 #content {
+    margin: 50px;
+    padding: 30px;
     float: right;
-    overflow: hidden; /* if you don't want #second to wrap below #first */
+    overflow: hidden; 
+    border: 1px solid black;
+}
+
+ul.nav {
+    display: flex;
+    list-style: none;
+    margin-top: 30px;
+    padding: 0;
+    
+    
+    
+}
+li.nav-item{
+    
+}
+span{
+    border-radius: 20px;
+    background-color: gray;
+    padding: 20px;
+    
+}
+span:hover{
+    background-color: lightgray;
+    padding: 20px;
+    border-top: 20px;
+    cursor: pointer;
 }
