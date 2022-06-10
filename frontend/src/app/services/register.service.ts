@@ -35,6 +35,14 @@ export class RegisterService {
     return this.http.post("http://localhost:4000/users/create", data)
   }
 
+  getUser(username){
+    const data = {
+      username: username
+    }
+
+    return this.http.post("http://localhost:4000/users/getuser", data)
+  }
+
   addCustomer(username, password, name, phone, idCard){
     const data = {
       username: username,
@@ -65,8 +73,15 @@ export class RegisterService {
       noOfDays: noOfDays,
       percent: percent
     }
-
     return this.http.post("http://localhost:4000/users/addorderer", data)
+  }
 
+  changePassword(username, password, type){
+    const data = {
+      username: username,
+      password: password,
+      type: type
+    }
+    return this.http.post("http://localhost:4000/users/changepassword", data)
   }
 }

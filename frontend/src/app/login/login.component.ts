@@ -26,10 +26,11 @@ export class LoginComponent implements OnInit {
   login(){
     this.loginService.login(this.username, this.password).subscribe((user: User) =>{
       if (user != null){
-        if (user.type == 1) { 
+        if (user.type == 1) {   
           this.companyService.getCompanyStatus(user.username).subscribe((status: string) => {
             sessionStorage.setItem('username', this.username)
-            if (status=="novo") {//promeni u pending kada dodas da administrator prihvata registraciju kompanije sto ce da promeni status iz novo u pending
+            sessionStorage.setItem('type', user.type+"")
+            if (status=="novo") {
               this.router.navigate(['company/details'])
             }
             else if (status == "aktivan") this.router.navigate(['company'])

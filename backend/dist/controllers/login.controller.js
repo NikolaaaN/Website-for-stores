@@ -120,6 +120,32 @@ class LoginController {
                 res.json("Dodato");
         });
     }
+    changePassword(req, res) {
+        let username = req.body.username;
+        let password = req.body.password;
+        let type = req.body.type;
+        user_1.default.updateOne({ 'username': username }, { 'password': password }, (err, resp) => {
+            if (type == "1") {
+                company_1.default.updateOne({ 'username': username }, { 'password': password }, (err) => {
+                    if (err)
+                        console.log(err);
+                });
+            }
+            if (err)
+                console.log(err);
+            else
+                res.json();
+        });
+    }
+    getUser(req, res) {
+        let username = req.body.username;
+        user_1.default.findOne({ 'username': username }, (err, user) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(user);
+        });
+    }
 }
 exports.LoginController = LoginController;
 //# sourceMappingURL=login.controller.js.map

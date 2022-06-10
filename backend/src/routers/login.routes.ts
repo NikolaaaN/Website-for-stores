@@ -27,4 +27,12 @@ loginRouter.route('/addorderer').post(
     (req, res) => new LoginController().createOrderer(req, res)
 )
 
+loginRouter.route('/changepassword').post(
+    (req, res) => new LoginController().changePassword(req, res)
+)
+
+loginRouter.route('/getuser').post(
+    (req, res) => new LoginController().getUser(req, res)
+)
+
 export default loginRouter

@@ -95,8 +95,7 @@ class CompanyController {
     getCompanyByIdAndName(req, res) {
         let id = req.body.taxID;
         let name = req.body.name;
-        console.log(id + " " + name);
-        company_1.default.find({ 'taxID': id, 'companyName': name }, (err, company) => {
+        company_1.default.findOne({ 'taxID': id, 'companyName': name }, (err, company) => {
             if (err)
                 console.log(err);
             else

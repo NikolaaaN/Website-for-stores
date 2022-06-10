@@ -118,4 +118,29 @@ export class LoginController{
             else res.json("Dodato")
         })
     }
+
+    changePassword(req: express.Request, res: express.Response){
+        let username = req.body.username
+        let password = req.body.password
+        let type = req.body.type
+
+        UserModel.updateOne({'username': username}, {'password': password}, (err, resp) => {
+            if (type=="1"){
+                CompanyModel.updateOne({'username': username}, {'password': password}, (err) => {
+                    if (err) console.log(err)
+                })
+            }
+            if (err) console.log(err)
+            else res.json()
+        })
+    }
+
+    getUser(req: express.Request, res: express.Response){
+        let username = req.body.username
+         
+        UserModel.findOne({'username': username} , (err, user) => {
+            if (err) console.log(err)
+            else res.json(user)
+        })
+    }
 }

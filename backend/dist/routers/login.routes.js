@@ -12,5 +12,7 @@ loginRouter.route('/adminlogin').post((req, res) => new login_controller_1.Login
 loginRouter.route('/create').post((req, res) => new login_controller_1.LoginController().createUser(req, res));
 loginRouter.route('/addcustomer').post((req, res) => new login_controller_1.LoginController().createCustomer(req, res));
 loginRouter.route('/addorderer').post((req, res) => new login_controller_1.LoginController().createOrderer(req, res));
+loginRouter.route('/changepassword').post((req, res) => new login_controller_1.LoginController().changePassword(req, res));
+loginRouter.route('/getuser').post((req, res) => new login_controller_1.LoginController().getUser(req, res));
 exports.default = loginRouter;
 //# sourceMappingURL=login.routes.js.map
