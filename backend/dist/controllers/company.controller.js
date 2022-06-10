@@ -68,6 +68,41 @@ class CompanyController {
             }
         });
     }
+    updateGeneralDetails(req, res) {
+        let username = req.body.username;
+        let category = req.body.category;
+        let code = req.body.code;
+        let pdv = req.body.pdv;
+        let bankAccount = req.body.bankAccount;
+        let noOfCashRegisters = req.body.noOfCashRegisters;
+        let noOfStorages = req.body.noOfStorages;
+        company_1.default.updateOne({ 'username': username }, { 'category': category, 'code': code, 'taxID': pdv, 'bankAccount': bankAccount, 'cashRegisterNumber': noOfCashRegisters, 'storageNumber': noOfStorages }, (err, resp) => {
+            if (err)
+                console.log("Error");
+            else
+                res.json("updated");
+        });
+    }
+    getCompanyById(req, res) {
+        let id = req.body.taxID;
+        company_1.default.find({ 'taxID': id }, (err, companies) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(companies);
+        });
+    }
+    getCompanyByIdAndName(req, res) {
+        let id = req.body.taxID;
+        let name = req.body.name;
+        console.log(id + " " + name);
+        company_1.default.find({ 'taxID': id, 'companyName': name }, (err, company) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(company);
+        });
+    }
 }
 exports.CompanyController = CompanyController;
 //# sourceMappingURL=company.controller.js.map

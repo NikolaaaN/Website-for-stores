@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Company } from '../models/company';
 import { CompanyService } from '../services/company.service';
 
@@ -9,7 +10,7 @@ import { CompanyService } from '../services/company.service';
 })
 export class CompanyComponent implements OnInit {
 
-  constructor(private companyService: CompanyService) { }
+  constructor(private companyService: CompanyService, private router: Router) { }
 
   menuLists= ['opste informacije', 'detalji']
   selected = 'opste informacije'
@@ -36,9 +37,20 @@ export class CompanyComponent implements OnInit {
   details(){
     
   }
+  update(){
+    let username= sessionStorage.getItem('username')
+    this.companyService.updateGeneralDetails(this.category, this.code, this.pdv, this.bankAccount, this.noOfCashRegisters, this.noOfStorages, username).subscribe((message: string) => {
+      console.log(message)
+
+    })
+  }
 
   setSelectedItem(item){
     this.selected = item
+  }
+
+  orderers(){
+    this.router.navigate(['company/orderers'])
   }
 
 }

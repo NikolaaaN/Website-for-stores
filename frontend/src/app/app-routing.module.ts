@@ -4,9 +4,11 @@ import { AddBuyerComponent } from './add-buyer/add-buyer.component';
 import { AddcompanyComponent } from './addcompany/addcompany.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
 import { LoginComponent } from './login/login.component';
+import { OrderersComponent } from './orderers/orderers.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: "admin", component: AdminComponent},
   {path: "company/details", component: CompanydetailsComponent},
   {path: "admin/addcompany", component: AddcompanyComponent},
-  {path: "admin/addbuyer", component: AddBuyerComponent}
+  {path: "admin/addbuyer", component: AddBuyerComponent},
+  {path: "company/orderers", component: OrderersComponent},
+  {path: "changepasswords", component: ChangepasswordComponent}
 ];
 
 @NgModule({

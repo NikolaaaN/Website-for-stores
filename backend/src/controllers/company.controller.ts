@@ -67,4 +67,36 @@ export class CompanyController{
         })
     }
 
+    updateGeneralDetails(req: express.Request, res: express.Response){
+        let username = req.body.username
+        let category = req.body.category
+        let code = req.body.code
+        let pdv= req.body.pdv
+        let bankAccount = req.body.bankAccount
+        let noOfCashRegisters = req.body.noOfCashRegisters
+        let noOfStorages = req.body.noOfStorages
+        Company.updateOne({'username': username}, {'category': category, 'code': code, 'taxID': pdv, 'bankAccount': bankAccount, 'cashRegisterNumber': noOfCashRegisters, 'storageNumber': noOfStorages}, (err, resp) => {
+            if (err) console.log("Error")
+            else res.json("updated")
+        })
+
+    }
+    getCompanyById(req: express.Request, res: express.Response){
+        let id = req.body.taxID
+        Company.find({'taxID': id}, (err, companies) => {
+            if (err) console.log(err)
+            else res.json(companies)
+        })
+
+    }
+    getCompanyByIdAndName(req: express.Request, res: express.Response){
+        let id = req.body.taxID
+        let name = req.body.name
+        Company.findOne({'taxID': id, 'companyName': name}, (err, company) => {
+            if (err) console.log(err)
+            else  res.json(company)
+        })
+
+    }
+
 }

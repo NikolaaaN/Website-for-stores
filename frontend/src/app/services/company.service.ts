@@ -53,4 +53,33 @@ export class CompanyService {
     }
     return this.http.post('http://localhost:4000/companies/setstatus', data)
   }
+
+  updateGeneralDetails(category, code, pdv, bankAccount, noOfCashRegisters, noOfStorages, username){
+    const data = {
+      username: username,
+      category: category,
+      code: code,
+      pdv: pdv,
+      bankAccount: bankAccount,
+      noOfCashRegisters: noOfCashRegisters,
+      noOfStorages: noOfStorages
+    }
+    console.log(username);
+    return this.http.post('http://localhost:4000/companies/updategeneraldetails', data)
+  }
+
+  getCompanyByID(taxID){
+    const data = {
+      taxID: taxID
+    }
+    return this.http.post('http://localhost:4000/companies/taxid', data)
+  }
+
+  getCompanyByIdAndName(taxID, name){
+    const data = {
+      taxID: taxID,
+      name: name
+    }
+    return this.http.post('http://localhost:4000/companies/taxidandname', data)
+  }
 }

@@ -14,6 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
 import { AddcompanyComponent } from './addcompany/addcompany.component';
 import { AddBuyerComponent } from './add-buyer/add-buyer.component';
+import { OrderersComponent } from './orderers/orderers.component';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { AddBuyerComponent } from './add-buyer/add-buyer.component';
     FooterComponent,
     CompanydetailsComponent,
     AddcompanyComponent,
-    AddBuyerComponent
+    AddBuyerComponent,
+    OrderersComponent,
+    SidemenuComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,

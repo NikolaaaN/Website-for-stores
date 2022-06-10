@@ -1,17 +1,19 @@
 <body>
     <div id="wrapper">
 
-        <div id="menu">
-            <ul id="menuList">
+         <div id="menu">
+            <!--<ul id="menuList">
                 <li (click)="details()" class="menuItems">Company details</li>
-                <li class="menuItems">Orderers</li>
+                <li class="menuItems" (click)="orderers()">Orderers</li>
                 <li class="menuItems">Goods and services</li>
                 <li class="menuItems">Article category</li>
                 <li class="menuItems">Table layout</li>
                 <li class="menuItems">Accounts</li>
                 <li class="menuItems">Fiscal review</li>
-            </ul>
-        </div>
+            </ul> -->
+            <app-sidemenu></app-sidemenu>
+        </div> 
+        
         <div id="content">
 
             <ul class="nav">
@@ -23,17 +25,19 @@
 
             <ng-container *ngIf="selected === 'opste informacije'">
 
-                <label>category: {{category}}</label>
+                category:<input value="{{category}}" [(ngModel)]="category">
                 <br/>
-                <label>code: {{code}}</label>
+                code: <input value="{{code}}" [(ngModel)]="code">
                 <br/>
-                <label>pdv: {{pdv}}</label>
+                pdv: <input value="{{pdv}}" [(ngModel)]="pdv">
                 <br/>
-                <label>bankAccount: {{bankAccount}}</label>
+                bankAccount: <input value="{{bankAccount}}" [(ngModel)]="bankAccount">
                 <br/>
-                <label>number of storages: {{noOfStorages}}</label>
+                number of storages:<input value="{{noOfStorages}}" [(ngModel)]="noOfStorages">
                 <br/>
-                <label>number of cash reigisters: {{noOfCashRegisters}}</label>
+                number of cash registers<input value="{{noOfCashRegisters}}" [(ngModel)]="noOfCashRegisters"> 
+                <br/>
+                <button (click)="update()">Azuriraj</button>
 
             </ng-container>
             <ng-container *ngIf="selected === 'detalji'">

@@ -11,5 +11,6 @@ loginRouter.route('/register').post((req, res) => new login_controller_1.LoginCo
 loginRouter.route('/adminlogin').post((req, res) => new login_controller_1.LoginController().adminLogin(req, res));
 loginRouter.route('/create').post((req, res) => new login_controller_1.LoginController().createUser(req, res));
 loginRouter.route('/addcustomer').post((req, res) => new login_controller_1.LoginController().createCustomer(req, res));
+loginRouter.route('/addorderer').post((req, res) => new login_controller_1.LoginController().createOrderer(req, res));
 exports.default = loginRouter;
 //# sourceMappingURL=login.routes.js.map

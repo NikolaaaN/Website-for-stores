@@ -1,0 +1,68 @@
+<body>
+    <div id="wrapper">
+
+        <div id="menu">
+            <app-sidemenu></app-sidemenu>
+        </div>
+        <div id="content">
+            <h2>Registrujte vaseg narucioca</h2>
+            <table >
+
+                <tr>
+                    Username: <input type="text" [(ngModel)]="username">
+                </tr>
+                <tr>
+                    Password: <input type="password" [(ngModel)]="password" pattern="(?=.*[a-z]).{8,12}">
+                </tr>
+                <tr>
+                    Phone: <input type="text" [(ngModel)]="phone">
+                </tr>
+                <tr>
+                    Email: <input type="text" [(ngModel)]="email">
+                </tr>
+                <tr>
+                    Company name: <input type="text" [(ngModel)]="companyName">
+                </tr>
+                <tr>
+                    Address: <input type="text" [(ngModel)]="address">
+                </tr>
+                <tr>
+                    Tax ID: <input type="text" [(ngModel)]="taxID">
+                </tr>
+                <tr>
+                    Company ID: <input type="text" [(ngModel)]="companyID">
+                </tr>
+                <tr>
+                    Owner fullname: <input type="text" [(ngModel)]="fullName">
+                </tr>
+                    broj dana: <input type="text" [(ngModel)]="noOfDays">
+                <tr>
+                </tr>
+                    procenat rabata <input type="text" [(ngModel)]="percent">
+                 <tr>
+                    <button (click)="register()">Register</button>
+                </tr>
+                {{message}}
+            </table>
+            <h4>Pronadjite narucioca pomocu piba</h4>
+            pib: <input type="text" [(ngModel)]="pib">
+            <button (click)="search()">Pronadji</button>
+            <br/>
+            <select [(ngModel)]="name">
+                <option *ngFor="let c of allCompanies" value="{{c.companyName}}"  >{{c.companyName}}</option>
+
+            </select>
+            <div *ngIf="allCompanies[0] != null">
+                <br/>
+                broj dana: <input type="text" [(ngModel)]="days">
+                <br/>
+                procenat rabata <input type="text" [(ngModel)]="percentage">
+                <br>
+                <button (click)="addById()">Register</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>

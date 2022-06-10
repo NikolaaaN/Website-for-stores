@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   constructor(private registerService: RegisterService, private router: Router) { }
 
   ngOnInit(): void {
+    
   }
   
   message: string
@@ -29,7 +30,6 @@ export class RegisterComponent implements OnInit {
   companyID : string
   image: File
   imageString: string
-  
 
   onFileSelected(event){
     console.log(event.target.files[0])

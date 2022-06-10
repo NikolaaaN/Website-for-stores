@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul#menuList{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background: #2c3e50;
+    width: 15%;
+    text-align: center;
+    
+}
+ul li.menuItems{
+    margin-top: 20px;
+    font-size: 17px;
+    padding: 20px;
+    text-transform:  uppercase;
+}
+ul li.menuItems:hover{
+        background: #1b9bff;
+        transition: .5s;
+}
+

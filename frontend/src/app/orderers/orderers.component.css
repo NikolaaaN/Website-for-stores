@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#wrapper {
+    width: 700px;
+    overflow: hidden; 
+}
+#menu {
+    width: 300px;
+    float:left; 
+    
+}
+#content {
+    margin: 50px;
+    padding: 30px;
+    float: right;
+}

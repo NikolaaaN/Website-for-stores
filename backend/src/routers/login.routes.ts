@@ -23,4 +23,8 @@ loginRouter.route('/addcustomer').post(
     (req, res) => new LoginController().createCustomer(req, res)
 )
 
+loginRouter.route('/addorderer').post(
+    (req, res) => new LoginController().createOrderer(req, res)
+)
+
 export default loginRouter

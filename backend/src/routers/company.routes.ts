@@ -26,5 +26,14 @@ companyRouter.route('/delete').post(
 companyRouter.route('/setstatus').post(
     (req, res) => new CompanyController().setStatus(req, res)
 )
+companyRouter.route('/updategeneraldetails').post(
+    (req, res) => new CompanyController().updateGeneralDetails(req, res)
+)
+companyRouter.route('/taxid').post(
+    (req, res) => new CompanyController().getCompanyById(req, res)
+)
+companyRouter.route('/taxidandname').post(
+    (req, res) => new CompanyController().getCompanyByIdAndName(req, res)
+)
 
 export default companyRouter

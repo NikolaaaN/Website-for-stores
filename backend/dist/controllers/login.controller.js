@@ -7,6 +7,7 @@ exports.LoginController = void 0;
 const user_1 = __importDefault(require("../models/user"));
 const company_1 = __importDefault(require("../models/company"));
 const customer_1 = __importDefault(require("../models/customer"));
+const orderer_1 = __importDefault(require("../models/orderer"));
 class LoginController {
     login(req, res) {
         let username = req.body.username;
@@ -97,6 +98,26 @@ class LoginController {
                         res.json(customer);
                 });
             }
+        });
+    }
+    createOrderer(req, res) {
+        let parentCompany = req.body.parentCompany;
+        let fullName = req.body.fullName;
+        let username = req.body.username;
+        let password = req.body.password;
+        let phone = req.body.phone;
+        let email = req.body.email;
+        let companyName = req.body.companyName;
+        let address = req.body.address;
+        let taxID = req.body.taxID;
+        let companyID = req.body.companyID;
+        let noOfDays = req.body.noOfDays;
+        let percent = req.body.percent;
+        orderer_1.default.create({ 'parentCompany': parentCompany, 'fullName': fullName, 'username': username, 'password': password, 'phone': phone, 'email': email, 'companyName': companyName, 'address': address, 'taxID': taxID, 'companyID': companyID, 'noOfDays': noOfDays, 'percent': percent }, (err, orderer) => {
+            if (err)
+                console.log(err);
+            else
+                res.json("Dodato");
         });
     }
 }

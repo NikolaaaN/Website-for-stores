@@ -23,13 +23,14 @@ ul li.menuItems:hover{
         transition: .5s;
 }
 
-label{
+input{
+    margin: 10px;
     display: inline-block;
     padding: 10px;
-    font-size: 20px;
+    font-size: 12px;
 }
 #wrapper {
-    width: 700px;
+    width: 800px;
     overflow: hidden; 
 }
 #menu {
@@ -52,9 +53,6 @@ ul.nav {
     padding: 0;
     
     
-    
-}
-li.nav-item{
     
 }
 span{
