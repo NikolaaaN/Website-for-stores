@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { Goods } from './Goods'
 
 const Schema = mongoose.Schema
 
@@ -53,6 +54,9 @@ let Company = new Schema({
     },
     cashRegisterNumber: {
         type: Number
+    },
+    goods: {
+        type: Array
     }
 })
 

@@ -102,6 +102,70 @@ class CompanyController {
                 res.json(company);
         });
     }
+    addGoods(req, res) {
+        let username = req.body.username;
+        let goods = {
+            code: req.body.code,
+            name: req.body.name,
+            unit: req.body.unit,
+            tax: req.body.tax,
+            type: req.body.type,
+            country: req.body.country,
+            foreignName: req.body.foreignName,
+            barcode: req.body.barcode,
+            manufacturer: req.body.manufacturer,
+            tariff: req.body.tariff,
+            taxType: req.body.taxType,
+            amount: req.body.amount,
+            description: req.body.description,
+            declaration: req.body.declaration,
+            storage: req.body.storage,
+            purchasePrice: req.body.purchasePrice,
+            sellingPrice: req.body.sellingPrice,
+            stock: req.body.stock,
+            minimalAmoung: req.body.minimalAmount,
+            maximalAmount: req.body.maximalAmount
+        };
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            company.goods.forEach((good) => {
+                if (good.code == goods.code)
+                    res.json("good already exists");
+            });
+            company_1.default.updateOne({ 'username': username }, { $push: { 'goods': goods } }, (err, resp) => {
+                if (err)
+                    console.log(err);
+                else
+                    res.json("added");
+            });
+        });
+    }
+    getGoods(req, res) {
+        let username = req.body.username;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(company.goods);
+        });
+    }
+    deleteGood(req, res) {
+        let username = req.body.username;
+        let code = req.body.code;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            const ind = company.goods.indexOf(code, 0);
+            company.goods.splice(ind, 1);
+            if (err)
+                console.log(err);
+            else {
+                company_1.default.updateOne({ 'username': username }, { 'goods': company.goods }, (err, resp) => {
+                    if (err)
+                        console.log(err);
+                    else
+                        res.json("deleted");
+                });
+            }
+        });
+    }
 }
 exports.CompanyController = CompanyController;
 //# sourceMappingURL=company.controller.js.map

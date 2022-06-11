@@ -35,5 +35,14 @@ companyRouter.route('/taxid').post(
 companyRouter.route('/taxidandname').post(
     (req, res) => new CompanyController().getCompanyByIdAndName(req, res)
 )
+companyRouter.route('/addgoods').post(
+    (req, res) => new CompanyController().addGoods(req, res)
+)
+companyRouter.route('/getgoods').post(
+    (req, res) => new CompanyController().getGoods(req, res)
+)
+companyRouter.route('/deletegood').post(
+    (req, res) => new CompanyController().deleteGood(req, res)
+)
 
 export default companyRouter

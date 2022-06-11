@@ -56,6 +56,9 @@ let Company = new Schema({
     },
     cashRegisterNumber: {
         type: Number
+    },
+    goods: {
+        type: Array
     }
 });
 exports.default = mongoose_1.default.model('CompanyModel', Company, 'companies');

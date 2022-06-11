@@ -82,4 +82,26 @@ export class CompanyService {
     }
     return this.http.post('http://localhost:4000/companies/taxidandname', data)
   }
+
+  addGoods(data){
+    return this.http.post('http://localhost:4000/companies/addgoods', data)
+  }
+
+  getAllGoods(){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username
+    }
+    return this.http.post('http://localhost:4000/companies/getgoods', data)
+  }
+
+  deleteGood(code){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username,
+      code: code
+    }
+
+    return this.http.post('http://localhost:4000/companies/deletegood', data)
+  }
 }

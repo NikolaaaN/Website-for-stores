@@ -22,5 +22,8 @@ export class SidemenuComponent implements OnInit {
   changePassword(){
     this.router.navigate(['changepasswords'])
   }
+  goods(){
+    this.router.navigate(['roba'])
+  }
 
 }

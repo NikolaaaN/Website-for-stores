@@ -10,6 +10,7 @@ import { CompanydetailsComponent } from './companydetails/companydetails.compone
 import { LoginComponent } from './login/login.component';
 import { OrderersComponent } from './orderers/orderers.component';
 import { RegisterComponent } from './register/register.component';
+import { RobaComponent } from './roba/roba.component';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: "admin/addcompany", component: AddcompanyComponent},
   {path: "admin/addbuyer", component: AddBuyerComponent},
   {path: "company/orderers", component: OrderersComponent},
-  {path: "changepasswords", component: ChangepasswordComponent}
+  {path: "changepasswords", component: ChangepasswordComponent},
+  {path: "roba", component: RobaComponent}
 ];
 
 @NgModule({

@@ -17,6 +17,7 @@ import { AddBuyerComponent } from './add-buyer/add-buyer.component';
 import { OrderersComponent } from './orderers/orderers.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { RobaComponent } from './roba/roba.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     AddBuyerComponent,
     OrderersComponent,
     SidemenuComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    RobaComponent
   ],
   imports: [
     BrowserModule,
