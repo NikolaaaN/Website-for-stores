@@ -44,5 +44,11 @@ companyRouter.route('/getgoods').post(
 companyRouter.route('/deletegood').post(
     (req, res) => new CompanyController().deleteGood(req, res)
 )
+companyRouter.route('/getgood').post(
+    (req, res) => new CompanyController().getGood(req, res)
+)
+companyRouter.route('/updategood').post(
+    (req, res) => new CompanyController().updateGood(req, res)
+)
 
 export default companyRouter

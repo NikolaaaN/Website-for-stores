@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import Company from '../models/company'
 import express from 'express'
+import { rmSync } from 'fs'
 
 export class CompanyController{
     
@@ -148,8 +149,13 @@ export class CompanyController{
         let username = req.body.username
         let code = req.body.code
         Company.findOne({'username': username}, (err, company) => {
-            const ind = company.goods.indexOf(code, 0)
-            company.goods.splice(ind,1)
+            let index = 0;
+            for(; index < company.goods.length; index++ ){
+                if(company.goods[index].code == code)
+                    break;
+            }
+            console.log(index)
+            company.goods.splice(index,1)
             if (err) console.log(err)
             else{
                 Company.updateOne({'username': username}, {'goods': company.goods}, (err,resp) => {
@@ -157,9 +163,65 @@ export class CompanyController{
                     else res.json("deleted")
                 })
             }
+        })   
+    }
+
+    getGood(req: express.Request, res: express.Response) {
+        let username = req.body.username
+        let code = req.body.code
+        Company.findOne({'username': username}, (err, company) => {
+            let index = 0;
+            for(; index < company.goods.length; index++ ){
+                if(company.goods[index].code == code)
+                    break;
+            }
+            if(index  != -1)
+                res.json(company.goods[index])
+            else 
+                res.json("")
+        })
+    }
+
+    updateGood(req: express.Request, res: express.Response){
+        let username = req.body.username
+        let code = req.body.code
+        let goods = {
+            code: req.body.code,
+            name: req.body.name,
+            unit: req.body.unit,
+            tax: req.body.tax,
+            type: req.body.type,
+            country: req.body.country,
+            foreignName: req.body.foreignName,
+            barcode: req.body.barcode,
+            manufacturer: req.body.manufacturer,
+            tariff: req.body.tariff,
+            taxType: req.body.taxType,
+            amount: req.body.amount,
+            description: req.body.description,
+            declaration: req.body.declaration,
+            storage: req.body.storage,
+            purchasePrice: req.body.purchasePrice,
+            sellingPrice: req.body.sellingPrice,
+            stock: req.body.stock,
+            minimalAmoung: req.body.minimalAmount,
+            maximalAmount: req.body.maximalAmount
+         }
+        Company.findOne({'username': username}, (err, company) => {
+            let index = 0;
+            for(; index < company.goods.length; index++ ){
+                if(company.goods[index].code == code)
+                    break;
+            }
+            company.goods[index]= goods
+            // console.log(company)
+            Company.updateOne({'username': username}, {'goods': company.goods}, (err,resp) => {
+                if (err) console.log(err)
+                else res.json("updated")
+            })
+            
         })
 
-        
     }
 
 }

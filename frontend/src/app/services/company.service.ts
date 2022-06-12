@@ -104,4 +104,43 @@ export class CompanyService {
 
     return this.http.post('http://localhost:4000/companies/deletegood', data)
   }
+
+  getGood(code) {
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username,
+      code: code
+    }
+    return this.http.post('http://localhost:4000/companies/getgood', data)
+  }
+
+  updateGood(code, name, unit, tax, type, country, foreignName, barcode, manufacturer, tariff, taxType, amount, description, declaration, storage, purchasePrice, sellingPrice, stock, minimalAmount, maximalAmount){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username,
+      code: code,
+      name: name,
+      unit: unit,
+      tax: tax,
+      type: type,
+      country: country,
+      foreignName: foreignName,
+      barcode: barcode,
+      manufacturer: manufacturer,
+      tariff: tariff,
+      taxType: taxType,
+      amount: amount,
+      description: description,
+      declaration: declaration,
+      storage: storage,
+      purchasePrice: purchasePrice,
+      sellingPrice: sellingPrice,
+      stock: stock,
+      minimalAmount: minimalAmount,
+      maximalAmount: maximalAmount
+    }
+
+    return this.http.post('http://localhost:4000/companies/updategood', data)
+
+  }
 }

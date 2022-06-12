@@ -45,7 +45,7 @@ export class RobaComponent implements OnInit {
   foreignName: string
   barcode: string
   manufacturer: string
-  tariff: string
+  tariff: number
   taxType: string
   amount: number
   description: string
@@ -54,7 +54,7 @@ export class RobaComponent implements OnInit {
   storage: string
   purchasePrice: number
   sellingPrice: number
-  stock: string
+  stock: number
   minimalAmount: number
   maximalAmount: number
 
@@ -62,6 +62,7 @@ export class RobaComponent implements OnInit {
   selectedGoods: Goods[] = []
 
   form: boolean = false;
+  state: string = "novo"
 
   add(){
     let username = sessionStorage.getItem('username')
@@ -99,28 +100,45 @@ export class RobaComponent implements OnInit {
     this.form = true;
   }
 
-  formAppear(){
+  formAppear(state){
+    if (state == "novo")
+      this.state = "novo"
+    else
+      this.state = "staro"
     this.form = true;
     this.selected = 'opsti podaci'
   }
 
   next(){
+    if (this.curRow*10 > this.rowNum)
+      return
     this.selectedGoods.splice(0)
     let max;
     if ((this.curRow+1) * 10 < this.rowNum){
-      this.curRow++
-      if (this.curRow * 10 < this.rowNum)
-        max = 10
+      max = 10
     }
-    else{
+    else{  
       max = this.rowNum % 10
     }
+    this.curRow++
     for (let i = 0; i < max; i++){
-      this.selectedGoods[i] = this.goods[this.curRow * 10 + i]
+      this.selectedGoods[i] = this.goods[(this.curRow-1) * 10 + i]
     }
   }
 
   prev(){
+    if(this.curRow == 1)
+      return
+    this.selectedGoods.splice(0)
+    let min;
+    if ( (this.curRow-1) < 1)
+      this.curRow = 1
+    else
+      this.curRow--
+    for (let i = 0; i < 10; i++){
+      this.selectedGoods[i] = this.goods[(this.curRow-1) * 10 + i]
+    }
+    
 
   }
 
@@ -128,6 +146,41 @@ export class RobaComponent implements OnInit {
     this.companyService.deleteGood(code).subscribe((message: string) => {
       console.log(message)
     })
+  }
+
+  formAppearUpdate(code){
+    this.companyService.getGood(code).subscribe((good: Goods) => {
+
+      this.code = good.code
+      this.name = good.name
+      this.unit = good.unit
+      this.tax = good.tax
+      this.type = good.type
+      this.country = good.countryOfOrigin
+      this.foreignName = good.foreignName
+      this.barcode = good.barCode
+      this.manufacturer = good.manufacturer
+      this.tariff = good.tariff
+      this.taxType = good.taxType
+      this.amount = good.amount
+      this.description = good.description
+      this.declaration = good.declaration
+      this.storage = good.storage
+      this.purchasePrice = good.purchasingPrice
+      this.sellingPrice = good.sellingPrice
+      this.stock = good.onStock 
+      this.minimalAmount = good.minWanted
+      this.maximalAmount = good.maxWanted
+      this.formAppear("staro")
+
+    })
+  }
+
+  update(){
+    this.companyService.updateGood(this.code, this.name, this.unit, this.tax, this.type, this.country, this.foreignName, this.barcode, this.manufacturer, this.tariff, this.taxType, this.amount, this.description, this.declaration, this.storage, this.purchasePrice, this.sellingPrice, this.stock, this.minimalAmount, this.maximalAmount).subscribe((message: string) => {
+      console.log(message)
+    })
+
   }
 
 }

@@ -19,16 +19,16 @@
                 <td>{{g.tax}}</td>
                 <td>{{g.manufacturer}}</td>
                 <td><button (click)="delete(g.code)">Delete</button></td>
-                <td><button>Update</button></td>
+                <td><button (click)="formAppearUpdate(g.code)">Izmeni</button></td>
 
             </tr>
         </table>
-        <button *ngIf="rowNum>10" (click)="prev()">-</button>
+        <button *ngIf="rowNum>10" (click)="prev()">&#60;-</button>
         {{curRow}}
         <button *ngIf="rowNum>10" (click)="next()">-></button>
         <br/>
 
-        <button (click)="formAppear()">Unos</button>
+        <button (click)="formAppear('novo')">Unos</button>
         <br/>
         <ul class="nav" *ngIf="form">
             <li class="nav-item" *ngFor="let m of select">
@@ -55,7 +55,8 @@
             <label for="hrana">sirovina</label>
             <input type="radio" value="sirovina" name="tip" [(ngModel)]="type" id="sirovina">
             <br/>
-            <button (click)="add()">Dodaj</button>
+            <button (click)="add()" *ngIf="state == 'novo' ">Dodaj</button>
+            <button (click)="update()" *ngIf="state == 'staro' ">Azuriraj</button>
             
 
         </ng-container>
