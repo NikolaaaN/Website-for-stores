@@ -3,6 +3,15 @@
         <app-sidemenu></app-sidemenu>
     </div>
     <div class="content">
+        Izaberite nacin placanja:
+        <br/>
+        Gotovina:<input type="radio" name="payingWay" value="cash" (click)="cashSubmit()">
+        Cek: <input type="radio" name="payingWay" value="check"  (click)="checkSubmit()">
+        Kartica: <input type="radio" name="payingWay" value="card" (click)="cardSubmit()" >
+        Virman: <input type="radio" name="payingWay" value="virman" (click)="virmanSubmit()">
+       
+
+
 
     </div>
 </div>

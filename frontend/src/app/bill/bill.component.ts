@@ -30,10 +30,7 @@ export class BillComponent implements OnInit {
 
   price: number
 
-  bill: Bill = new Bill()
   bills: Array<Bill> = []
-
-
 
   loadGoods(){
     
@@ -55,18 +52,19 @@ export class BillComponent implements OnInit {
   }
 
   submitGood(){
-    this.bill.name= this.chosenGood
-    this.bill.amount = this.chosenAmount
-    this.bill.price = this.price
+    let bill : Bill = new Bill()
+    bill.name= this.chosenGood
+    bill.amount = this.chosenAmount
+    bill.price = this.price
     let date= new Date()
-    this.bill.date = date
-    this.bills.push(this.bill)
+    bill.date = date
+    this.bills.push(bill)
     this.amount = false;
 
   }
 
   submit(){
-    sessionStorage.setItem('bill', JSON.stringify(this.bill))
+    sessionStorage.setItem('bill', JSON.stringify(this.bills))
     this.router.navigate(['billpayment'])
      
   }

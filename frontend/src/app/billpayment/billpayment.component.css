@@ -7,10 +7,11 @@ body{
 input{
     display: inline-block;
     padding: 10px;
+    margin: 10px;
     font-size: 12px;
 }
 .wrapper {
-    width: 700px;
+    width: 750px;
     overflow: hidden; 
 }
 .menu {
