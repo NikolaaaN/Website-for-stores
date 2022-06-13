@@ -16,8 +16,10 @@ export class Goods {
     description: string
     declaration: string
 
+    category: string
+
     storage: string
-    purchasingPrice: number
+    purchasePrice: number
     sellingPrice: number
     onStock: number
     minWanted: number

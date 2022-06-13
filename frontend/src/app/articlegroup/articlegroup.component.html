@@ -1,0 +1,58 @@
+<div id="wrapper">
+    <div id="menu">
+        <app-sidemenu></app-sidemenu>
+    </div>
+    <div id="content">
+        <div id="category">
+        Dodajte kategoriju artikla:
+        <br/>
+        <input type="text"[(ngModel)]="category">
+        <br/>
+        <button (click)="add()">Dodaj</button>
+        <br/>
+        </div>
+        <div id="subCategory">
+            Dodajte podkategoriju:
+            <br/>
+            <select [(ngModel)]="categoryChoice">
+                <option *ngFor="let c of categories" >{{c.category}}</option>
+            </select>
+            <br/>
+            Podkategorija: <input type="text" [(ngModel)]="subCategory">
+            <br/>
+            <button (click)="addSubCategory()">Dodaj</button>
+        </div>
+
+        <button (click)="openPopup()">Dodeli artikal</button>
+        <br/>
+        <span>{{message}}</span>
+
+    </div>
+
+    <div id="popup" *ngIf="popup">
+        <div id="popupContent">
+            <table id="tablePopup">
+                <h3>Izaberite artikal da bi ste ga stavili u podkategoriju {{subCategory}}</h3>
+                <tr>
+                    <th>sifra_artikla</th>
+                    <th>naziv_artikla</th>
+                    <th>jedinica_mere</th>
+                    <th>stopa_poreza</th>
+                    <th>proizvodjac</th>
+                </tr>
+                <tr *ngFor="let g of goods">
+                    <td>{{g.code}}</td>
+                    <td>{{g.name}}</td>
+                    <td>{{g.unit}}</td>
+                    <td>{{g.tax}}</td>
+                    <td>{{g.manufacturer}}</td>
+                    <button (click)="submitCategory(g.code)">dodeli</button>
+                    
+                </tr>
+            </table>
+            <br/>
+            <button (click)="closePopup()">Zatvori</button>
+            
+        </div>
+    </div>
+</div>

@@ -20,5 +20,7 @@ companyRouter.route('/getgoods').post((req, res) => new company_controller_1.Com
 companyRouter.route('/deletegood').post((req, res) => new company_controller_1.CompanyController().deleteGood(req, res));
 companyRouter.route('/getgood').post((req, res) => new company_controller_1.CompanyController().getGood(req, res));
 companyRouter.route('/updategood').post((req, res) => new company_controller_1.CompanyController().updateGood(req, res));
+companyRouter.route('/addcategory').post((req, res) => new company_controller_1.CompanyController().addCategory(req, res));
+companyRouter.route('/getstores').post((req, res) => new company_controller_1.CompanyController().getStores(req, res));
 exports.default = companyRouter;
 //# sourceMappingURL=company.routes.js.map

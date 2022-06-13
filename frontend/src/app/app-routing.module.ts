@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddBuyerComponent } from './add-buyer/add-buyer.component';
 import { AddcompanyComponent } from './addcompany/addcompany.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { ArticlegroupComponent } from './articlegroup/articlegroup.component';
+import { BillComponent } from './bill/bill.component';
+import { BillpaymentComponent } from './billpayment/billpayment.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
@@ -23,7 +26,10 @@ const routes: Routes = [
   {path: "admin/addbuyer", component: AddBuyerComponent},
   {path: "company/orderers", component: OrderersComponent},
   {path: "changepasswords", component: ChangepasswordComponent},
-  {path: "roba", component: RobaComponent}
+  {path: "roba", component: RobaComponent},
+  {path: "groups", component: ArticlegroupComponent},
+  {path: "bills", component: BillComponent},
+  {path: "billpayment", component: BillpaymentComponent}
 ];
 
 @NgModule({

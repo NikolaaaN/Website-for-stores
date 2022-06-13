@@ -18,6 +18,9 @@ import { OrderersComponent } from './orderers/orderers.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { RobaComponent } from './roba/roba.component';
+import { ArticlegroupComponent } from './articlegroup/articlegroup.component';
+import { BillComponent } from './bill/bill.component';
+import { BillpaymentComponent } from './billpayment/billpayment.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { RobaComponent } from './roba/roba.component';
     OrderersComponent,
     SidemenuComponent,
     ChangepasswordComponent,
-    RobaComponent
+    RobaComponent,
+    ArticlegroupComponent,
+    BillComponent,
+    BillpaymentComponent
   ],
   imports: [
     BrowserModule,

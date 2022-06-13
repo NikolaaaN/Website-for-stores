@@ -57,6 +57,12 @@ let Company = new Schema({
     },
     goods: {
         type: Array
+    },
+    objects: {
+        type: Array
+    },
+    bills: {
+        type: Array
     }
 })
 

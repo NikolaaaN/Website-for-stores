@@ -25,5 +25,11 @@ export class SidemenuComponent implements OnInit {
   goods(){
     this.router.navigate(['roba'])
   }
+  groups(){
+    this.router.navigate(['groups'])
+  }
+  bills(){
+    this.router.navigate(['bills'])
+  }
 
 }

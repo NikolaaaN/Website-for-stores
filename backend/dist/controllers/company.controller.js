@@ -189,25 +189,6 @@ class CompanyController {
     updateGood(req, res) {
         let username = req.body.username;
         let code = req.body.code;
-        let name = req.body.name;
-        let unit = req.body.unit;
-        let tax = req.body.tax;
-        let type = req.body.type;
-        let country = req.body.country;
-        let foreignName = req.body.foreignName;
-        let barcode = req.body.barcode;
-        let manufacturer = req.body.manufacturer;
-        let tariff = req.body.tariff;
-        let taxType = req.body.taxType;
-        let amount = req.body.amount;
-        let description = req.body.description;
-        let declaration = req.body.declaration;
-        let storage = req.body.storage;
-        let purchasePrice = req.body.purchasePrice;
-        let sellingPrice = req.body.sellingPrice;
-        let stock = req.body.stock;
-        let minimalAmount = req.body.minimalAmount;
-        let maximalAmount = req.body.maximalAmount;
         let goods = {
             code: req.body.code,
             name: req.body.name,
@@ -244,6 +225,37 @@ class CompanyController {
                 else
                     res.json("updated");
             });
+        });
+    }
+    addCategory(req, res) {
+        let username = req.body.username;
+        let code = req.body.code;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            let index = 0;
+            for (; index < company.goods.length; index++) {
+                if (company.goods[index].code == code)
+                    break;
+            }
+            if (company.goods[index].category != null)
+                res.json("category already added");
+            else {
+                company.goods[index].category = req.body.subCategory;
+                company_1.default.updateOne({ 'username': username }, { 'goods': company.goods }, (err, resp) => {
+                    if (err)
+                        console.log(err);
+                    else
+                        res.json("updated");
+                });
+            }
+        });
+    }
+    getStores(req, res) {
+        let username = req.body.username;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(company.objects);
         });
     }
 }

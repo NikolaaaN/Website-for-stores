@@ -166,7 +166,7 @@ export class RobaComponent implements OnInit {
       this.description = good.description
       this.declaration = good.declaration
       this.storage = good.storage
-      this.purchasePrice = good.purchasingPrice
+      this.purchasePrice = good.purchasePrice
       this.sellingPrice = good.sellingPrice
       this.stock = good.onStock 
       this.minimalAmount = good.minWanted

@@ -141,6 +141,23 @@ export class CompanyService {
     }
 
     return this.http.post('http://localhost:4000/companies/updategood', data)
+  }
 
+  submitGoodCategory(code, subCategory){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      code: code,
+      username: username,
+      subCategory: subCategory
+    }
+    return this.http.post('http://localhost:4000/companies/addcategory', data)
+  }
+
+  getStores(){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      'username': username
+    }
+    return this.http.post('http://localhost:4000/companies/getstores', data)
   }
 }

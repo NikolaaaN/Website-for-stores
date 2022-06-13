@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+input{
+    display: inline-block;
+    padding: 10px;
+    font-size: 12px;
+}
+#wrapper {
+    width: 700px;
+    overflow: hidden; 
+}
+#menu {
+    width: 300px;
+    float:left; 
+    
+}
+#content {
+    margin: 50px;
+    padding: 30px;
+    float: right;
+    overflow: hidden; 
+}
+#subCategory{
+    margin-top: 20px;
+}
+#popup{
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:auto;
+    
+}
+
+#popupContent{
+    height: 350px;
+    width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    overflow: auto;
+
+}
+span{
+    color: red;
+}
+#tablePopup{
+    background: #fff;
+    padding: 30px;
+}

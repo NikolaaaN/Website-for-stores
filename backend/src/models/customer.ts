@@ -17,6 +17,9 @@ let Customer = new Schema({
     },
     idCard: {
         type: String
+    },
+    bills: {
+        type: Array
     }
 })
 export default mongoose.model('CustomerModel', Customer, 'customers')

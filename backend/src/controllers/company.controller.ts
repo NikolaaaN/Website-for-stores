@@ -218,10 +218,38 @@ export class CompanyController{
             Company.updateOne({'username': username}, {'goods': company.goods}, (err,resp) => {
                 if (err) console.log(err)
                 else res.json("updated")
-            })
-            
+            }) 
         })
+    }
 
+    addCategory(req: express.Request, res: express.Response){
+        let username = req.body.username
+        let code = req.body.code
+        Company.findOne({'username': username}, (err, company) => {
+            let index = 0;
+            for(; index < company.goods.length; index++ ){
+                if(company.goods[index].code == code)
+                    break;
+            }
+            if(company.goods[index].category!= null)
+                res.json("category already added")
+            else{
+                company.goods[index].category= req.body.subCategory
+                Company.updateOne({'username': username}, {'goods': company.goods}, (err,resp) => {
+                    if (err) console.log(err)
+                    else res.json("updated")
+                }) 
+            }
+        })
+        
+    }
+
+    getStores(req: express.Request, res: express.Response){
+        let username = req.body.username
+        Company.findOne({'username': username}, (err, company) => {
+            if(err) console.log(err)
+            else res.json(company.objects)
+        })
     }
 
 }

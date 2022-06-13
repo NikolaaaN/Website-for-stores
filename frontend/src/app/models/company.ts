@@ -1,3 +1,5 @@
+import { Bill } from "./bill"
+
 export class Company{
     fullName : string
     username : string
@@ -15,4 +17,5 @@ export class Company{
     bankAccount: string
     noOfStorages: number
     noOfCashRegisters: number
+    bills: Array<Bill>
 }

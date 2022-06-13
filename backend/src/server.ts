@@ -3,6 +3,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import loginRouter from './routers/login.routes'
 import companyRouter from './routers/company.routes'
+import categoryRouter from './routers/category.routes'
 
 
 const app = express()
@@ -19,6 +20,7 @@ const router = express.Router()
 
 router.use('/users', loginRouter)
 router.use('/companies', companyRouter)
+router.use('/categories', categoryRouter)
 
 
 app.use('/', router)

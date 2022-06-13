@@ -59,6 +59,12 @@ let Company = new Schema({
     },
     goods: {
         type: Array
+    },
+    objects: {
+        type: Array
+    },
+    bills: {
+        type: Array
     }
 });
 exports.default = mongoose_1.default.model('CompanyModel', Company, 'companies');

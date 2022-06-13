@@ -50,5 +50,11 @@ companyRouter.route('/getgood').post(
 companyRouter.route('/updategood').post(
     (req, res) => new CompanyController().updateGood(req, res)
 )
+companyRouter.route('/addcategory').post(
+    (req, res) => new CompanyController().addCategory(req, res)
+)
+companyRouter.route('/getstores').post(
+    (req, res) => new CompanyController().getStores(req, res)
+)
 
 export default companyRouter
