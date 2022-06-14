@@ -1,0 +1,26 @@
+<table id="listaKompanija">
+    <div id="wrapper">
+        <div id="menu">
+            <ul>
+                <li>Company details</li>
+                <li (click)="addCompany()">Add company</li>
+                <li (click)="addBuyer()">Add buyers</li>
+                <li (click)="review()">Daily reviews</li>
+            </ul>
+        </div>
+        <div id="content">
+           <table>
+            <tr>
+                <th>Naziv</th>
+                <th>Ukupan iznos</th>
+            </tr>
+            <tr *ngFor="let d of dailyReport">
+                <td> {{d.name}} </td>
+                <td> {{d.fullPrice}} </td>
+                <td> {{d.taxTotal}} </td>
+
+            </tr>
+           </table>
+        </div>
+    </div>
+    </table>

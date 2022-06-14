@@ -272,6 +272,7 @@ export class CompanyController{
         let orderer = req.body.orderer
         let type = req.body.type
         let bills : Bills = new Bills()
+        let taxPrice = req.body.taxPrice
         bills.bills = bill
         bills.finalPrice = finalPrice
         bills.fullName = fullName
@@ -280,6 +281,7 @@ export class CompanyController{
         bills.date = new Date()
         bills.orderer = orderer
         bills.type = type
+        bills.taxPrice = taxPrice
         Company.updateOne({'username': username}, {$push: {'bills': bills}}, (err, resp) => {
             if(err) console.log(err)
             else res.json('bill added')
@@ -292,6 +294,14 @@ export class CompanyController{
             if (err) console.log(err)
             else res.json(company)
         })
+   }
+
+   getBills(req: express.Request, res: express.Response){
+    let username = req.body.username
+    Company.findOne({'username': username}, (err, company) => {
+        if (err) console.log(err)
+        else res.json(company.bills)
+    })
    }
 
 }

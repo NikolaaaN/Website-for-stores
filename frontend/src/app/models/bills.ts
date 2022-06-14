@@ -10,4 +10,8 @@ export class Bills{
     date: Date
     type: string
     taxPrice: number
+
+    getDate(){
+        return this.date.getDate()
+    }
 }

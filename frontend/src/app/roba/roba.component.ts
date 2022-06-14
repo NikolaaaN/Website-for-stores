@@ -138,8 +138,6 @@ export class RobaComponent implements OnInit {
     for (let i = 0; i < 10; i++){
       this.selectedGoods[i] = this.goods[(this.curRow-1) * 10 + i]
     }
-    
-
   }
 
   delete(code){
@@ -182,5 +180,4 @@ export class RobaComponent implements OnInit {
     })
 
   }
-
 }

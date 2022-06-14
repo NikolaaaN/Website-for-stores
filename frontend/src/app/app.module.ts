@@ -21,6 +21,8 @@ import { RobaComponent } from './roba/roba.component';
 import { ArticlegroupComponent } from './articlegroup/articlegroup.component';
 import { BillComponent } from './bill/bill.component';
 import { BillpaymentComponent } from './billpayment/billpayment.component';
+import { IzvestajComponent } from './izvestaj/izvestaj.component';
+import { AdminreviewComponent } from './adminreview/adminreview.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { BillpaymentComponent } from './billpayment/billpayment.component';
     RobaComponent,
     ArticlegroupComponent,
     BillComponent,
-    BillpaymentComponent
+    BillpaymentComponent,
+    IzvestajComponent,
+    AdminreviewComponent
   ],
   imports: [
     BrowserModule,

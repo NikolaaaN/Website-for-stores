@@ -177,7 +177,7 @@ export class CompanyService {
     return this.http.post('http://localhost:4000/companies/getorderers', data)
   }
 
-  pushBill(bill, finalPrice, fullName, slip, brLK, orderer, type){
+  pushBill(bill, finalPrice, fullName, slip, brLK, orderer, type, taxPrice){
     let username = sessionStorage.getItem('username')
     const data = {
       username: username,
@@ -187,8 +187,18 @@ export class CompanyService {
       slip: slip,
       brLK: brLK,
       orderer: orderer,
-      type: type
+      type: type,
+      taxPrice: taxPrice
     }
     return this.http.post('http://localhost:4000/companies/pushbill', data)
+  }
+
+  getAllBills(){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username
+    }
+
+    return this.http.post('http://localhost:4000/companies/getbills', data)
   }
 }

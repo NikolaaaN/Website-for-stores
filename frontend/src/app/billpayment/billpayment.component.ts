@@ -37,6 +37,7 @@ export class BillpaymentComponent implements OnInit {
   slip: string
   orderer: string
   type: string
+  taxPrice: number = 0
 
   cashSubmit(){
     this.cash = true
@@ -71,12 +72,11 @@ export class BillpaymentComponent implements OnInit {
     this.type = "cash"
     this.bill.forEach(element => {
       console.log(element.amount + " " + element.price)
-      
       this.finalPrice += element.amount * element.price
     });
+    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    
-    this.companyService.pushBill(this.bill, this.finalPrice, null, null, this.brLK, null, this.type).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice, null, null, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
 
@@ -92,11 +92,13 @@ export class BillpaymentComponent implements OnInit {
     this.type = "check"
     this.bill.forEach(element => {
       console.log(element.amount + " " + element.price)
+
       
       this.finalPrice += element.amount * element.price
     });
+    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    this.companyService.pushBill(this.bill, this.finalPrice, this.fullName, null, this.brLK, null, this.type).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice, this.fullName, null, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
 
@@ -115,8 +117,9 @@ export class BillpaymentComponent implements OnInit {
       
       this.finalPrice += element.amount * element.price
     });
+    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, null, this.type).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
 
@@ -135,8 +138,9 @@ export class BillpaymentComponent implements OnInit {
       
       this.finalPrice += element.amount * element.price
     });
+    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, this.orderer, this.type).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, this.orderer, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
 

@@ -279,6 +279,7 @@ class CompanyController {
         let orderer = req.body.orderer;
         let type = req.body.type;
         let bills = new bills_1.Bills();
+        let taxPrice = req.body.taxPrice;
         bills.bills = bill;
         bills.finalPrice = finalPrice;
         bills.fullName = fullName;
@@ -287,6 +288,7 @@ class CompanyController {
         bills.date = new Date();
         bills.orderer = orderer;
         bills.type = type;
+        bills.taxPrice = taxPrice;
         company_1.default.updateOne({ 'username': username }, { $push: { 'bills': bills } }, (err, resp) => {
             if (err)
                 console.log(err);
@@ -301,6 +303,15 @@ class CompanyController {
                 console.log(err);
             else
                 res.json(company);
+        });
+    }
+    getBills(req, res) {
+        let username = req.body.username;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(company.bills);
         });
     }
 }

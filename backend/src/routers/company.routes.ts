@@ -65,5 +65,8 @@ companyRouter.route('/pushbill').post(
 companyRouter.route('/getcompanybyusername').post(
     (req, res) => new CompanyController().getCompanyByUsername(req, res)
 )
+companyRouter.route('/getbills').post(
+    (req, res) => new CompanyController().getBills(req, res)
+)
 
 export default companyRouter

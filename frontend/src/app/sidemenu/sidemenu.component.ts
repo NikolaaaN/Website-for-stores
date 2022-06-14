@@ -31,5 +31,8 @@ export class SidemenuComponent implements OnInit {
   bills(){
     this.router.navigate(['bills'])
   }
+  review(){
+    this.router.navigate(['review'])
+  }
 
 }

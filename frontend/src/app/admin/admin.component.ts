@@ -47,5 +47,8 @@ export class AdminComponent implements OnInit {
   addBuyer(){
     this.router.navigate(['/admin/addbuyer'])
   }
+  review(){
+    this.router.navigate(['/admin/review'])
+  }
 
 }

@@ -31,6 +31,7 @@ export class BillComponent implements OnInit {
   amount: boolean = false
   chosenAmount: string = ""//chosen je za izabranu robu 
   chosenGood: string = ""
+  taxPrice: number = 0
 
   company: Company
 
@@ -39,6 +40,7 @@ export class BillComponent implements OnInit {
   bills: Array<Bill> = []
 
   loadGoods(){
+    this.selectedGoods.splice(0)
     
     this.companyService.getAllGoods().subscribe((goods: Array<Goods>) => {
       this.goods = goods
@@ -56,6 +58,7 @@ export class BillComponent implements OnInit {
     this.amount =true;
     this.chosenGood = name;
     if (this.company.pdv){
+      this.taxPrice += (this.price * tax)/100
       this.price =  this.price + (this.price * tax)/100
     }
     
@@ -65,15 +68,16 @@ export class BillComponent implements OnInit {
     let bill : Bill = new Bill()
     bill.name= this.chosenGood
     bill.amount = parseInt(this.chosenAmount)
+    this.taxPrice *= bill.amount
     bill.price = this.price
     this.bills.push(bill)
-    this.amount = false;
-    console.log(this.price + "  "+this.chosenAmount)
-
+    this.amount = false
+    
   }
 
   submit(){
     sessionStorage.setItem('bill', JSON.stringify(this.bills))
+    sessionStorage.setItem('tax', this.taxPrice.toString())
     this.router.navigate(['billpayment'])
      
   }
