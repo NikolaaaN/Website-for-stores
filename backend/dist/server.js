@@ -9,6 +9,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const login_routes_1 = __importDefault(require("./routers/login.routes"));
 const company_routes_1 = __importDefault(require("./routers/company.routes"));
 const category_routes_1 = __importDefault(require("./routers/category.routes"));
+const customer_routes_1 = __importDefault(require("./routers/customer.routes"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -21,6 +22,7 @@ const router = express_1.default.Router();
 router.use('/users', login_routes_1.default);
 router.use('/companies', company_routes_1.default);
 router.use('/categories', category_routes_1.default);
+router.use('/customer', customer_routes_1.default);
 app.use('/', router);
 app.listen(4000, () => console.log(`Express server running on port 4000`));
 //# sourceMappingURL=server.js.map

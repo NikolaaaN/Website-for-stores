@@ -56,5 +56,14 @@ companyRouter.route('/addcategory').post(
 companyRouter.route('/getstores').post(
     (req, res) => new CompanyController().getStores(req, res)
 )
+companyRouter.route('/getorderers').post(
+    (req, res) => new CompanyController().getOrderers(req, res)
+)
+companyRouter.route('/pushbill').post(
+    (req, res) => new CompanyController().pushBills(req, res)
+)
+companyRouter.route('/getcompanybyusername').post(
+    (req, res) => new CompanyController().getCompanyByUsername(req, res)
+)
 
 export default companyRouter

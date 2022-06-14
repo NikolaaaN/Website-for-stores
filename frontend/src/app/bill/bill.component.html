@@ -25,17 +25,17 @@
                 <td>{{good.name}}</td>
                 <td>{{good.purchasePrice}}</td>
                 <td>{{good.sellingPrice}}</td>
-                <td><button (click)="goodChosen(good.name, good.purchasePrice)">izaberi</button></td>  
+                <td><button (click)="goodChosen(good.name, good.purchasePrice, good.tax)">izaberi</button></td>  
 
             </tr>
         </table>
         <br/>
         <select [(ngModel)]="chosenAmount" *ngIf="amount">
-            <option>0</option>
-            <option>1</option>
-            <option>5</option>
-            <option>10</option>
-            <option>20</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=5>5</option>
+            <option value=10>10</option>
+            <option value=20>20</option> 
         </select>
         <br/>
         <button (click)="submitGood()" *ngIf="amount">izaberi kolicinu</button>

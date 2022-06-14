@@ -45,7 +45,7 @@
             <br/>
             unit: <input value="{{unit}}" [(ngModel)]="unit">
             <br/>
-            tax: <input value="{{tax}}" [(ngModel)]="tax">
+            tax: <input value="{{tax}}" type="number" [(ngModel)]="tax">
             <br/>
             tip: 
             <label for="hrana">hrana</label>
@@ -86,9 +86,9 @@
 
             naziv:<input value="{{storage}}" [(ngModel)]="storage">
             <br/>
-            nabavna cena: <input value="{{purchasePrice}}" [(ngModel)]="purchasePrice">
+            nabavna cena: <input value="{{purchasePrice}}" type="number" [(ngModel)]="purchasePrice">
             <br/>
-            prodajna cena <input value="{{sellingPrice}}" [(ngModel)]="sellingPrice">
+            prodajna cena <input value="{{sellingPrice}}" type="number" [(ngModel)]="sellingPrice">
             <br/>
             stanje: <input value="{{stock}}" [(ngModel)]="stock">
             <br/>

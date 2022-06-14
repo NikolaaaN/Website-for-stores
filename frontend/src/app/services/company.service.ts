@@ -83,6 +83,14 @@ export class CompanyService {
     return this.http.post('http://localhost:4000/companies/taxidandname', data)
   }
 
+  getCompanyByUsername(){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username
+    }
+    return this.http.post('http://localhost:4000/companies/getcompanybyusername', data)
+  }
+
   addGoods(data){
     return this.http.post('http://localhost:4000/companies/addgoods', data)
   }
@@ -159,5 +167,28 @@ export class CompanyService {
       'username': username
     }
     return this.http.post('http://localhost:4000/companies/getstores', data)
+  }
+
+  getOrderers(){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      'username': username
+    } 
+    return this.http.post('http://localhost:4000/companies/getorderers', data)
+  }
+
+  pushBill(bill, finalPrice, fullName, slip, brLK, orderer, type){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username,
+      bill: bill,
+      finalPrice: finalPrice,
+      fullName: fullName,
+      slip: slip,
+      brLK: brLK,
+      orderer: orderer,
+      type: type
+    }
+    return this.http.post('http://localhost:4000/companies/pushbill', data)
   }
 }

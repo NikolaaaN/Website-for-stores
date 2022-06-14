@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Bill } from '../models/bill';
+import { Company } from '../models/company';
 import { Goods } from '../models/goods';
 import { Stores } from '../models/stores';
 import { CompanyService } from '../services/company.service';
@@ -18,6 +19,9 @@ export class BillComponent implements OnInit {
     this.companyService.getStores().subscribe((stores: Array<Stores>) => {
       this.stores = stores
     })
+    this.companyService.getCompanyByUsername().subscribe((company: Company) => {
+      this.company = company
+    })
   }
 
   stores: Array<Stores>
@@ -25,8 +29,10 @@ export class BillComponent implements OnInit {
   goods: Array<Goods>
   selectedGoods: Array<Goods> = []
   amount: boolean = false
-  chosenAmount: number = 0 //chosen je za izabranu robu 
+  chosenAmount: string = ""//chosen je za izabranu robu 
   chosenGood: string = ""
+
+  company: Company
 
   price: number
 
@@ -45,21 +51,24 @@ export class BillComponent implements OnInit {
     
   }
 
-  goodChosen(name, purchasePrice){
+  goodChosen(name, purchasePrice, tax){
     this.price=purchasePrice
     this.amount =true;
     this.chosenGood = name;
+    if (this.company.pdv){
+      this.price =  this.price + (this.price * tax)/100
+    }
+    
   }
 
   submitGood(){
     let bill : Bill = new Bill()
     bill.name= this.chosenGood
-    bill.amount = this.chosenAmount
+    bill.amount = parseInt(this.chosenAmount)
     bill.price = this.price
-    let date= new Date()
-    bill.date = date
     this.bills.push(bill)
     this.amount = false;
+    console.log(this.price + "  "+this.chosenAmount)
 
   }
 

@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import loginRouter from './routers/login.routes'
 import companyRouter from './routers/company.routes'
 import categoryRouter from './routers/category.routes'
+import customerRouter from './routers/customer.routes'
 
 
 const app = express()
@@ -21,6 +22,7 @@ const router = express.Router()
 router.use('/users', loginRouter)
 router.use('/companies', companyRouter)
 router.use('/categories', categoryRouter)
+router.use('/customer', customerRouter)
 
 
 app.use('/', router)

@@ -2,6 +2,8 @@ import mongoose from 'mongoose'
 import Company from '../models/company'
 import express from 'express'
 import { rmSync } from 'fs'
+import orderer from '../models/orderer'
+import { Bills } from '../models/bills'
 
 export class CompanyController{
     
@@ -251,5 +253,45 @@ export class CompanyController{
             else res.json(company.objects)
         })
     }
+
+    getOrderers(req: express.Request, res: express.Response){
+        let username = req.body.username
+        orderer.find({'parentCompany': username}, (err, orderers) => {
+            if (err) console.log(err)
+            else res.json(orderers)
+        })
+    }
+
+    pushBills(req: express.Request, res: express.Response){
+        let username = req.body.username
+        let bill = req.body.bill
+        let finalPrice = req.body.finalPrice
+        let fullName = req.body.fullName
+        let brLK = req.body.brLK
+        let slip = req.body.slip
+        let orderer = req.body.orderer
+        let type = req.body.type
+        let bills : Bills = new Bills()
+        bills.bills = bill
+        bills.finalPrice = finalPrice
+        bills.fullName = fullName
+        bills.brLK = brLK
+        bills.slip = slip
+        bills.date = new Date()
+        bills.orderer = orderer
+        bills.type = type
+        Company.updateOne({'username': username}, {$push: {'bills': bills}}, (err, resp) => {
+            if(err) console.log(err)
+            else res.json('bill added')
+        })
+    }
+
+   getCompanyByUsername(req: express.Request, res: express.Response){
+        let username = req.body.username
+        Company.findOne({'username': username}, (err, company) => {
+            if (err) console.log(err)
+            else res.json(company)
+        })
+   }
 
 }

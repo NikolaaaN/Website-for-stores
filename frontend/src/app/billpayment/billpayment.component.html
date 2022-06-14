@@ -3,13 +3,36 @@
         <app-sidemenu></app-sidemenu>
     </div>
     <div class="content">
-        Izaberite nacin placanja:
+        <h2>Izaberite nacin placanja:</h2>
         <br/>
-        Gotovina:<input type="radio" name="payingWay" value="cash" (click)="cashSubmit()">
+        Gotovina:<input type="radio" name="payingWay" checked="true" value="cash" (click)="cashSubmit()">
         Cek: <input type="radio" name="payingWay" value="check"  (click)="checkSubmit()">
         Kartica: <input type="radio" name="payingWay" value="card" (click)="cardSubmit()" >
         Virman: <input type="radio" name="payingWay" value="virman" (click)="virmanSubmit()">
-       
+        <div class="cash" *ngIf="cash">
+            Iznos: <input type="number" name="" id="">
+            <br/>
+            Br licne karte(opcionalno): <input type="text" [(ngModel)]="brLK">
+            <button (click)="cashPayout()">Potvrdi</button>
+        </div>
+        <div class="check" *ngIf="check">
+            Ime i prezime: <input type="text" name="" id="" [(ngModel)]="fullName">
+            <br/>
+            Br licne karte: <input type="text" [(ngModel)]="brLK">
+            <button (click)="checkPayout()">Potvrdi</button>
+        </div>
+        <div class="card" *ngIf="card">
+            Broj licne karte: <input type="text" [(ngModel)]="brLK">
+            <br/>
+            Broj slip racuna: <input type="text" name="" id="" [(ngModel)]="slip">
+            <button (click)="cardPayout()">Potvrdi</button>
+        </div>
+        <div class="virman" *ngIf="virman">
+            <select [(ngModel)]="orderer">
+                <option *ngFor="let o of orderers">{{o.fullName}}</option>
+            </select>
+            <button (click)="virmanPayout()">Potvrdi</button>
+        </div>
 
 
 

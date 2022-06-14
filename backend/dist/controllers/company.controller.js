@@ -5,6 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CompanyController = void 0;
 const company_1 = __importDefault(require("../models/company"));
+const orderer_1 = __importDefault(require("../models/orderer"));
+const bills_1 = require("../models/bills");
 class CompanyController {
     getAllCompanies(req, res) {
         company_1.default.find({}, (err, companies) => {
@@ -256,6 +258,49 @@ class CompanyController {
                 console.log(err);
             else
                 res.json(company.objects);
+        });
+    }
+    getOrderers(req, res) {
+        let username = req.body.username;
+        orderer_1.default.find({ 'parentCompany': username }, (err, orderers) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(orderers);
+        });
+    }
+    pushBills(req, res) {
+        let username = req.body.username;
+        let bill = req.body.bill;
+        let finalPrice = req.body.finalPrice;
+        let fullName = req.body.fullName;
+        let brLK = req.body.brLK;
+        let slip = req.body.slip;
+        let orderer = req.body.orderer;
+        let type = req.body.type;
+        let bills = new bills_1.Bills();
+        bills.bills = bill;
+        bills.finalPrice = finalPrice;
+        bills.fullName = fullName;
+        bills.brLK = brLK;
+        bills.slip = slip;
+        bills.date = new Date();
+        bills.orderer = orderer;
+        bills.type = type;
+        company_1.default.updateOne({ 'username': username }, { $push: { 'bills': bills } }, (err, resp) => {
+            if (err)
+                console.log(err);
+            else
+                res.json('bill added');
+        });
+    }
+    getCompanyByUsername(req, res) {
+        let username = req.body.username;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(company);
         });
     }
 }
