@@ -31,11 +31,18 @@ export class AddBuyerComponent implements OnInit {
     })
   }
 
+  details(){
+    this.router.navigate(['admin'])
+  }
   addCompany(){
     this.router.navigate(['/admin/addcompany'])
   }
   addCustomer(){
-    this.router.navigate(['/admin/addBuyer'])
+    this.router.navigate(['/admin/addbuyer'])
   }
+  report(){
+    this.router.navigate(['admin/review'])
+  }
+
 
 }

@@ -39,6 +39,9 @@ export class AdminreviewComponent implements OnInit {
   dailyReport: Array<DailyReport> = []
   report: DailyReport = new DailyReport()
 
+  details(){
+    this.router.navigate(['admin'])
+  }
   addCompany(){
     this.router.navigate(['/admin/addcompany'])
   }

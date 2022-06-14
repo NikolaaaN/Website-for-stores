@@ -1,5 +1,6 @@
 
 import { Bills } from "./bills"
+import { Goods } from "./goods"
 
 export class Company{
     fullName : string
@@ -19,4 +20,5 @@ export class Company{
     noOfStorages: number
     noOfCashRegisters: number
     bills: Array<Bills>
+    goods: Array<Goods>
 }

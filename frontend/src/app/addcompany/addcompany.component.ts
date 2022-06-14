@@ -13,8 +13,17 @@ export class AddcompanyComponent implements OnInit {
   ngOnInit(): void {
    
   }
+  details(){
+    this.router.navigate(['admin'])
+  }
   addCompany(){
     this.router.navigate(['/admin/addcompany'])
+  }
+  addBuyer(){
+    this.router.navigate(['/admin/addbuyer'])
+  }
+  review(){
+    this.router.navigate(['/admin/review'])
   }
 
 }

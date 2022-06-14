@@ -1,20 +1,21 @@
 <div class="login">
-    <table>
+    <div class="content">
+    <!-- <div class="vl"></div> -->
+        <table>
 
-        <tr>
-            Username: <input type="text" [(ngModel)]="username">
-        </tr>
-        <tr>
-            Password: <input type="password" [(ngModel)]="password">
-        </tr>
-        <tr>
-            <p id="message">{{message}}</p>
-        </tr>
-        <tr>
-            <button (click)="login()" id="login">Login</button>
-        </tr>
-       
-
-    </table>
+            <tr>
+                Username: <input type="text" [(ngModel)]="username">
+            </tr>
+            <tr>
+                Password: <input type="password" [(ngModel)]="password">
+            </tr>
+            <tr>
+                <p id="message">{{message}}</p>
+            </tr>
+            <tr>
+                <button (click)="login()" id="login">Login</button>
+            </tr>  
+        </table>
+    </div>
 </div>
 

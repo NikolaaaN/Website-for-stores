@@ -201,4 +201,15 @@ export class CompanyService {
 
     return this.http.post('http://localhost:4000/companies/getbills', data)
   }
+
+  // getAllGoodsByCode(code){
+  //   let username = sessionStorage.getItem('username')
+
+  //   const data = {
+  //     'username': username,
+  //     'code': code
+  //   }
+
+  //   return this.http.post('http://localhost:4000/companies/getgoodsbycode', data)
+  // }
 }

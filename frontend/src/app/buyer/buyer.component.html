@@ -1,0 +1,34 @@
+<div class="wrapper">
+    <div class="menu">
+        <ul>
+            <li (click)="store()">prodavnica</li>
+            <li (click)="bills()">moji racuni</li>
+            
+        </ul>
+    </div>
+    <div class="content">
+
+        <h2>Izaberite preduzece:</h2>
+        <select [(ngModel)] = "selectedCompanyName">
+            <option *ngFor="let c of companies" (click)="selected()" selected="true"t>{{c.companyName}}</option> 
+        </select>
+        
+        <div class="table">
+
+            <table>
+                <tr>
+                    <th>Proizvodjac</th>
+                    <th>minimalna cena</th>
+                    <th>objekti</th>
+                </tr>
+                <tr *ngFor="let t of tableRows">
+                    <td>{{t.name}}</td>
+                    <td>{{t.price}}</td>
+                    <td>{{t.object}}</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+</div>

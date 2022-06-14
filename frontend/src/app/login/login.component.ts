@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           })
           
         }
-        if (user.type == 2) console.log("afsa")
+        if (user.type == 2) this.router.navigate(['buyer'])
         if (user.type == 3) this.message = "Login using the admin page"
 
       }

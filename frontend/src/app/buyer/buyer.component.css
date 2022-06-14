@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background: #2c3e50;
+    width: 15%;
+    text-align: center;
+    
+}
+ul li{
+    margin-top: 20px;
+    font-size: 17px;
+    padding: 20px;
+    text-transform:  uppercase;
+}
+ul li:hover{
+        background: #1b9bff;
+        transition: .5s;
+}
+
+label{
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+}
+.wrapper {
+    width: 700px;
+    overflow: hidden; 
+}
+.menu {
+    width: 300px;
+    float:left; 
+    
+}
+.content {
+    width: 300px;
+    float: right;
+    overflow: hidden; 
+}

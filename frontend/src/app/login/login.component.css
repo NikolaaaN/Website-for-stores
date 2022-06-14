@@ -20,3 +20,12 @@
     border-radius: 10px;
     
 }
+.vl{
+    margin-left: 600px;
+    border-left: 3px solid black;
+    height: 300px;
+}
+.content{
+    display: inline-block;
+   
+}
