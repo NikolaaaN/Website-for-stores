@@ -30,7 +30,7 @@ export class BuyerComponent implements OnInit {
   tableRow: any = {
     name: "",
     price : 0,
-    objects: ["", ""]
+    objects: ""
   }
 
   store(){
@@ -44,15 +44,21 @@ export class BuyerComponent implements OnInit {
     this.selectedCompany = this.companies.find(company => this.selectedCompanyName == company.companyName)
     this.selectedCompany.goods.forEach(good => {
 
-      //magacini i objekti treba da budu niz kod robe
-
-      // this.companyService.getAllGoodsByCode(code).subscribe((goods: Array<Goods>) => {
-
-      // }) 
-
       this.tableRow.name = good.manufacturer
-      this.tableRow.price = good.purchasePrice
-      this.tableRow.object = good.storage
+      
+      let names= ""
+      let minPrice=0
+      if (good.storages){
+        console.log(good.storages)
+        minPrice = good.storages[0].purchasePrice
+        good.storages.forEach(storage => {
+         if (storage.purchasePrice< minPrice)
+          minPrice = storage.purchasePrice
+        names += storage.name + ' '
+        });
+      }
+      this.tableRow.price =minPrice
+      this.tableRow.object = names
       this.tableRows.push(this.tableRow)
       this.tableRow= new Object()
     });

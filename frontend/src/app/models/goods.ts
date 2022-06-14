@@ -18,6 +18,8 @@ export class Goods {
 
     category: string
 
+    storages: Array<Storage> = []
+
     storage: string
     purchasePrice: number
     sellingPrice: number

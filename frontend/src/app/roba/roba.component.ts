@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Goods } from '../models/goods';
 import { CompanyService } from '../services/company.service';
+import { Storage } from '../models/storage';
 
 @Component({
   selector: 'app-roba',
@@ -58,6 +59,9 @@ export class RobaComponent implements OnInit {
   minimalAmount: number
   maximalAmount: number
 
+  currentObject: Storage = new Storage()
+  allObjects: Array<Storage> = []
+
   goods: Goods[] = []
   selectedGoods: Goods[] = []
 
@@ -87,7 +91,8 @@ export class RobaComponent implements OnInit {
       sellingPrice: this.sellingPrice,
       stock: this.stock,
       minimalAmoung: this.minimalAmount,
-      maximalAmount: this.maximalAmount
+      maximalAmount: this.maximalAmount,
+      allObjects: this.allObjects
     }
     this.companyService.addGoods(data).subscribe((message: string) => {
       console.log(message)
@@ -178,6 +183,21 @@ export class RobaComponent implements OnInit {
     this.companyService.updateGood(this.code, this.name, this.unit, this.tax, this.type, this.country, this.foreignName, this.barcode, this.manufacturer, this.tariff, this.taxType, this.amount, this.description, this.declaration, this.storage, this.purchasePrice, this.sellingPrice, this.stock, this.minimalAmount, this.maximalAmount).subscribe((message: string) => {
       console.log(message)
     })
+
+  }
+
+  addObject(){
+
+    this.currentObject.name = this.storage
+    this.currentObject.purchasePrice = this.purchasePrice
+    this.currentObject.sellingPrice = this.sellingPrice
+    this.currentObject.stock = this.stock
+    this.currentObject.minAmount = this.minimalAmount
+    this.currentObject.maxAmount = this.maximalAmount
+
+    this.allObjects.push(this.currentObject)
+
+    this.currentObject = new Storage()
 
   }
 }

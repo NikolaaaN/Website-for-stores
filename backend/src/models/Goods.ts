@@ -1,3 +1,4 @@
+import { Storage } from "./storage"
 
 export class Goods {
     code: string
@@ -17,6 +18,8 @@ export class Goods {
     declaration: string
 
     category: string
+
+    storages: Array<Storage>
 
     storage: string
     purchasingPrice: number

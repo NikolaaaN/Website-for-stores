@@ -84,18 +84,35 @@
         </ng-container>
         <ng-container *ngIf="selected === 'cene i stanje robe'">
 
-            naziv:<input value="{{storage}}" [(ngModel)]="storage">
-            <br/>
-            nabavna cena: <input value="{{purchasePrice}}" type="number" [(ngModel)]="purchasePrice">
-            <br/>
-            prodajna cena <input value="{{sellingPrice}}" type="number" [(ngModel)]="sellingPrice">
-            <br/>
-            stanje: <input value="{{stock}}" [(ngModel)]="stock">
-            <br/>
-            minimalna kolicina: <input value="{{minimalAmount}}" [(ngModel)]="minimalAmount">
-            <br/>
-            maksimalna kolicina: <input value="{{maximalAmount}}" [(ngModel)]="maximalAmount">
-            <br/>
+            <table>
+                <tr>
+                    <th>naziv</th>
+                    <th>nabavna cena</th>
+                    <th>prodajna cena</th>
+                </tr>
+                <tr *ngFor="let o of allObjects">
+                    <td>{{o.name}}</td>
+                    <td>{{o.sellingPrice}}</td>
+                    <td>{{o.purchasePrice}}</td>
+                </tr>
+            </table>
+
+
+            <div class="input">
+                naziv:<input value="{{storage}}" [(ngModel)]="storage">
+                <br/>
+                prodajna cena: <input value="{{purchasePrice}}" type="number" [(ngModel)]="purchasePrice">
+                <br/>
+                nabavna cena <input value="{{sellingPrice}}" type="number" [(ngModel)]="sellingPrice">
+                <br/>
+                stanje: <input value="{{stock}}" [(ngModel)]="stock">
+                <br/>
+                minimalna kolicina: <input value="{{minimalAmount}}" [(ngModel)]="minimalAmount">
+                <br/>
+                maksimalna kolicina: <input value="{{maximalAmount}}" [(ngModel)]="maximalAmount">
+                <br/>
+                <button (click)="addObject()">Dodaj objekat</button>
+            </div>
 
         </ng-container>
         

@@ -126,7 +126,8 @@ class CompanyController {
             sellingPrice: req.body.sellingPrice,
             stock: req.body.stock,
             minimalAmoung: req.body.minimalAmount,
-            maximalAmount: req.body.maximalAmount
+            maximalAmount: req.body.maximalAmount,
+            storages: req.body.allObjects
         };
         company_1.default.findOne({ 'username': username }, (err, company) => {
             company.goods.forEach((good) => {
