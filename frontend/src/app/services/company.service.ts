@@ -189,6 +189,7 @@ export class CompanyService {
       orderer: orderer,
       type: type,
       taxPrice: taxPrice
+      
     }
     return this.http.post('http://localhost:4000/companies/pushbill', data)
   }
@@ -212,4 +213,21 @@ export class CompanyService {
 
   //   return this.http.post('http://localhost:4000/companies/getgoodsbycode', data)
   // }
+
+  searchGoodsByName(searchParam, selectedCompany){
+    const data = {
+      selectedCompany: selectedCompany,
+      searchParam: searchParam
+    }
+    console.log(data.searchParam)
+    return this.http.post('http://localhost:4000/companies/searchgoods', data)
+  }
+  searchGoodsByManufacturer(searchParam, selectedCompany){
+    const data = {
+      selectedCompany: selectedCompany,
+      searchParam: searchParam
+    }
+    console.log(data.searchParam)
+    return this.http.post('http://localhost:4000/companies/searchgoodsbymanufacturer', data)
+  }
 }

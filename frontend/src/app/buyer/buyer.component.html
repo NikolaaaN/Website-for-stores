@@ -10,7 +10,7 @@
 
         <h2>Izaberite preduzece:</h2>
         <select [(ngModel)] = "selectedCompanyName">
-            <option *ngFor="let c of companies" (click)="selected()" selected="true"t>{{c.companyName}}</option> 
+            <option *ngFor="let c of companies" (click)="selectCompany()" selected="true"t>{{c.companyName}}</option> 
         </select>
         
         <div class="table">
@@ -27,6 +27,11 @@
                     <td>{{t.object}}</td>
                 </tr>
             </table>
+
+            Naziv:<input type="radio" value="naziv" name="radio" [(ngModel)]="searchType">
+            Proizvodjac<input type="radio" value="proizvodjac" name="radio" [(ngModel)]="searchType">
+            <input type="text" [(ngModel)]="searchParam">
+            <button (click)="search()">Pretrazi</button>
 
         </div>
 

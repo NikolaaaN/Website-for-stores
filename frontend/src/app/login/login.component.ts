@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
   login(){
     this.loginService.login(this.username, this.password).subscribe((user: User) =>{
       if (user != null){
+        sessionStorage.setItem('username', this.username)
+        sessionStorage.setItem('type', user.type+"")
         if (user.type == 1) {   
           this.companyService.getCompanyStatus(user.username).subscribe((status: string) => {
             sessionStorage.setItem('username', this.username)

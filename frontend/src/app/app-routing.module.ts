@@ -9,6 +9,7 @@ import { ArticlegroupComponent } from './articlegroup/articlegroup.component';
 import { BillComponent } from './bill/bill.component';
 import { BillpaymentComponent } from './billpayment/billpayment.component';
 import { BuyerComponent } from './buyer/buyer.component';
+import { BuyerbillsComponent } from './buyerbills/buyerbills.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanydetailsComponent } from './companydetails/companydetails.component';
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path: "billpayment", component: BillpaymentComponent},
   {path: "review", component: IzvestajComponent},
   {path: "admin/review", component: AdminreviewComponent},
-  {path: "buyer", component: BuyerComponent}
+  {path: "buyer", component: BuyerComponent},
+  {path: "buyerbills", component: BuyerbillsComponent}
 ];
 
 @NgModule({

@@ -22,6 +22,8 @@ export class BillpaymentComponent implements OnInit {
     this.companyService.getOrderers().subscribe((orderers: Array<Orderer>) => {
       this.orderers = orderers
     })
+    this.selectedCompany = sessionStorage.getItem('companyName')
+    this.selectedStore = sessionStorage.getItem('objectName')
     
   }
 
@@ -38,6 +40,9 @@ export class BillpaymentComponent implements OnInit {
   orderer: string
   type: string
   taxPrice: number = 0
+
+  selectedCompany: string
+  selectedStore: string
 
   cashSubmit(){
     this.cash = true
@@ -78,7 +83,7 @@ export class BillpaymentComponent implements OnInit {
     
     this.companyService.pushBill(this.bill, this.finalPrice, null, null, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
-        this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
+        this.customerService.pushBill(this.type,this.brLK, this.bill , this.selectedCompany, this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 
         })
       }
@@ -100,7 +105,7 @@ export class BillpaymentComponent implements OnInit {
     
     this.companyService.pushBill(this.bill, this.finalPrice, this.fullName, null, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
-        this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
+        this.customerService.pushBill(this.type,this.brLK, this.bill, this.selectedCompany, this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 
         })
       }
@@ -121,7 +126,7 @@ export class BillpaymentComponent implements OnInit {
     
     this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
-        this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
+        this.customerService.pushBill(this.type,this.brLK, this.bill, this.selectedCompany,this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 
         })
       }
@@ -142,7 +147,7 @@ export class BillpaymentComponent implements OnInit {
     
     this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, this.orderer, this.type, this.taxPrice).subscribe((message: string) => {
       if(this.brLK != null){
-        this.customerService.pushBill(this.brLK, this.bill).subscribe(() => {
+        this.customerService.pushBill(this.type,this.brLK, this.bill, this.selectedCompany, this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 
         })
       }

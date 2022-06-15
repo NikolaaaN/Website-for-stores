@@ -78,6 +78,8 @@ export class BillComponent implements OnInit {
   submit(){
     sessionStorage.setItem('bill', JSON.stringify(this.bills))
     sessionStorage.setItem('tax', this.taxPrice.toString())
+    sessionStorage.setItem('companyName', this.company.companyName)
+    sessionStorage.setItem('objectName', this.selectedStore)
     this.router.navigate(['billpayment'])
      
   }

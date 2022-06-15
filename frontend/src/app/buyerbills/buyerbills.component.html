@@ -1,0 +1,45 @@
+<div class="wrapper">
+    <div class="menu">
+        <ul>
+            <li (click)="store()">prodavnica</li>
+            <li (click)="bills()">moji racuni</li>
+            <li (click)="changePassword()">promeni lozinku</li>
+            
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Moji Racuni:</h2>
+        <input type="text" [(ngModel)]="searchParam">
+        br licne karte:<button (click)="search()">Pretrazi</button>
+        <table>
+            <tr>
+                <th>Kompanije</th>
+                <th>Prodavnica/Restoran</th>
+                <th>Ukupan Iznos</th>
+                <th>Nacin placanja</th>
+            </tr>
+            <tr *ngFor="let b of allBills">
+                <td>{{b.companyName}}</td>
+                <td>{{b.storeName}}</td>
+                <td>{{b.finalPrice}}</td>
+                <td>{{b.type}}</td>
+                <td><button (click)="details(b)">Detalji</button></td>
+
+            </tr>
+        </table>
+
+        <table *ngIf="detailsOn">
+            <tr>
+                <th>name</th>
+                <th>amount</th>
+                <th>price</th>
+            </tr>
+            <tr *ngFor="let b of selectedBill.bills">
+                <td>{{b.name}}</td>
+                <td>{{b.amount}}</td>
+                <td>{{b.price}}</td>
+            </tr>
+        </table>
+    </div>
+   
+</div>

@@ -315,6 +315,40 @@ class CompanyController {
                 res.json(company.bills);
         });
     }
+    searchGoodsByName(req, res) {
+        let searchParam = req.body.searchParam;
+        let goods = [];
+        let selectCompany = req.body.selectedCompany;
+        console.log(selectCompany);
+        company_1.default.findOne({ 'companyName': selectCompany }, (err, company) => {
+            if (err)
+                console.log(err);
+            else {
+                company.goods.forEach(good => {
+                    if (good.name.includes(searchParam))
+                        goods.push(good);
+                });
+            }
+            res.json(goods);
+        });
+    }
+    searchGoodsByManufacturer(req, res) {
+        let searchParam = req.body.searchParam;
+        let goods = [];
+        let selectCompany = req.body.selectedCompany;
+        console.log(selectCompany);
+        company_1.default.findOne({ 'companyName': selectCompany }, (err, company) => {
+            if (err)
+                console.log(err);
+            else {
+                company.goods.forEach(good => {
+                    if (good.manufacturer.includes(searchParam))
+                        goods.push(good);
+                });
+            }
+            res.json(goods);
+        });
+    }
 }
 exports.CompanyController = CompanyController;
 //# sourceMappingURL=company.controller.js.map

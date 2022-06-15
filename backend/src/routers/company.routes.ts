@@ -68,5 +68,11 @@ companyRouter.route('/getcompanybyusername').post(
 companyRouter.route('/getbills').post(
     (req, res) => new CompanyController().getBills(req, res)
 )
+companyRouter.route('/searchgoods').post(
+    (req, res) => new CompanyController().searchGoodsByName(req, res)
+)
+companyRouter.route('/searchgoodsbymanufacturer').post(
+    (req, res) => new CompanyController().searchGoodsByManufacturer(req, res)
+)
 
 export default companyRouter

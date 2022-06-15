@@ -25,7 +25,10 @@ export class BuyerComponent implements OnInit {
   selectedCompanyName: string
   selectedCompany : Company = new Company()
 
-  tableRows: any = []
+  searchParam: string
+  searchType: string
+
+  tableRows: any = [  ]
 
   tableRow: any = {
     name: "",
@@ -37,12 +40,17 @@ export class BuyerComponent implements OnInit {
     this.router.navigate(['buyer'])
   }
   bills(){
-
+    this.router.navigate(['buyerbills'])
   }
 
-  selected(){
+  selectCompany(){
     this.selectedCompany = this.companies.find(company => this.selectedCompanyName == company.companyName)
-    this.selectedCompany.goods.forEach(good => {
+    this.selected(this.selectedCompany.goods)
+  }
+
+  selected(goods){
+    this.tableRows = []
+    goods.forEach(good => {
 
       this.tableRow.name = good.manufacturer
       
@@ -63,7 +71,17 @@ export class BuyerComponent implements OnInit {
       this.tableRow= new Object()
     });
     
+  }
 
+  search(){
+    if (this.searchType == "naziv")
+      this.companyService.searchGoodsByName(this.searchParam, this.selectedCompanyName).subscribe((goods: Goods[])=>{
+        this.selected(goods)
+      })
+    else if (this.searchType == "proizvodjac")
+      this.companyService.searchGoodsByManufacturer(this.searchParam, this.selectedCompanyName).subscribe((goods: Goods[]) => {
+        this.selected(goods)
+      })
   }
 
 }

@@ -4,6 +4,7 @@ import express from 'express'
 import { rmSync } from 'fs'
 import orderer from '../models/orderer'
 import { Bills } from '../models/bills'
+import { Goods } from '../models/Goods'
 
 export class CompanyController{
     
@@ -305,4 +306,43 @@ export class CompanyController{
     })
    }
 
+   searchGoodsByName(req: express.Request, res: express.Response){
+    let searchParam = req.body.searchParam;
+    let goods : Array<Goods> = []
+    let selectCompany = req.body.selectedCompany
+    console.log(selectCompany)
+
+    Company.findOne({'companyName': selectCompany}, (err, company) => {
+
+        if (err) console.log(err)
+        else {
+            company.goods.forEach(good => {
+                if (good.name.includes(searchParam))
+                    goods.push(good)
+            });
+        }
+        
+        res.json(goods)
+      
+    })
+
+   }
+   searchGoodsByManufacturer(req: express.Request, res: express.Response){
+    let searchParam = req.body.searchParam;
+    let goods : Array<Goods> = []
+    let selectCompany = req.body.selectedCompany
+    console.log(selectCompany)
+
+    Company.findOne({'companyName': selectCompany}, (err, company) => {
+
+        if (err) console.log(err)
+        else {
+            company.goods.forEach(good => {
+                if (good.manufacturer.includes(searchParam))
+                    goods.push(good)
+            });
+        }
+        res.json(goods)  
+    })
+   }
 }

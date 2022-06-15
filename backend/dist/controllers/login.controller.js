@@ -131,6 +131,12 @@ class LoginController {
                         console.log(err);
                 });
             }
+            if (type == "2") {
+                customer_1.default.updateOne({ 'username': username }, { 'password': password }, (err) => {
+                    if (err)
+                        console.log(err);
+                });
+            }
             if (err)
                 console.log(err);
             else

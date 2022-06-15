@@ -10,6 +10,9 @@ export class Bills{
     date: Date
     type: string
     taxPrice: number
+    companyName: string
+    storeName: string
+    payingOption: string
 
     getDate(){
         return this.date.getDate()

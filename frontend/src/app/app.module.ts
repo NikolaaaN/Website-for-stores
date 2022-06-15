@@ -24,6 +24,7 @@ import { BillpaymentComponent } from './billpayment/billpayment.component';
 import { IzvestajComponent } from './izvestaj/izvestaj.component';
 import { AdminreviewComponent } from './adminreview/adminreview.component';
 import { BuyerComponent } from './buyer/buyer.component';
+import { BuyerbillsComponent } from './buyerbills/buyerbills.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { BuyerComponent } from './buyer/buyer.component';
     BillpaymentComponent,
     IzvestajComponent,
     AdminreviewComponent,
-    BuyerComponent
+    BuyerComponent,
+    BuyerbillsComponent
   ],
   imports: [
     BrowserModule,
