@@ -33,7 +33,8 @@ class CompanyController {
         let bankAccount = req.body.bankAccount;
         let noOfStorages = req.body.noOfStorages;
         let noOfCashRegisters = req.body.noOfCashRegisters;
-        company_1.default.updateOne({ 'username': username }, { 'category': category, 'code': code, 'pdv': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan" }, (err, resp) => {
+        let objects = req.body.objects;
+        company_1.default.updateOne({ 'username': username }, { 'category': category, 'code': code, 'pdv': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan", 'objects': objects }, (err, resp) => {
             if (err)
                 console.log(err);
             else {

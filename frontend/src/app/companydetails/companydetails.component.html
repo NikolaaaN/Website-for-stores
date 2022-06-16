@@ -20,6 +20,16 @@
             number of storages: <input type="number" [(ngModel)] = "noOfStorages">
         </tr>
         <tr>
+            <div id="storageInput" style="margin: 20px" *ngIf="noOfStorages>0">
+                <h4>Add storages:</h4>
+                id:<input type="text" [(ngModel)] = objectId>
+                storages<input type="text"  [(ngModel)] = objectName>
+                <br/>
+                <button (click)="addObject()">dodaj objekat</button>
+                <p id="message">{{message}}</p>
+            </div>
+        </tr>
+        <tr>
             number of cash registers: <input type="number" [(ngModel)] = "noOfCashRegisters">
         </tr>
         <tr>
@@ -27,5 +37,5 @@
         </tr>
 
     </table>
-    <p id="message">{{message}}</p>
+    
 </div>

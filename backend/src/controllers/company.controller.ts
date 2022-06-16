@@ -31,8 +31,9 @@ export class CompanyController{
         let bankAccount = req.body.bankAccount;
         let noOfStorages = req.body.noOfStorages;
         let noOfCashRegisters = req.body.noOfCashRegisters
+        let objects = req.body.objects
 
-        Company.updateOne({'username': username}, {'category': category , 'code': code, 'pdv': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan"}, (err, resp) => {
+        Company.updateOne({'username': username}, {'category': category , 'code': code, 'pdv': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan", 'objects': objects}, (err, resp) => {
             
             if(err) console.log(err)
             else {

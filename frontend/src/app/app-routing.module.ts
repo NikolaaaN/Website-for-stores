@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { OrderersComponent } from './orderers/orderers.component';
 import { RegisterComponent } from './register/register.component';
 import { RobaComponent } from './roba/roba.component';
+import { StoloviComponent } from './stolovi/stolovi.component';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
@@ -37,7 +38,8 @@ const routes: Routes = [
   {path: "review", component: IzvestajComponent},
   {path: "admin/review", component: AdminreviewComponent},
   {path: "buyer", component: BuyerComponent},
-  {path: "buyerbills", component: BuyerbillsComponent}
+  {path: "buyerbills", component: BuyerbillsComponent},
+  {path: "tables", component: StoloviComponent}
 ];
 
 @NgModule({

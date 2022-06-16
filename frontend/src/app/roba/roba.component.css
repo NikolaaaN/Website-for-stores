@@ -25,7 +25,7 @@ input{
     float: right;
     overflow: hidden; 
 }
-th{
+td{
     padding: 10px;
 }
 ul.nav {

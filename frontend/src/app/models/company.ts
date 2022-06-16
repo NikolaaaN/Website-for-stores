@@ -21,4 +21,5 @@ export class Company{
     noOfCashRegisters: number
     bills: Array<Bills>
     goods: Array<Goods>
+    objects: Array<any>
 }

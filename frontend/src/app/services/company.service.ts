@@ -19,7 +19,7 @@ export class CompanyService {
     return this.http.post('http://localhost:4000/companies/status', data)
   }
 
-  submitDetails(username, category, code, pdv, bankAccount, noOfStorages, noOfCashRegisters){
+  submitDetails(username, category, code, pdv, bankAccount, noOfStorages, noOfCashRegisters, objects){
     const data = {
       username: username,
       category: category,
@@ -27,7 +27,8 @@ export class CompanyService {
       pdv: pdv,
       bankAccount: bankAccount,
       noOfStorages: noOfStorages,
-      noOfCashRegisters: noOfCashRegisters
+      noOfCashRegisters: noOfCashRegisters,
+      objects: objects
     }
     return this.http.post('http://localhost:4000/companies/details', data)
   }
@@ -229,5 +230,12 @@ export class CompanyService {
     }
     console.log(data.searchParam)
     return this.http.post('http://localhost:4000/companies/searchgoodsbymanufacturer', data)
+  }
+
+  drawCanvas(c){
+    let ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(20, 20, 150, 100);
+    ctx.stroke();
   }
 }

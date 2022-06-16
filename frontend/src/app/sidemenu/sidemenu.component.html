@@ -7,7 +7,7 @@
                 <li class="menuItems" (click)="orderers() ">Orderers</li>
                 <li class="menuItems" (click)="goods()">Goods and services</li>
                 <li class="menuItems" (click)="groups()">Article category</li>
-                <li class="menuItems">Table layout</li>
+                <li *ngIf="category == 'ugostiteljski'" class="menuItems" (click)="tables()">Table layout</li>
                 <li class="menuItems" (click)="bills()">Accounts</li>
                 <li class="menuItems" (click)="review()">Fiscal review</li>
                 <li class="menuItems" (click)="changePassword()">Promeni lozinku</li>

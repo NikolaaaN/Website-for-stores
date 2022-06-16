@@ -25,6 +25,7 @@ import { IzvestajComponent } from './izvestaj/izvestaj.component';
 import { AdminreviewComponent } from './adminreview/adminreview.component';
 import { BuyerComponent } from './buyer/buyer.component';
 import { BuyerbillsComponent } from './buyerbills/buyerbills.component';
+import { StoloviComponent } from './stolovi/stolovi.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BuyerbillsComponent } from './buyerbills/buyerbills.component';
     IzvestajComponent,
     AdminreviewComponent,
     BuyerComponent,
-    BuyerbillsComponent
+    BuyerbillsComponent,
+    StoloviComponent
   ],
   imports: [
     BrowserModule,

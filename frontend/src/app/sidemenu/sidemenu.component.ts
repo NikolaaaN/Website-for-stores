@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Company } from '../models/company';
+import { CompanyService } from '../services/company.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -8,10 +10,15 @@ import { Router } from '@angular/router';
 })
 export class SidemenuComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private companyService: CompanyService) { }
 
   ngOnInit(): void {
+    this.companyService.getCompanyByUsername().subscribe((company: Company) => {
+      this.category = company.category
+    })
   }
+
+  category: string
 
   companyDetails(){
     this.router.navigate(['company'])
@@ -33,6 +40,9 @@ export class SidemenuComponent implements OnInit {
   }
   review(){
     this.router.navigate(['review'])
+  }
+  tables(){
+    this.router.navigate(['tables'])
   }
 
 }
