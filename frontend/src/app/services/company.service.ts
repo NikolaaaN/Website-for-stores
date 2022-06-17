@@ -232,10 +232,23 @@ export class CompanyService {
     return this.http.post('http://localhost:4000/companies/searchgoodsbymanufacturer', data)
   }
 
-  drawCanvas(c){
-    let ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.rect(20, 20, 150, 100);
-    ctx.stroke();
+  addTable(name, table){
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username,
+      name: name,
+      table: table
+    }
+    return this.http.post('http://localhost:4000/companies/addtable', data)
+  }
+
+  getTables(restaurant){ 
+    let username = sessionStorage.getItem('username')
+    const data = {
+      username: username,
+      restaurant: restaurant
+    }
+    return this.http.post('http://localhost:4000/companies/gettables', data)
+
   }
 }

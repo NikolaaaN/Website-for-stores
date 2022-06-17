@@ -1,7 +1,7 @@
 import { Bill } from "./bill"
 
 export class Bills{
-    bills: Array<Bill>
+    bills: Array<Bill> = []
     finalPrice: number
     fullName: string
     slip: string

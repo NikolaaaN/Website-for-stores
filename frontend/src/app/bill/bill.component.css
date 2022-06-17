@@ -10,7 +10,7 @@ input{
     font-size: 12px;
 }
 .wrapper {
-    width: 700px;
+    width: 800px;
     overflow: hidden; 
 }
 .menu {
@@ -19,6 +19,7 @@ input{
     
 }
 .content {
+    width: 400px;
     margin: 50px;
     padding: 30px;
     float: right;

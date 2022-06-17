@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   login(){
+    sessionStorage.clear()
     this.router.navigate([''])
   }
   signUp(){

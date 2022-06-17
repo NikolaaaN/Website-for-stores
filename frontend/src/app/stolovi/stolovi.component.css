@@ -11,7 +11,7 @@ input{
     font-size: 12px;
 }
 .wrapper {
-    width: 800px;
+    width: 1000px;
     overflow: hidden; 
 }
 .menu {
@@ -20,21 +20,27 @@ input{
     
 }
 .content {
-    width: 300px;
+    width: 600px;
     margin: 50px;
     padding: 30px;
     float: right;
     overflow: hidden; 
 }
 li{
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
     background: gray;
     list-style-type: 0;
     display: inline;
 }
+li:hover{
+    background: lightgray;
+}
 canvas{
     margin-left: 10px;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 400px;
     border: 1px solid black;
 }

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Goods } from '../models/goods';
 import { CompanyService } from '../services/company.service';
 import { Storage } from '../models/storage';
+import { Company } from '../models/company';
 
 @Component({
   selector: 'app-roba',
@@ -16,6 +17,9 @@ export class RobaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.companyService.getCompanyByUsername().subscribe((company: Company) => {
+      this.company = company
+    })
     this.companyService.getAllGoods().subscribe((data : Goods[]) => {
       this.goods = data
       if (data.length<10)
@@ -58,6 +62,8 @@ export class RobaComponent implements OnInit {
   stock: number
   minimalAmount: number
   maximalAmount: number
+
+  company: Company
 
   currentObject: Storage = new Storage()
   allObjects: Array<Storage> = []

@@ -346,4 +346,47 @@ export class CompanyController{
         res.json(goods)  
     })
    }
+   
+   addTable(req: express.Request, res: express.Response){
+    let username = req.body.username
+    let name = req.body.name
+    let table = req.body.table
+    Company.findOne({'username': username}, (err, company) => {
+        if(err) console.log(err)
+        else {
+            
+            company.objects.forEach(object => {
+                
+                if(object.name == name){
+                    object.tables.push(table)
+                    console.log(object.tables)
+                }
+            });
+        }
+        Company.updateOne({'username': username}, {'objects': company.objects}, (err, resp) => {
+            if (err) console.log(err)
+            else res.json("message")
+        })
+
+    })
+   }
+
+   getTables(req: express.Request, res: express.Response){
+    let username = req.body.username
+    let restaurant = req.body.restaurant
+
+    Company.findOne({'username': username}, (err, company) => {
+         if (err) console.log(err)
+         else{
+            company.objects.forEach(object => {
+                
+                if(object.name == restaurant){
+                    
+                    res.json(object.tables)
+                }
+            });
+         }
+    })
+    
+   }
 }

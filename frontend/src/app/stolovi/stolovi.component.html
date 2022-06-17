@@ -3,10 +3,39 @@
         <app-sidemenu></app-sidemenu>
     </div>
     <div class="content">
-        <ul>
-            <li *ngFor="let o of company.objects">{{o.naziv}}</li>
+        <ul *ngIf="companyLoaded">
+            <li *ngFor="let o of company.objects" (click)="selectObject(o.name)">{{o.name}}</li>
         </ul>
         <br/>
         <canvas id="myCanvas"></canvas>
+        <br/>
+        <button (click)="showTableForm()">add table</button>
+        <table *ngIf="showForm">
+            <tr>
+                id: <input type="number" [(ngModel)]="tableID">
+            </tr>
+            <tr>
+                startHeight:<input type="number" [(ngModel)]="startHeight">
+            </tr>
+            <tr>
+                startWidth:<input type="number" [(ngModel)]="startWidth">
+            </tr>
+            <tr>
+                shape:<input type="text" [(ngModel)]="shape">
+            </tr>
+            <tr>
+                height:<input type="number" [(ngModel)]="height">
+            </tr>
+            <tr>
+                width:<input type="number" [(ngModel)]="width">
+            </tr>
+            <tr>
+                radius:<input type="number" [(ngModel)]="radius">
+            </tr>
+            <tr>
+                taken:<input type="checkbox"[(ngModel)]="taken">
+            </tr>
+            <tr><button (click)="addTable()">Add</button></tr>
+        </table>
     </div>
 </div>

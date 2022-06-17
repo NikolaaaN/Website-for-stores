@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { Goods } from './Goods'
+import { Store } from './store'
 
 const Schema = mongoose.Schema
 

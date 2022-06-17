@@ -5,8 +5,13 @@
     <div class="content">
         <table>
             <tr>
-                <select [(ngModel)]="selectedStore">
+                Odaberite prodavnicu:<select [(ngModel)]="selectedStore">
                     <option *ngFor="let store of stores">{{store.name}}</option>
+                </select>
+            </tr>
+            <tr>
+                Odaberite sto:<select [(ngModel)]="tableID" *ngIf="isRestaurant">
+                    <option *ngFor="let t of tables">{{t.id}}</option>
                 </select>
             </tr>
             <tr>

@@ -1,3 +1,4 @@
+
 export class Storage{
     name: string
     purchasePrice: number

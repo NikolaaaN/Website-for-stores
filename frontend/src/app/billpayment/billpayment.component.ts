@@ -24,6 +24,7 @@ export class BillpaymentComponent implements OnInit {
     })
     this.selectedCompany = sessionStorage.getItem('companyName')
     this.selectedStore = sessionStorage.getItem('objectName')
+    this.tableID = parseInt(sessionStorage.getItem('tableID'))
     
   }
 
@@ -40,6 +41,7 @@ export class BillpaymentComponent implements OnInit {
   orderer: string
   type: string
   taxPrice: number = 0
+  tableID: number = 0
 
   selectedCompany: string
   selectedStore: string

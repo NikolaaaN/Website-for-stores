@@ -350,6 +350,44 @@ class CompanyController {
             res.json(goods);
         });
     }
+    addTable(req, res) {
+        let username = req.body.username;
+        let name = req.body.name;
+        let table = req.body.table;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            if (err)
+                console.log(err);
+            else {
+                company.objects.forEach(object => {
+                    if (object.name == name) {
+                        object.tables.push(table);
+                        console.log(object.tables);
+                    }
+                });
+            }
+            company_1.default.updateOne({ 'username': username }, { 'objects': company.objects }, (err, resp) => {
+                if (err)
+                    console.log(err);
+                else
+                    res.json("message");
+            });
+        });
+    }
+    getTables(req, res) {
+        let username = req.body.username;
+        let restaurant = req.body.restaurant;
+        company_1.default.findOne({ 'username': username }, (err, company) => {
+            if (err)
+                console.log(err);
+            else {
+                company.objects.forEach(object => {
+                    if (object.name == restaurant) {
+                        res.json(object.tables);
+                    }
+                });
+            }
+        });
+    }
 }
 exports.CompanyController = CompanyController;
 //# sourceMappingURL=company.controller.js.map

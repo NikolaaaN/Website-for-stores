@@ -28,5 +28,7 @@ companyRouter.route('/getcompanybyusername').post((req, res) => new company_cont
 companyRouter.route('/getbills').post((req, res) => new company_controller_1.CompanyController().getBills(req, res));
 companyRouter.route('/searchgoods').post((req, res) => new company_controller_1.CompanyController().searchGoodsByName(req, res));
 companyRouter.route('/searchgoodsbymanufacturer').post((req, res) => new company_controller_1.CompanyController().searchGoodsByManufacturer(req, res));
+companyRouter.route('/addtable').post((req, res) => new company_controller_1.CompanyController().addTable(req, res));
+companyRouter.route('/gettables').post((req, res) => new company_controller_1.CompanyController().getTables(req, res));
 exports.default = companyRouter;
 //# sourceMappingURL=company.routes.js.map

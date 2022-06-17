@@ -99,7 +99,9 @@
 
 
             <div class="input">
-                naziv:<input value="{{storage}}" [(ngModel)]="storage">
+                naziv: <select [(ngModel)]="storage">
+                    <option *ngFor="let o of company.objects">{{o.name}}</option>
+                </select>
                 <br/>
                 prodajna cena: <input value="{{purchasePrice}}" type="number" [(ngModel)]="purchasePrice">
                 <br/>
