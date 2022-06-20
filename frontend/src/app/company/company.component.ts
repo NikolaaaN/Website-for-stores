@@ -20,11 +20,12 @@ export class CompanyComponent implements OnInit {
       console.log(company)
       this.category = company.category
       this.code = company.code
-      this.pdv = company.pdv
+      this.pdv = company.tax
       this.bankAccount = company.bankAccount
-      this.noOfStorages = company.noOfStorages
-      this.noOfCashRegisters = company.noOfCashRegisters
+      this.noOfStorages = company.storageNumber
+      this.noOfCashRegisters = company.cashRegisterNumber
     })
+    
   }
 
   category: string

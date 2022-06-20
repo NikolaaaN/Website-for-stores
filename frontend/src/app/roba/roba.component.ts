@@ -96,7 +96,7 @@ export class RobaComponent implements OnInit {
       purchasePrice: this.purchasePrice,
       sellingPrice: this.sellingPrice,
       stock: this.stock,
-      minimalAmoung: this.minimalAmount,
+      minimalAmount: this.minimalAmount,
       maximalAmount: this.maximalAmount,
       allObjects: this.allObjects
     }

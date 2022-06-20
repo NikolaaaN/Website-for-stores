@@ -70,11 +70,11 @@
             <br/>
             manufacturer: <input value="{{manufacturer}}" [(ngModel)]="manufacturer">
             <br/>
-            tarifa:<input value="{{tariff}}" [(ngModel)]="tariff">
+            tarifa:<input type="number" value="{{tariff}}" [(ngModel)]="tariff">
             <br/>
             tip takse:<input type="checkbox" value="eko" [(ngModel)]="taxType"> 
             <br/>
-            zalihe <input value="{{amount}}" [(ngModel)]="amount">
+            zalihe <input type="number" value="{{amount}}" [(ngModel)]="amount">
             <br/>
             opis: <input value="{{description}}" [(ngModel)]="description">
             <br/>
@@ -105,13 +105,13 @@
                 <br/>
                 prodajna cena: <input value="{{purchasePrice}}" type="number" [(ngModel)]="purchasePrice">
                 <br/>
-                nabavna cena <input value="{{sellingPrice}}" type="number" [(ngModel)]="sellingPrice">
+                nabavna cena <input  value="{{sellingPrice}}" type="number" [(ngModel)]="sellingPrice">
                 <br/>
-                stanje: <input value="{{stock}}" [(ngModel)]="stock">
+                stanje: <input type="number" value="{{stock}}" [(ngModel)]="stock">
                 <br/>
-                minimalna kolicina: <input value="{{minimalAmount}}" [(ngModel)]="minimalAmount">
+                minimalna kolicina: <input type="number" value="{{minimalAmount}}" [(ngModel)]="minimalAmount">
                 <br/>
-                maksimalna kolicina: <input value="{{maximalAmount}}" [(ngModel)]="maximalAmount">
+                maksimalna kolicina: <input type="number" value="{{maximalAmount}}" [(ngModel)]="maximalAmount">
                 <br/>
                 <button (click)="addObject()">Dodaj objekat</button>
             </div>

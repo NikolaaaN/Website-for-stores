@@ -45,7 +45,11 @@ export class RegisterComponent implements OnInit {
   }
   
   register(){
-    if (this.validatePassword(this.password))
+    if (!this.validatePassword(this.password) )
+      this.message = "vasa sifra mora da bude izmedju 8 i 12 karaktera i da sadrzi veliko slovo, broj i specijalni karakter"
+    else if( !this.validateEmail(this.email))
+      this.message = "upisite validan email"
+    else{
     this.registerService.register(this.fullName, this.username, this.password, this.phone, this.email, this.companyName
       , this.address, this.taxID, this.companyID, this.imageString).subscribe((company: Company) => {
         if (!company)
@@ -57,13 +61,15 @@ export class RegisterComponent implements OnInit {
           this.router.navigate([''])
         }
       })
-    else
-      this.message = "Your password must be between 8 and 12 characters and must contain a capital letter"
+    }
   }
 
   validatePassword(password){
-    return /[A-Z]/.test(password) && /[1-9]/.test(password) && /[!@#$%^&*(){"~`?<>:"|\][';/.,}]/.test(password) && password
-    
+    return /[A-Z]/.test(password) && /[1-9]/.test(password) && /[!@#$%^&*(){"~`?<>:"|\][';/.,}]/.test(password) && password && password.length > 8 && password.length < 12
+  }
+  validateEmail(email){
+    // return /"[a-z0-9]+@[a-z0-9]+\.[a-z]"/.test(email)
+    return true;
   }
 
 }

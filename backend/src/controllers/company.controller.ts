@@ -32,8 +32,9 @@ export class CompanyController{
         let noOfStorages = req.body.noOfStorages;
         let noOfCashRegisters = req.body.noOfCashRegisters
         let objects = req.body.objects
+        console.log(pdv)
 
-        Company.updateOne({'username': username}, {'category': category , 'code': code, 'pdv': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan", 'objects': objects}, (err, resp) => {
+        Company.updateOne({'username': username}, {'category': category , 'code': code, 'tax': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan", 'objects': objects}, (err, resp) => {
             
             if(err) console.log(err)
             else {
@@ -125,7 +126,7 @@ export class CompanyController{
          purchasePrice: req.body.purchasePrice,
          sellingPrice: req.body.sellingPrice,
          stock: req.body.stock,
-         minimalAmoung: req.body.minimalAmount,
+         minimalAmount: req.body.minimalAmount,
          maximalAmount: req.body.maximalAmount,
          storages: req.body.allObjects
       }
@@ -339,8 +340,9 @@ export class CompanyController{
         if (err) console.log(err)
         else {
             company.goods.forEach(good => {
-                if (good.manufacturer.includes(searchParam))
-                    goods.push(good)
+                if(good.manufacturer!=null)
+                    if (good.manufacturer.includes(searchParam))
+                        goods.push(good)
             });
         }
         res.json(goods)  

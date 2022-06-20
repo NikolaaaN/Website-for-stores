@@ -220,7 +220,6 @@ export class CompanyService {
       selectedCompany: selectedCompany,
       searchParam: searchParam
     }
-    console.log(data.searchParam)
     return this.http.post('http://localhost:4000/companies/searchgoods', data)
   }
   searchGoodsByManufacturer(searchParam, selectedCompany){

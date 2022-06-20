@@ -35,6 +35,7 @@ export class CompanydetailsComponent implements OnInit {
 
   submit(){
     this.username = sessionStorage.getItem('username')
+    console.log(this.pdv)
     this.companyService.submitDetails(this.username, this.category, this.code, this.pdv, this.bankAccount, this.noOfStorages, this.noOfCashRegisters, this.objects).subscribe((mess: string) => {
       this.router.navigate(['company'])
     })

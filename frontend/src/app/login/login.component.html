@@ -1,7 +1,7 @@
-<div class="login">
+<div >
     <div class="content">
-    <!-- <div class="vl"></div> -->
-        <table>
+    
+        <table id="loginTabela">
 
             <tr>
                 Username: <input type="text" [(ngModel)]="username">
@@ -15,6 +15,37 @@
             <tr>
                 <button (click)="login()" id="login">Login</button>
             </tr>  
+        </table>
+    
+        <br/>
+        <table *ngFor="let l of latestBills" id="billTable">
+            <tr >
+                <th>kompanija</th>
+                <th>iznos racuna</th>
+                <th>iznos poreza</th>
+                <th>detalji</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>{{l.finalPrice}}</td>
+                <td>{{l.taxPrice}}</td>
+                <td><button (click) = "selectBill(l.finalPrice)">pokazi detalje</button></td>
+            </tr>
+            <tr *ngIf="selectedBill == l.finalPrice" id="detailTable">
+                <table *ngFor="let b of l.bills"  >
+                    <tr>
+                        <th>naziv</th>
+                        <th>kolicina</th>
+                        <th>cena</th>
+                    </tr>
+                    <tr>
+                        <td>{{b.name}}</td>
+                        <td>{{b.amount}}</td>
+                        <td>{{b.price}}</td>
+                    </tr>
+
+                </table>
+            </tr>
         </table>
     </div>
 </div>

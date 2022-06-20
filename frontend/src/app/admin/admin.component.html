@@ -1,4 +1,4 @@
-<table id="listaKompanija">
+
     <div id="wrapper">
         <div id="menu">
             <ul>
@@ -9,24 +9,49 @@
             </ul>
         </div>
         <div id="content">
-            <tr>
-                <th>Name</th>
-                <th>Owner</th>
-                <th>Address</th>
-            </tr>
-            <tr *ngFor="let n of allCompanies">
-                <td>{{n.companyName}}</td>
-                <td>{{n.fullName}}</td>
-                <td>
-                    <button (click)="delete(n.username)">Delete</button>
-                </td>
-                <td>
-                    <div>
-                        <button  *ngIf="n.status == 'aktivan' || n.status == 'novo';  else  elseBlock"  (click)= 'changeStatus(n.status, n.username)'>Deactivate</button>
-                        <ng-template #elseBlock> <button (click)= 'changeStatus(n.status, n.username)'>Activate</button> </ng-template>
-                     </div>
-                </td>
-            </tr>
+            <table id="listaKompanija">
+                <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Address</th>
+                </tr>
+                <tr *ngFor="let n of allCompanies">
+                    <td>{{n.companyName}}</td>
+                    <td>{{n.fullName}}</td>
+                    <td>
+                        <button (click)="delete(n.username)">Delete</button>
+                    </td>
+                    <td>
+                        <div>
+                            <button  *ngIf="n.status == 'aktivan' || n.status == 'novo';  else  elseBlock"  (click)= 'changeStatus(n.status, n.username)'>Deactivate</button>
+                            <ng-template #elseBlock> <button (click)= 'changeStatus(n.status, n.username)'>Activate</button> </ng-template>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="noviZahtevi" *ngIf="!(pendingCompanies.length == 0)">
+                <h2>
+                    Novi zahtevi:
+                    
+                </h2>
+                <table id="listaKompanija" >
+                    <tr>
+                        <th>Name</th>
+                        <th>Owner</th>
+                        <th>Address</th>
+                    </tr>
+                    <tr *ngFor="let n of pendingCompanies">
+                        <td>{{n.companyName}}</td>
+                        <td>{{n.fullName}}</td>
+                        <td>
+                            <button (click)="accept(n.username)">prihvati</button>    
+                        </td>
+                        <td>
+                            <button  (click)="deny(n.username)"> odbaci</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-    </table>
+   

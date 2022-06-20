@@ -3,7 +3,10 @@ body{
     padding: 0;
     display: flex;
 }
-
+input{
+    margin: 3px;   
+    padding: 2px;
+}
 #wrapper {
     width: 700px;
     overflow: hidden; 

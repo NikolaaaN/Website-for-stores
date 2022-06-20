@@ -33,7 +33,7 @@ export class OrderersComponent implements OnInit {
   percent: number
 
   register(){
-    this.registerService.registerOrderer(this.username, this.password, this.fullName, this.phone, this.email, this.companyName, this.address, this.taxID, this.companyID, this.noOfDays, this.percent).subscribe((message: string) => {
+    this.registerService.registerOrderer(this.username, this.fullName, this.phone, this.email, this.companyName, this.address, this.taxID, this.companyID, this.noOfDays, this.percent).subscribe((message: string) => {
       this.message = message
     })
   }
@@ -51,7 +51,8 @@ export class OrderersComponent implements OnInit {
 
   addById(){
     this.companyService.getCompanyByIdAndName(this.pib, this.name).subscribe((data: Company) => {
-      this.registerService.registerOrderer(data[0].username, data[0].password, data[0].fullName, data[0].phone, data[0].email, data[0].companyName, data[0].address, this.pib, data.companyID, this.days, this.percentage).subscribe((message: string) => {
+      console.log(data)
+      this.registerService.registerOrderer(data.username, data.fullName, data.phone, data.email, data.companyName, data.address, this.pib, data.companyID, this.days, this.percentage).subscribe((message: string) => {
         this.message = message
       })
     })

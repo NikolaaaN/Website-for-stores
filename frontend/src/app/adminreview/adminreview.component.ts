@@ -17,13 +17,14 @@ export class AdminreviewComponent implements OnInit {
     this.companyService.getAllCompanies().subscribe((companies: Array<Company>) => {
       let total = 0
       let taxTotal = 0 
+      console.log(companies)
       companies.forEach(company => {
         this.report.name = company.companyName
         company.bills.forEach(bill => {
-          if(typeof(bill.finalPrice) == typeof(1) && typeof(bill.taxPrice) == typeof(1)){
-            total += bill.finalPrice
-            taxTotal += bill.taxPrice
-          }
+            if(typeof(bill.finalPrice) == typeof(1) && typeof(bill.taxPrice) == typeof(1)){
+              total += bill.finalPrice
+              taxTotal += bill.taxPrice
+            }
         });
         this.report.fullPrice = total
         this.report.taxTotal = taxTotal

@@ -41,7 +41,7 @@ class LoginController {
             address: address,
             taxID: taxID,
             companyID: companyID,
-            status: "novo",
+            status: "pending",
             image: file
         });
         company_1.default.countDocuments({ 'username': username }, (err, count) => {
@@ -104,7 +104,6 @@ class LoginController {
         let parentCompany = req.body.parentCompany;
         let fullName = req.body.fullName;
         let username = req.body.username;
-        let password = req.body.password;
         let phone = req.body.phone;
         let email = req.body.email;
         let companyName = req.body.companyName;
@@ -113,7 +112,7 @@ class LoginController {
         let companyID = req.body.companyID;
         let noOfDays = req.body.noOfDays;
         let percent = req.body.percent;
-        orderer_1.default.create({ 'parentCompany': parentCompany, 'fullName': fullName, 'username': username, 'password': password, 'phone': phone, 'email': email, 'companyName': companyName, 'address': address, 'taxID': taxID, 'companyID': companyID, 'noOfDays': noOfDays, 'percent': percent }, (err, orderer) => {
+        orderer_1.default.create({ 'parentCompany': parentCompany, 'fullName': fullName, 'username': username, 'phone': phone, 'email': email, 'companyName': companyName, 'address': address, 'taxID': taxID, 'companyID': companyID, 'noOfDays': noOfDays, 'percent': percent }, (err, orderer) => {
             if (err)
                 console.log(err);
             else

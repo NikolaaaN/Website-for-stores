@@ -55,14 +55,13 @@ export class RegisterService {
     return this.http.post("http://localhost:4000/users/addcustomer", data)
   }
 
-  registerOrderer(username, password, fullName, phone, email, companyName, address, taxID, companyID, noOfDays, percent){
+  registerOrderer(username, fullName, phone, email, companyName, address, taxID, companyID, noOfDays, percent){
 
     let parentCompany = sessionStorage.getItem('username')
 
     const data = {
       parentCompany: parentCompany,
       username: username,
-      password: password,
       fullName: fullName,
       phone: phone,
       email: email,

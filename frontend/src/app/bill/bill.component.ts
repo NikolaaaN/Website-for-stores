@@ -83,7 +83,7 @@ export class BillComponent implements OnInit {
     this.price=purchasePrice
     this.amount =true;
     this.chosenGood = name;
-    if (this.company.pdv){
+    if (this.company.tax){
       this.taxPrice += (this.price * tax)/100
       this.price =  this.price + (this.price * tax)/100
     }

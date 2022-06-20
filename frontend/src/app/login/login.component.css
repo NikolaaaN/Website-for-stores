@@ -10,22 +10,36 @@
 }
 
 #login{
+    
     background-color: #02375f;
     color: white;
     padding: 8px;
     width: 100px;
+    margin-left: 70px;
     text-align: center;
-    display: inline-block;
     font-size: 16px;
     border-radius: 10px;
     
 }
-.vl{
-    margin-left: 600px;
-    border-left: 3px solid black;
-    height: 300px;
+#loginTabela{
+    display: inline-block;
+    margin: 100px;
+    margin-left: 200px;
+    flex: none;
 }
 .content{
     display: inline-block;
    
+}
+#billTable{
+    margin-left: 200px;
+}
+th{
+    background-color: rgb(117, 170, 47);
+}
+td{
+    background-color: lightgray;
+}
+#detailTable{
+    
 }

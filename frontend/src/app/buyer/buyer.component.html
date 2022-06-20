@@ -10,7 +10,7 @@
 
         <h2>Izaberite preduzece:</h2>
         <select [(ngModel)] = "selectedCompanyName">
-            <option *ngFor="let c of companies" (click)="selectCompany()" selected="true"t>{{c.companyName}}</option> 
+            <option *ngFor="let c of companies" (click)="selectCompany(c.companyName)"  selected="true"t>{{c.companyName}}</option> 
         </select>
         
         <div class="table">

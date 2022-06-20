@@ -14,11 +14,11 @@ export class Company{
     companyID : string
     category: string
     code: string
-    pdv: boolean
+    tax: boolean
     status: string
     bankAccount: string
-    noOfStorages: number
-    noOfCashRegisters: number
+    storageNumber: number
+    cashRegisterNumber: number
     bills: Array<Bills>
     goods: Array<Goods>
     objects: Array<any>

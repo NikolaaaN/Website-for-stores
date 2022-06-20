@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Bills } from '../models/bills';
+import { Company } from '../models/company';
 import { User } from '../models/user';
 import { CompanyService } from '../services/company.service';
 import { LoginService } from '../services/login.service';
@@ -17,11 +19,33 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router, private companyService: CompanyService) { }
 
   ngOnInit(): void {
+    this.companyService.getAllCompanies().subscribe((companies: Array<Company>) => {
+      this.companies = companies
+      companies.forEach(company => {
+        company.bills.forEach(bills => {
+          this.bills.push(bills)
+        });
+      });
+      this.bills.sort(
+        (bill1,bill2) => Number(bill2.date) - Number(bill1.date)
+      )
+      for (let i = 1 ; i<6; i++){
+        this.latestBills.push(this.bills[this.bills.length-i])
+      }
+    })
+    
+    
   }
 
   username: string
   password: string
   message: string
+
+  selectedBill: number
+
+  companies: Array<Company> = []
+  bills: Array<Bills> = []
+  latestBills: Array<Bills> = []
 
   login(){
     this.loginService.login(this.username, this.password).subscribe((user: User) =>{
@@ -54,6 +78,9 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['register']);
   }
     
+  selectBill(price){
+    this.selectedBill =  price
+  }
  
 
 }

@@ -14,12 +14,11 @@ export class AdminComponent implements OnInit {
   constructor(private http: HttpClient, private companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
-    this.companyService.getAllCompanies().subscribe((data: Company[]) => {
-      this.allCompanies = data;
-    })
+    this.loadCompanies()
   }
 
   allCompanies: Company[] = []
+  pendingCompanies: Company[] = []
 
   delete(username){
     this.companyService.deleteCompany(username).subscribe((message: string) => {
@@ -32,12 +31,41 @@ export class AdminComponent implements OnInit {
   changeStatus(status, username){
     if (status == "aktivan" || status == "novo")
       status = "neaktivan"
+    else if (status == "neaktivanNov" )
+      status = "novo"
     else status = "aktivan"
 
     this.companyService.setStatus(status, username).subscribe( (message: string) => {
-        if (message == "updated") this.companyService.getAllCompanies().subscribe((data: Company[]) => {
-        this.allCompanies = data;
-      })
+        this.loadCompanies()
+    })
+  }
+
+  accept(username){
+    let status = "novo"
+    this.companyService.setStatus(status, username).subscribe( (message: string) => {
+      this.loadCompanies()
+  })
+  }
+  deny(username){
+    let status = "neaktivanNov"
+    this.companyService.setStatus(status, username).subscribe( (message: string) => {
+      this.loadCompanies()
+  })
+  }
+
+  loadCompanies(){
+    this.companyService.getAllCompanies().subscribe((data: Company[]) => {
+      this.allCompanies.splice(0)
+      this.pendingCompanies.splice(0)
+      let i = 0
+      this.allCompanies = data;
+      this.allCompanies.forEach(company => {
+          if(company.status == "pending"){
+            this.pendingCompanies.push(company)
+            this.allCompanies.splice(i,1)    
+          }
+          i++
+      });
     })
   }
 
