@@ -26,6 +26,8 @@ export class RobaComponent implements OnInit {
        this.selectedGoods = data
       else{
         for (let i=0; i<10; i++){
+          if (this.goods[i].manufacturer == undefined)
+            this.goods[i].manufacturer = "/"
           this.selectedGoods[i]=this.goods[i]
         }
         this.curRow = 1
@@ -63,6 +65,8 @@ export class RobaComponent implements OnInit {
   minimalAmount: number
   maximalAmount: number
 
+  message:string
+
   company: Company
 
   currentObject: Storage = new Storage()
@@ -76,6 +80,8 @@ export class RobaComponent implements OnInit {
 
   add(){
     let username = sessionStorage.getItem('username')
+    if(this.tax == null)
+      this.tax = 0
     const data = {
       username: username,
       code: this.code,
@@ -100,9 +106,19 @@ export class RobaComponent implements OnInit {
       maximalAmount: this.maximalAmount,
       allObjects: this.allObjects
     }
-    this.companyService.addGoods(data).subscribe((message: string) => {
-      console.log(message)
-    })
+    console.log(this.unit)
+    if (this.name == undefined || this.unit == undefined || this.tax == undefined){
+      this.message = "popunite sve opste podatke"
+    }
+    else if (!this.validateCode(this.code)){
+      this.message = "Kod mora da se sastoji samo iz cifara"
+    }
+    else{
+      this.companyService.addGoods(data).subscribe((message: string) => {
+        this.allObjects.splice(0)
+        this.message = ""
+      })
+    } 
 
   }
 
@@ -134,6 +150,8 @@ export class RobaComponent implements OnInit {
     this.curRow++
     for (let i = 0; i < max; i++){
       this.selectedGoods[i] = this.goods[(this.curRow-1) * 10 + i]
+      if (this.selectedGoods[i].manufacturer == undefined)
+            this.selectedGoods[i].manufacturer = "/"
     }
   }
 
@@ -141,7 +159,6 @@ export class RobaComponent implements OnInit {
     if(this.curRow == 1)
       return
     this.selectedGoods.splice(0)
-    let min;
     if ( (this.curRow-1) < 1)
       this.curRow = 1
     else
@@ -205,5 +222,9 @@ export class RobaComponent implements OnInit {
 
     this.currentObject = new Storage()
 
+  }
+
+  validateCode(code){
+    return  /^[0-9]+$/.test(code)
   }
 }

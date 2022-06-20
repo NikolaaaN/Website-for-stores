@@ -26,23 +26,26 @@
                 <th>detalji</th>
             </tr>
             <tr>
-                <td></td>
+                <td>{{l.companyName}}</td>
                 <td>{{l.finalPrice}}</td>
                 <td>{{l.taxPrice}}</td>
-                <td><button (click) = "selectBill(l.finalPrice)">pokazi detalje</button></td>
+                <td>
+                    <button (click) = "unselectBill()" *ngIf="selectedBill == l.finalPrice">smanji detalje</button>
+                    <button (click) = "selectBill(l.finalPrice)" *ngIf="selectedBill != l.finalPrice">pokazi detalje</button>
+                </td>
             </tr>
-            <tr *ngIf="selectedBill == l.finalPrice" id="detailTable">
-                <table *ngFor="let b of l.bills"  >
-                    <tr>
-                        <th>naziv</th>
-                        <th>kolicina</th>
-                        <th>cena</th>
+            <tr *ngIf="selectedBill == l.finalPrice" id="detailTable" >
+                <table *ngFor="let b of l.bills">
+                    <tr id="detailsRow">
+                        <th id="detailsHeader">naziv</th>
+                        <th id="detailsHeader">kolicina</th>
+                        <th id="detailsHeader">cena</th>
                     </tr>
-                    <tr>
+                    <tr >
                         <td>{{b.name}}</td>
                         <td>{{b.amount}}</td>
                         <td>{{b.price}}</td>
-                    </tr>
+                    </tr> 
 
                 </table>
             </tr>

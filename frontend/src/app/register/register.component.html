@@ -29,7 +29,7 @@
          Owner fullname: <input type="text" [(ngModel)]="fullName" >
      </tr>
      <tr>
-         Image:<input type="file" (change)="onFileSelected($event)" >
+         Image:<input type="file" (change)="onFileSelected($event)" [(ngModel)]="image">
      </tr>
      <tr>
          <button (click)="register()">Register</button>

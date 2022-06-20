@@ -2,15 +2,6 @@
     <div id="wrapper">
 
          <div id="menu">
-            <!--<ul id="menuList">
-                <li (click)="details()" class="menuItems">Company details</li>
-                <li class="menuItems" (click)="orderers()">Orderers</li>
-                <li class="menuItems">Goods and services</li>
-                <li class="menuItems">Article category</li>
-                <li class="menuItems">Table layout</li>
-                <li class="menuItems">Accounts</li>
-                <li class="menuItems">Fiscal review</li>
-            </ul> -->
             <app-sidemenu></app-sidemenu>
         </div> 
         
@@ -22,40 +13,48 @@
                 </li>
             
             </ul>
-
+            
             <ng-container *ngIf="selected === 'opste informacije'">
 
+                Vlasnik:<input type="text" [(ngModel)]="fullName" > 
+                <br/>
+                Email:<input type="text" [(ngModel)]="email" > 
+                <br/>
+                Telefon:<input type="text" [(ngModel)]="phone" > 
+                <br/>
+                Ime kompanije:<input type="text" [(ngModel)]="companyName" >
+                <br/> 
                 category:<input value="{{category}}" [(ngModel)]="category">
-                <br/>
-                code: <input value="{{code}}" [(ngModel)]="code">
-                <br/>
-                pdv: <input value="{{pdv}}" [(ngModel)]="pdv">
-                <br/>
-                bankAccount: <input value="{{bankAccount}}" [(ngModel)]="bankAccount">
-                <br/>
-                number of storages:<input value="{{noOfStorages}}" [(ngModel)]="noOfStorages">
-                <br/>
-                number of cash registers<input value="{{noOfCashRegisters}}" [(ngModel)]="noOfCashRegisters"> 
-                <br/>
-                <button (click)="update()">Azuriraj</button>
+                
 
             </ng-container>
             <ng-container *ngIf="selected === 'detalji'">
-                detalji
 
-                <label>category: {{category}}</label>
+                kod: <input value="{{code}}" [(ngModel)]="code">
                 <br/>
-                <label>code: {{code}}</label>
+                pdv: <input value="{{pdv}}" [(ngModel)]="pdv">
                 <br/>
-                <label>pdv: {{pdv}}</label>
+                racuni: <input value="{{bankAccount}}" [(ngModel)]="bankAccount">
                 <br/>
-                <label>bankAccount: {{bankAccount}}</label>
+                broj objekta:<input value="{{noOfStorages}}" [(ngModel)]="noOfStorages">
                 <br/>
-                <label>number of storages: {{noOfStorages}}</label>
-                <br/>
-                <label>number of cash reigisters: {{noOfCashRegisters}}</label>
-
+                broj kasa<input value="{{noOfCashRegisters}}" [(ngModel)]="noOfCashRegisters"> 
+                
             </ng-container>
+            <ng-container *ngIf="selected === 'objekti'">
+
+                <table>
+                    <tr>
+                        <th>Naziv</th>
+                    </tr>
+                    <tr  *ngFor='let o of objects'>
+                        <td>{{o.name}}</td>
+                    </tr>
+                </table>
+                
+            </ng-container>
+            <br/>
+            <button (click)="update()">Azuriraj</button>
         </div>
     </div>
 

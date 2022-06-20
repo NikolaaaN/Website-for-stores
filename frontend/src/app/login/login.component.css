@@ -40,6 +40,23 @@ th{
 td{
     background-color: lightgray;
 }
+tr{
+    width: 10px;
+}
 #detailTable{
+    display: inline-block;
+    
+}
+#detailsHeader{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+@media (max-width: 600px) {
+    #loginTabela{
+        margin-left: 50px;
+    }
+    #billTable{
+        margin-left: 50px;
+    }
     
 }

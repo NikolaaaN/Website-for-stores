@@ -14,7 +14,5 @@ export class Bills{
     storeName: string
     payingOption: string
 
-    getDate(){
-        return this.date.getDate()
-    }
+    
 }

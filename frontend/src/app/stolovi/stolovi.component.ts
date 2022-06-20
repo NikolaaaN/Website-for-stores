@@ -17,39 +17,14 @@ export class StoloviComponent implements OnInit {
     this.companyService.getCompanyByUsername().subscribe((company: Company) => {
       this.company = company
       this.object= this.company.objects[0].name
-      
       this.companyLoaded=true
 
     this.companyService.getTables(this.object).subscribe((tables: Array<Table>) => {
       this.tables = tables
       this.drawCanvas()
-      this.setupDrawing()
       this.fillTakenTables()
     })
     })
-    this.oneTable.startHeight = 30
-    this.oneTable.startWidth = 40
-    this.oneTable.height=50
-    this.oneTable.width= 50
-    this.oneTable.shape= "rectangle"
-    this.tables.push(this.oneTable)
-    this.oneTable = new Table()
-    this.oneTable.radius = 20
-    this.oneTable.shape = "round"
-    this.oneTable.startHeight = 100
-    this.oneTable.startWidth = 240
-    this.tables.push(this.oneTable)
-    this.oneTable = new Table()
-    this.oneTable.height=40
-    this.oneTable.width= 80
-    this.oneTable.startHeight = 20
-    this.oneTable.startWidth = 160
-    this.oneTable.shape= "rectangle"
-    this.tables.push(this.oneTable)
-    this.oneTable = new Table() 
-
-    
-
   }
 
   oneTable : Table = new Table()
@@ -96,16 +71,13 @@ export class StoloviComponent implements OnInit {
     this.companyService.getTables(this.object).subscribe((tables: Array<Table>) => {
       this.tables = tables
       this.drawCanvas()
-      this.fillTakenTables()
+      if(tables.length>0)
+        this.fillTakenTables()
     })
   }
 
-  setupDrawing(){
-    let c = document.getElementById("myCanvas");
-    this.tableService.setupDrawing(c)
-  }
-
   fillTakenTables(){
+    console.log(this.tables)
     let c = document.getElementById("myCanvas");
     this.tables.forEach(table => {
 

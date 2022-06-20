@@ -283,6 +283,7 @@ class CompanyController {
         let type = req.body.type;
         let bills = new bills_1.Bills();
         let taxPrice = req.body.taxPrice;
+        let companyName = req.body.company;
         bills.bills = bill;
         bills.finalPrice = finalPrice;
         bills.fullName = fullName;
@@ -292,6 +293,7 @@ class CompanyController {
         bills.orderer = orderer;
         bills.type = type;
         bills.taxPrice = taxPrice;
+        bills.companyName = companyName;
         company_1.default.updateOne({ 'username': username }, { $push: { 'bills': bills } }, (err, resp) => {
             if (err)
                 console.log(err);

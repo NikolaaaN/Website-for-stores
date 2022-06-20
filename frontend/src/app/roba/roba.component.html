@@ -18,7 +18,7 @@
                 <td>{{g.unit}}</td>
                 <td>{{g.tax}}</td>
                 <td>{{g.manufacturer}}</td>
-                <td><button (click)="delete(g.code)">Delete</button></td>
+                <td><button (click)="delete(g.code)">Izbrisi</button></td>
                 <td><button (click)="formAppearUpdate(g.code)">Izmeni</button></td>
 
             </tr>
@@ -39,14 +39,17 @@
         
         <ng-container *ngIf="selected === 'opsti podaci'">
 
-            code:<input value="{{code}}" [(ngModel)]="code">
+            kod:<input value="{{code}}" [(ngModel)]="code">
             <br/>
-            name: <input value="{{name}}" [(ngModel)]="name">
+            naziv: <input value="{{name}}" [(ngModel)]="name">
             <br/>
-            unit: <input value="{{unit}}" [(ngModel)]="unit">
+            jedinica mere: <input value="{{unit}}" [(ngModel)]="unit">
             <br/>
-            tax: <input value="{{tax}}" type="number" [(ngModel)]="tax">
+            <div class="porez" *ngIf="company.tax">
+             porez: <input value="{{tax}}" type="number" [(ngModel)]="tax">
+            </div>
             <br/>
+            <div class="tip" *ngIf="company.category=='ugostiteljski'"></div>
             tip: 
             <label for="hrana">hrana</label>
             <input type="radio" value="hrana" name="tip" [(ngModel)]="type" id="hrana">
@@ -62,7 +65,7 @@
         </ng-container>
         <ng-container *ngIf="selected === 'dopunski podaci'">
 
-            zemlja prekla:<input value="{{country}}" [(ngModel)]="country">
+            zemlja porekla:<input value="{{country}}" [(ngModel)]="country">
             <br/>
             strani naziv: <input value="{{foreignName}}" [(ngModel)]="foreignName">
             <br/>
@@ -117,6 +120,7 @@
             </div>
 
         </ng-container>
+        <p style="color: red;">{{message}}</p>
         
     </div>
 </div>

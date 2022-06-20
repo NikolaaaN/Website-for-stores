@@ -28,6 +28,8 @@ export class BillpaymentComponent implements OnInit {
     
   }
 
+  company: Company
+
   bill: Array<Bill> = []
   cash: boolean
   card: boolean
@@ -83,7 +85,7 @@ export class BillpaymentComponent implements OnInit {
     });
     this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    this.companyService.pushBill(this.bill, this.finalPrice, null, null, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice, null, null, this.brLK, null, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.type,this.brLK, this.bill , this.selectedCompany, this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 
@@ -105,7 +107,7 @@ export class BillpaymentComponent implements OnInit {
     });
     this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    this.companyService.pushBill(this.bill, this.finalPrice, this.fullName, null, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice, this.fullName, null, this.brLK, null, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.type,this.brLK, this.bill, this.selectedCompany, this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 
@@ -126,7 +128,7 @@ export class BillpaymentComponent implements OnInit {
     });
     this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, null, this.type, this.taxPrice).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, null, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.type,this.brLK, this.bill, this.selectedCompany,this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 
@@ -147,7 +149,7 @@ export class BillpaymentComponent implements OnInit {
     });
     this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
-    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, this.orderer, this.type, this.taxPrice).subscribe((message: string) => {
+    this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, this.orderer, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){
         this.customerService.pushBill(this.type,this.brLK, this.bill, this.selectedCompany, this.selectedStore, this.finalPrice, this.taxPrice).subscribe(() => {
 

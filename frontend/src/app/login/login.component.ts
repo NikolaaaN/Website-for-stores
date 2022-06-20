@@ -33,8 +33,7 @@ export class LoginComponent implements OnInit {
         this.latestBills.push(this.bills[this.bills.length-i])
       }
     })
-    
-    
+      
   }
 
   username: string
@@ -80,6 +79,10 @@ export class LoginComponent implements OnInit {
     
   selectBill(price){
     this.selectedBill =  price
+  }
+
+  unselectBill(){
+    this.selectedBill = 0
   }
  
 
