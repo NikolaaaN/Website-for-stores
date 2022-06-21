@@ -26,13 +26,26 @@ export class LoginComponent implements OnInit {
           this.bills.push(bills)
         });
       });
+      
+      this.bills.forEach(bill => {
+        const d = new Date(bill.date) //iz baze vraca string ovo je pokusaj da se vrati u date
+        bill.date = d
+      });
+      console.log(this.bills)
+      
       this.bills.sort(
-        (bill1,bill2) => Number(bill2.date) - Number(bill1.date)
+        (bill1,bill2) =>{
+           return Number(bill1.date) - Number(bill2.date)
+        }
       )
+      console.log(this.bills)
+      const date = new Date()
+      console.log("broj"+ Number(date))
       for (let i = 1 ; i<6; i++){
         this.latestBills.push(this.bills[this.bills.length-i])
       }
     })
+    
       
   }
 

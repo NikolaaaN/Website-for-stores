@@ -16,8 +16,9 @@ export class BillpaymentComponent implements OnInit {
   constructor(private companyService: CompanyService, private router: Router, private customerService: CustomerserviceService) { }
 
   ngOnInit(): void {
-    console.log(JSON.parse(sessionStorage.getItem('bill')))
+   
     this.bill = JSON.parse(sessionStorage.getItem('bill'))
+    console.log(this.bill)
     this.cash = true
     this.companyService.getOrderers().subscribe((orderers: Array<Orderer>) => {
       this.orderers = orderers
@@ -80,10 +81,9 @@ export class BillpaymentComponent implements OnInit {
 
     this.type = "cash"
     this.bill.forEach(element => {
-      console.log(element.amount + " " + element.price)
-      this.finalPrice += element.amount * element.price
+      this.finalPrice += element.price
+      this.taxPrice += element.tax
     });
-    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
     this.companyService.pushBill(this.bill, this.finalPrice, null, null, this.brLK, null, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){
@@ -100,12 +100,9 @@ export class BillpaymentComponent implements OnInit {
 
     this.type = "check"
     this.bill.forEach(element => {
-      console.log(element.amount + " " + element.price)
-
-      
       this.finalPrice += element.amount * element.price
+      this.taxPrice += element.tax
     });
-    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
     this.companyService.pushBill(this.bill, this.finalPrice, this.fullName, null, this.brLK, null, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){
@@ -122,11 +119,9 @@ export class BillpaymentComponent implements OnInit {
 
     this.type = "card"
     this.bill.forEach(element => {
-      console.log(element.amount + " " + element.price)
-      
       this.finalPrice += element.amount * element.price
+      this.taxPrice += element.tax
     });
-    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
     this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, null, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){
@@ -143,11 +138,10 @@ export class BillpaymentComponent implements OnInit {
 
     this.type = "virman"
     this.bill.forEach(element => {
-      console.log(element.amount + " " + element.price)
       
       this.finalPrice += element.amount * element.price
+      this.taxPrice += element.tax
     });
-    this.taxPrice = parseInt(sessionStorage.getItem('tax'))
     
     this.companyService.pushBill(this.bill, this.finalPrice,null, this.slip, this.brLK, this.orderer, this.type, this.taxPrice, this.selectedCompany).subscribe((message: string) => {
       if(this.brLK != null){

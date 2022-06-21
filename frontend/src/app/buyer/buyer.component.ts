@@ -32,6 +32,7 @@ export class BuyerComponent implements OnInit {
   tableRows: any = [  ]
 
   tableRow: any = {
+    article: "",
     name: "",
     price : 0,
     objects: ""
@@ -56,6 +57,7 @@ export class BuyerComponent implements OnInit {
     if(goods.length!=0){
       goods.forEach(good => {
 
+        this.tableRow.article = good.name
         this.tableRow.name = good.manufacturer
         
         let names= ""

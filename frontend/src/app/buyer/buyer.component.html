@@ -17,11 +17,13 @@
 
             <table>
                 <tr>
+                    <th>Artikal</th>
                     <th>Proizvodjac</th>
                     <th>minimalna cena</th>
                     <th>objekti</th>
                 </tr>
                 <tr *ngFor="let t of tableRows">
+                    <td>{{t.article}}</td>
                     <td>{{t.name}}</td>
                     <td>{{t.price}}</td>
                     <td>{{t.object}}</td>

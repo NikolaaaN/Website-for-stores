@@ -65,10 +65,14 @@ export class RegisterComponent implements OnInit {
   }
 
   validatePassword(password){
+
     return /[A-Z]/.test(password) && /[1-9]/.test(password) && /[!@#$%^&*(){"~`?<>:"|\][';/.,}]/.test(password) && password && password.length > 8 && password.length < 12
+
   }
   validateEmail(email){
+
     return /"[a-z0-9]+@[a-z0-9]+.[a-z]"/.test(email)
+    
   }
 
 }

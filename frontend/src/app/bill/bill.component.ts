@@ -18,20 +18,20 @@ export class BillComponent implements OnInit {
   constructor(private companyService: CompanyService, private router: Router) { }
 
   ngOnInit(): void {
-    this.companyService.getStores().subscribe((stores: Array<Stores>) => {
-      this.stores = stores
-    })
+    
     this.companyService.getCompanyByUsername().subscribe((company: Company) => {
       this.company = company
       if (this.company.category == "ugostiteljski"){
         this.isRestaurant = true
       }
+      this.stores = company.objects
+      this.selectedStore = this.stores[0].name
+      this.loadGoods()
     })
     
     if (JSON.parse(sessionStorage.getItem("tableBills"))!=null)
       this.tableBills = JSON.parse(sessionStorage.getItem("tableBills"))
     console.log(this.tableBills)
-    
     
   }
 
@@ -66,6 +66,7 @@ export class BillComponent implements OnInit {
       this.companyService.getTables(this.selectedStore).subscribe((tables: Array<Table>) => {
        
         this.tables = tables
+        this.tableID = tables[0].id
       })
     }
     this.companyService.getAllGoods().subscribe((goods: Array<Goods>) => {
@@ -75,16 +76,15 @@ export class BillComponent implements OnInit {
         this.selectedGoods.push(element)
         
       });
-    })
-    
+    })    
   }
 
-  goodChosen(name, purchasePrice, tax){
-    this.price=purchasePrice
+  goodChosen(name, sellingPrice, tax){
+    this.price = sellingPrice
     this.amount =true;
     this.chosenGood = name;
     if (this.company.tax){
-      this.taxPrice += (this.price * tax)/100
+      this.taxPrice = (this.price * tax)/100
       this.price =  this.price + (this.price * tax)/100
     }
     
@@ -96,16 +96,20 @@ export class BillComponent implements OnInit {
     bill.name= this.chosenGood
     bill.amount = parseInt(this.chosenAmount)
     this.taxPrice *= bill.amount
+    this.price *= bill.amount
+    bill.tax = this.taxPrice
     bill.price = this.price
     this.amount = false
-    console.log(this.tableID)
     if (this.company.category == "ugostiteljski")
       this.saveToSession(bill)
+    else
+      this.bills.push(bill)
     
   }
 
   submit(){
-    sessionStorage.removeItem(this.tableID.toString())
+    if(this.company.category == "ugostiteljski")
+      sessionStorage.removeItem(this.tableID.toString())
     sessionStorage.setItem('bill', JSON.stringify(this.bills))
     sessionStorage.setItem('tax', this.taxPrice.toString())
     sessionStorage.setItem('companyName', this.company.companyName)

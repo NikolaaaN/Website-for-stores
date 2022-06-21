@@ -61,6 +61,5 @@ export class TableService {
     ctx.fillStyle="red"
     ctx.font = "10px Arial";
     ctx.fillText("zauzet", table.startWidth + table.width * 0.1, table.startHeight + table.height * 0.8)
-    ctx.fillText()
   }
 }

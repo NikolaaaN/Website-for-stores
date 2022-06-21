@@ -43,6 +43,11 @@ export class LoginController{
 
         })
 
+         if( /[A-Z]/.test(password) && /[1-9]/.test(password) && /[!@#$%^&*(){"~`?<>:"|\][';/.,}]/.test(password) && password && password.length > 8 && password.length < 12){
+
+        }
+        
+         
         CompanyModel.countDocuments({'username': username}, (err, count) => {
             if (count > 0){
                 res.json();
