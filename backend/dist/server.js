@@ -13,7 +13,7 @@ const customer_routes_1 = __importDefault(require("./routers/customer.routes"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
-mongoose_1.default.connect('mongodb://localhost:27017/usersProjectDB');
+mongoose_1.default.connect('mongodb://localhost:27017/projectDB');
 const connection = mongoose_1.default.connection;
 connection.once('open', () => {
     console.log('db connected');

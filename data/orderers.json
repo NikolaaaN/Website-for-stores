@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "62b47312feda5b934d86c4a2"
+  },
+  "parentCompany": "kompanija99",
+  "fullName": "Pavle",
+  "username": "kompanija",
+  "phone": "065 2225555",
+  "email": "email.email.com",
+  "companyName": "Kompanija",
+  "address": "bulevar kompanije",
+  "taxID": "26",
+  "companyID": "2",
+  "noOfDays": 20,
+  "percent": 10,
+  "__v": 0
+}]

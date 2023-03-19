@@ -12,10 +12,11 @@ class LoginController {
     login(req, res) {
         let username = req.body.username;
         let password = req.body.password;
-        let status = "";
-        user_1.default.findOne({ 'username': username, 'password': password }, (err, user) => {
+        let status = '';
+        console.log(username + password);
+        user_1.default.findOne({ username: username, password: password }, (err, user) => {
             if (err)
-                console.log("Error");
+                console.log('Error');
             else
                 res.json(user);
         });
@@ -41,10 +42,17 @@ class LoginController {
             address: address,
             taxID: taxID,
             companyID: companyID,
-            status: "pending",
-            image: file
+            status: 'pending',
+            image: file,
         });
-        company_1.default.countDocuments({ 'username': username }, (err, count) => {
+        if (/[A-Z]/.test(password) &&
+            /[1-9]/.test(password) &&
+            /[!@#$%^&*(){"~`?<>:"|\][';/.,}]/.test(password) &&
+            password &&
+            password.length > 8 &&
+            password.length < 12) {
+        }
+        company_1.default.countDocuments({ username: username }, (err, count) => {
             if (count > 0) {
                 res.json();
             }
@@ -57,9 +65,10 @@ class LoginController {
     adminLogin(req, res) {
         let username = req.body.username;
         let password = req.body.password;
-        user_1.default.findOne({ 'username': username, 'password': password, 'type': 3 }, (err, user) => {
+        console.log(username + password);
+        user_1.default.findOne({ username: username, password: password, type: 3 }, (err, user) => {
             if (err)
-                console.log("Error");
+                console.log('Error');
             res.json(user);
         });
     }
@@ -67,14 +76,14 @@ class LoginController {
         let username = req.body.username;
         let password = req.body.password;
         let type = req.body.type;
-        user_1.default.countDocuments({ 'username': username }, (err, count) => {
+        user_1.default.countDocuments({ username: username }, (err, count) => {
             if (count > 0) {
                 res.json();
             }
             else {
-                user_1.default.create({ 'username': username, 'password': password, 'type': type }, (err, user) => {
+                user_1.default.create({ username: username, password: password, type: type }, (err, user) => {
                     if (err)
-                        console.log("Error");
+                        console.log('Error');
                     res.json(user);
                 });
             }
@@ -86,14 +95,20 @@ class LoginController {
         let name = req.body.name;
         let phone = req.body.phone;
         let idCard = req.body.idCard;
-        customer_1.default.countDocuments({ 'username': username }, (err, count) => {
+        customer_1.default.countDocuments({ username: username }, (err, count) => {
             if (count > 0) {
                 res.json();
             }
             else {
-                customer_1.default.create({ 'username': username, 'password': password, 'name': name, 'phone': phone, 'idCard': idCard }, (err, customer) => {
+                customer_1.default.create({
+                    username: username,
+                    password: password,
+                    name: name,
+                    phone: phone,
+                    idCard: idCard,
+                }, (err, customer) => {
                     if (err)
-                        console.log("Error adding customer to db");
+                        console.log('Error adding customer to db');
                     else
                         res.json(customer);
                 });
@@ -112,26 +127,38 @@ class LoginController {
         let companyID = req.body.companyID;
         let noOfDays = req.body.noOfDays;
         let percent = req.body.percent;
-        orderer_1.default.create({ 'parentCompany': parentCompany, 'fullName': fullName, 'username': username, 'phone': phone, 'email': email, 'companyName': companyName, 'address': address, 'taxID': taxID, 'companyID': companyID, 'noOfDays': noOfDays, 'percent': percent }, (err, orderer) => {
+        orderer_1.default.create({
+            parentCompany: parentCompany,
+            fullName: fullName,
+            username: username,
+            phone: phone,
+            email: email,
+            companyName: companyName,
+            address: address,
+            taxID: taxID,
+            companyID: companyID,
+            noOfDays: noOfDays,
+            percent: percent,
+        }, (err, orderer) => {
             if (err)
                 console.log(err);
             else
-                res.json("Dodato");
+                res.json('Dodato');
         });
     }
     changePassword(req, res) {
         let username = req.body.username;
         let password = req.body.password;
         let type = req.body.type;
-        user_1.default.updateOne({ 'username': username }, { 'password': password }, (err, resp) => {
-            if (type == "1") {
-                company_1.default.updateOne({ 'username': username }, { 'password': password }, (err) => {
+        user_1.default.updateOne({ username: username }, { password: password }, (err, resp) => {
+            if (type == '1') {
+                company_1.default.updateOne({ username: username }, { password: password }, (err) => {
                     if (err)
                         console.log(err);
                 });
             }
-            if (type == "2") {
-                customer_1.default.updateOne({ 'username': username }, { 'password': password }, (err) => {
+            if (type == '2') {
+                customer_1.default.updateOne({ username: username }, { password: password }, (err) => {
                     if (err)
                         console.log(err);
                 });
@@ -144,7 +171,7 @@ class LoginController {
     }
     getUser(req, res) {
         let username = req.body.username;
-        user_1.default.findOne({ 'username': username }, (err, user) => {
+        user_1.default.findOne({ username: username }, (err, user) => {
             if (err)
                 console.log(err);
             else

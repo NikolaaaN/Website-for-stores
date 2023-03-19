@@ -1,396 +1,426 @@
-import mongoose from 'mongoose'
-import Company from '../models/company'
-import express from 'express'
-import { rmSync } from 'fs'
-import orderer from '../models/orderer'
-import { Bills } from '../models/bills'
-import { Goods } from '../models/Goods'
+import mongoose from 'mongoose';
+import Company from '../models/company';
+import express from 'express';
+import { rmSync } from 'fs';
+import orderer from '../models/orderer';
+import { Bills } from '../models/bills';
+import { Goods } from '../models/Goods';
 
-export class CompanyController{
-    
-    getAllCompanies(req: express.Request, res: express.Response){
-        Company.find( {} , (err, companies)=>{
-            if(err) console.log(err)
-            else res.json(companies)
-        } )
-    }
+export class CompanyController {
+  getAllCompanies(req: express.Request, res: express.Response) {
+    Company.find({}, (err, companies) => {
+      if (err) console.log(err);
+      else res.json(companies);
+    });
+  }
 
-    getStatus(req: express.Request, res: express.Response){
-        let username = req.body.username;
-        Company.findOne({'username': username}, (err, company) => {
-            if (err) console.log("Error")
-            else res.json(company.status)
-        })
-    }
+  getStatus(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    Company.findOne({ username: username }, (err, company) => {
+      if (err) console.log('Error');
+      else res.json(company.status);
+    });
+  }
 
-    submitDetails(req: express.Request, res: express.Response){
-        let username = req.body.username;
-        let category = req.body.category;
-        let code = req.body.code;
-        let pdv = req.body.pdv;
-        let bankAccount = req.body.bankAccount;
-        let noOfStorages = req.body.noOfStorages;
-        let noOfCashRegisters = req.body.noOfCashRegisters
-        let objects = req.body.objects
-        console.log(pdv)
+  submitDetails(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let category = req.body.category;
+    let code = req.body.code;
+    let pdv = req.body.pdv;
+    let bankAccount = req.body.bankAccount;
+    let noOfStorages = req.body.noOfStorages;
+    let noOfCashRegisters = req.body.noOfCashRegisters;
+    let objects = req.body.objects;
+    console.log(pdv);
 
-        Company.updateOne({'username': username}, {'category': category , 'code': code, 'tax': pdv, 'bankAccount': bankAccount, 'storageNumber': noOfStorages, 'cashRegisterNumber': noOfCashRegisters, 'status': "aktivan", 'objects': objects}, (err, resp) => {
-            
-            if(err) console.log(err)
-            else {
-                res.json({'message': 'ok'})
-            }
-        })
-    }
-
-    getDetails(req: express.Request, res: express.Response){
-        let username = req.body.username
-
-        Company.findOne({'username' : username}, (err, resp) => {
-            if (err) console.log("Error")
-            else res.json(resp)
-        })
-    }
-
-    delete(req: express.Request, res: express.Response){
-        let username = req.body.username
-
-        Company.deleteOne({'username': username}, (err, resp) =>{
-            if (err) console.log("Error")
-            else res.json("deleted")
-        })
-    }
-
-    setStatus(req: express.Request, res: express.Response){
-        let status = req.body.status
-        let username = req.body.username
-        Company.updateOne({'username': username}, {'status': status}, (err, resp) => {
-            
-            if(err) console.log(err)
-            else {
-                res.json('updated')
-            }
-        })
-    }
-
-    updateGeneralDetails(req: express.Request, res: express.Response){
-        let username = req.body.username
-        let category = req.body.category
-        let code = req.body.code
-        let pdv= req.body.pdv
-        let bankAccount = req.body.bankAccount
-        let noOfCashRegisters = req.body.noOfCashRegisters
-        let noOfStorages = req.body.noOfStorages
-        Company.updateOne({'username': username}, {'category': category, 'code': code, 'taxID': pdv, 'bankAccount': bankAccount, 'cashRegisterNumber': noOfCashRegisters, 'storageNumber': noOfStorages}, (err, resp) => {
-            if (err) console.log("Error")
-            else res.json("updated")
-        })
-
-    }
-    getCompanyById(req: express.Request, res: express.Response){
-        let id = req.body.taxID
-        Company.find({'taxID': id}, (err, companies) => {
-            if (err) console.log(err)
-            else res.json(companies)
-        })
-
-    }
-    getCompanyByIdAndName(req: express.Request, res: express.Response){
-        let id = req.body.taxID
-        let name = req.body.name
-        Company.findOne({'taxID': id, 'companyName': name}, (err, company) => {
-            if (err) console.log(err)
-            else  res.json(company)
-        })
-
-    }
-
-    addGoods(req: express.Request, res: express.Response){
-      let username = req.body.username
-      let goods = {
-         code: req.body.code,
-         name: req.body.name,
-         unit: req.body.unit,
-         tax: req.body.tax,
-         type: req.body.type,
-         country: req.body.country,
-         foreignName: req.body.foreignName,
-         barcode: req.body.barcode,
-         manufacturer: req.body.manufacturer,
-         tariff: req.body.tariff,
-         taxType: req.body.taxType,
-         amount: req.body.amount,
-         description: req.body.description,
-         declaration: req.body.declaration,
-         storage: req.body.storage,
-         purchasePrice: req.body.purchasePrice,
-         sellingPrice: req.body.sellingPrice,
-         stock: req.body.stock,
-         minimalAmount: req.body.minimalAmount,
-         maximalAmount: req.body.maximalAmount,
-         storages: req.body.allObjects
+    Company.updateOne(
+      { username: username },
+      {
+        category: category,
+        code: code,
+        tax: pdv,
+        bankAccount: bankAccount,
+        storageNumber: noOfStorages,
+        cashRegisterNumber: noOfCashRegisters,
+        status: 'aktivan',
+        objects: objects,
+      },
+      (err, resp) => {
+        if (err) console.log(err);
+        else {
+          res.json({ message: 'ok' });
+        }
       }
+    );
+  }
 
-      Company.findOne({'username': username}, (err, company) => {
-        company.goods.forEach( (good) => {
-            if( good.code == goods.code )
-                res.json("good already exists")
-            });
-            Company.updateOne({'username': username}, {$push: {'goods': goods}}, (err,resp) => {
-                if (err) console.log(err)
-                else res.json("added")
-            })
-      })
-    }
+  getDetails(req: express.Request, res: express.Response) {
+    let username = req.body.username;
 
-    getGoods(req: express.Request, res: express.Response){
-        let username = req.body.username
-        Company.findOne({'username': username}, (err, company) => {
-            if (err) console.log(err)
-            else res.json(company.goods)
-        })
-    }
+    Company.findOne({ username: username }, (err, resp) => {
+      if (err) console.log('Error');
+      else res.json(resp);
+    });
+  }
 
-    deleteGood(req: express.Request, res: express.Response){
-        let username = req.body.username
-        let code = req.body.code
-        Company.findOne({'username': username}, (err, company) => {
-            let index = 0;
-            for(; index < company.goods.length; index++ ){
-                if(company.goods[index].code == code)
-                    break;
-            }
-            console.log(index)
-            company.goods.splice(index,1)
-            if (err) console.log(err)
-            else{
-                Company.updateOne({'username': username}, {'goods': company.goods}, (err,resp) => {
-                    if (err) console.log(err)
-                    else res.json("deleted")
-                })
-            }
-        })   
-    }
+  delete(req: express.Request, res: express.Response) {
+    let username = req.body.username;
 
-    getGood(req: express.Request, res: express.Response) {
-        let username = req.body.username
-        let code = req.body.code
-        Company.findOne({'username': username}, (err, company) => {
-            let index = 0;
-            for(; index < company.goods.length; index++ ){
-                if(company.goods[index].code == code)
-                    break;
-            }
-            if(index  != -1)
-                res.json(company.goods[index])
-            else 
-                res.json("")
-        })
-    }
+    Company.deleteOne({ username: username }, (err, resp) => {
+      if (err) console.log('Error');
+      else res.json('deleted');
+    });
+  }
 
-    updateGood(req: express.Request, res: express.Response){
-        let username = req.body.username
-        let code = req.body.code
-        let goods = {
-            code: req.body.code,
-            name: req.body.name,
-            unit: req.body.unit,
-            tax: req.body.tax,
-            type: req.body.type,
-            country: req.body.country,
-            foreignName: req.body.foreignName,
-            barcode: req.body.barcode,
-            manufacturer: req.body.manufacturer,
-            tariff: req.body.tariff,
-            taxType: req.body.taxType,
-            amount: req.body.amount,
-            description: req.body.description,
-            declaration: req.body.declaration,
-            storage: req.body.storage,
-            purchasePrice: req.body.purchasePrice,
-            sellingPrice: req.body.sellingPrice,
-            stock: req.body.stock,
-            minimalAmoung: req.body.minimalAmount,
-            maximalAmount: req.body.maximalAmount
-         }
-        Company.findOne({'username': username}, (err, company) => {
-            let index = 0;
-            for(; index < company.goods.length; index++ ){
-                if(company.goods[index].code == code)
-                    break;
-            }
-            company.goods[index]= goods
-            // console.log(company)
-            Company.updateOne({'username': username}, {'goods': company.goods}, (err,resp) => {
-                if (err) console.log(err)
-                else res.json("updated")
-            }) 
-        })
-    }
+  setStatus(req: express.Request, res: express.Response) {
+    let status = req.body.status;
+    let username = req.body.username;
+    Company.updateOne(
+      { username: username },
+      { status: status },
+      (err, resp) => {
+        if (err) console.log(err);
+        else {
+          res.json('updated');
+        }
+      }
+    );
+  }
 
-    addCategory(req: express.Request, res: express.Response){
-        let username = req.body.username
-        let code = req.body.code
-        Company.findOne({'username': username}, (err, company) => {
-            let index = 0;
-            for(; index < company.goods.length; index++ ){
-                if(company.goods[index].code == code)
-                    break;
-            }
-            if(company.goods[index].category!= null)
-                res.json("category already added")
-            else{
-                company.goods[index].category= req.body.subCategory
-                Company.updateOne({'username': username}, {'goods': company.goods}, (err,resp) => {
-                    if (err) console.log(err)
-                    else res.json("updated")
-                }) 
-            }
-        })
-        
-    }
+  updateGeneralDetails(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let category = req.body.category;
+    let code = req.body.code;
+    let pdv = req.body.pdv;
+    let bankAccount = req.body.bankAccount;
+    let noOfCashRegisters = req.body.noOfCashRegisters;
+    let noOfStorages = req.body.noOfStorages;
+    Company.updateOne(
+      { username: username },
+      {
+        category: category,
+        code: code,
+        taxID: pdv,
+        bankAccount: bankAccount,
+        cashRegisterNumber: noOfCashRegisters,
+        storageNumber: noOfStorages,
+      },
+      (err, resp) => {
+        if (err) console.log('Error');
+        else res.json('updated');
+      }
+    );
+  }
+  getCompanyById(req: express.Request, res: express.Response) {
+    let id = req.body.taxID;
+    Company.find({ taxID: id }, (err, companies) => {
+      if (err) console.log(err);
+      else res.json(companies);
+    });
+  }
+  getCompanyByIdAndName(req: express.Request, res: express.Response) {
+    let id = req.body.taxID;
+    let name = req.body.name;
+    Company.findOne({ taxID: id, companyName: name }, (err, company) => {
+      if (err) console.log(err);
+      else res.json(company);
+    });
+  }
 
-    getStores(req: express.Request, res: express.Response){
-        let username = req.body.username
-        Company.findOne({'username': username}, (err, company) => {
-            if(err) console.log(err)
-            else res.json(company.objects)
-        })
-    }
+  addGoods(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let goods = {
+      code: req.body.code,
+      name: req.body.name,
+      unit: req.body.unit,
+      tax: req.body.tax,
+      type: req.body.type,
+      country: req.body.country,
+      foreignName: req.body.foreignName,
+      barcode: req.body.barcode,
+      manufacturer: req.body.manufacturer,
+      tariff: req.body.tariff,
+      taxType: req.body.taxType,
+      amount: req.body.amount,
+      description: req.body.description,
+      declaration: req.body.declaration,
+      storage: req.body.storage,
+      purchasePrice: req.body.purchasePrice,
+      sellingPrice: req.body.sellingPrice,
+      stock: req.body.stock,
+      minimalAmount: req.body.minimalAmount,
+      maximalAmount: req.body.maximalAmount,
+      storages: req.body.allObjects,
+    };
 
-    getOrderers(req: express.Request, res: express.Response){
-        let username = req.body.username
-        orderer.find({'parentCompany': username}, (err, orderers) => {
-            if (err) console.log(err)
-            else res.json(orderers)
-        })
-    }
+    Company.findOne({ username: username }, (err, company) => {
+      company.goods.forEach((good) => {
+        if (good.code == goods.code) res.json('good already exists');
+      });
+      Company.updateOne(
+        { username: username },
+        { $push: { goods: goods } },
+        (err, resp) => {
+          if (err) console.log(err);
+          else res.json('added');
+        }
+      );
+    });
+  }
 
-    pushBills(req: express.Request, res: express.Response){
-        let username = req.body.username
-        let bill = req.body.bill
-        let finalPrice = req.body.finalPrice
-        let fullName = req.body.fullName
-        let brLK = req.body.brLK
-        let slip = req.body.slip
-        let orderer = req.body.orderer
-        let type = req.body.type
-        let bills : Bills = new Bills()
-        let taxPrice = req.body.taxPrice
-        let companyName = req.body.company
-        bills.bills = bill
-        bills.finalPrice = finalPrice
-        bills.fullName = fullName
-        bills.brLK = brLK
-        bills.slip = slip
-        bills.date = new Date()
-        bills.orderer = orderer
-        bills.type = type
-        bills.taxPrice = taxPrice
-        bills.companyName = companyName
-        Company.updateOne({'username': username}, {$push: {'bills': bills}}, (err, resp) => {
-            if(err) console.log(err)
-            else res.json('bill added')
-        })
-    }
+  getGoods(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    Company.findOne({ username: username }, (err, company) => {
+      if (err) console.log(err);
+      else res.json(company.goods);
+    });
+  }
 
-   getCompanyByUsername(req: express.Request, res: express.Response){
-        let username = req.body.username
-        Company.findOne({'username': username}, (err, company) => {
-            if (err) console.log(err)
-            else res.json(company)
-        })
-   }
+  deleteGood(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let code = req.body.code;
+    Company.findOne({ username: username }, (err, company) => {
+      let index = 0;
+      for (; index < company.goods.length; index++) {
+        if (company.goods[index].code == code) break;
+      }
+      console.log(index);
+      company.goods.splice(index, 1);
+      if (err) console.log(err);
+      else {
+        Company.updateOne(
+          { username: username },
+          { goods: company.goods },
+          (err, resp) => {
+            if (err) console.log(err);
+            else res.json('deleted');
+          }
+        );
+      }
+    });
+  }
 
-   getBills(req: express.Request, res: express.Response){
-    let username = req.body.username
-    Company.findOne({'username': username}, (err, company) => {
-        if (err) console.log(err)
-        else res.json(company.bills)
-    })
-   }
+  getGood(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let code = req.body.code;
+    Company.findOne({ username: username }, (err, company) => {
+      let index = 0;
+      for (; index < company.goods.length; index++) {
+        if (company.goods[index].code == code) break;
+      }
+      if (index != -1) res.json(company.goods[index]);
+      else res.json('');
+    });
+  }
 
-   searchGoodsByName(req: express.Request, res: express.Response){
+  updateGood(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let code = req.body.code;
+    let goods = {
+      code: req.body.code,
+      name: req.body.name,
+      unit: req.body.unit,
+      tax: req.body.tax,
+      type: req.body.type,
+      country: req.body.country,
+      foreignName: req.body.foreignName,
+      barcode: req.body.barcode,
+      manufacturer: req.body.manufacturer,
+      tariff: req.body.tariff,
+      taxType: req.body.taxType,
+      amount: req.body.amount,
+      description: req.body.description,
+      declaration: req.body.declaration,
+      storage: req.body.storage,
+      purchasePrice: req.body.purchasePrice,
+      sellingPrice: req.body.sellingPrice,
+      stock: req.body.stock,
+      minimalAmoung: req.body.minimalAmount,
+      maximalAmount: req.body.maximalAmount,
+    };
+    Company.findOne({ username: username }, (err, company) => {
+      let index = 0;
+      for (; index < company.goods.length; index++) {
+        if (company.goods[index].code == code) break;
+      }
+      company.goods[index] = goods;
+      // console.log(company)
+      Company.updateOne(
+        { username: username },
+        { goods: company.goods },
+        (err, resp) => {
+          if (err) console.log(err);
+          else res.json('updated');
+        }
+      );
+    });
+  }
+
+  addCategory(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let code = req.body.code;
+    Company.findOne({ username: username }, (err, company) => {
+      let index = 0;
+      for (; index < company.goods.length; index++) {
+        if (company.goods[index].code == code) break;
+      }
+      if (company.goods[index].category != null)
+        res.json('category already added');
+      else {
+        company.goods[index].category = req.body.subCategory;
+        Company.updateOne(
+          { username: username },
+          { goods: company.goods },
+          (err, resp) => {
+            if (err) console.log(err);
+            else res.json('updated');
+          }
+        );
+      }
+    });
+  }
+
+  getStores(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    Company.findOne({ username: username }, (err, company) => {
+      if (err) console.log(err);
+      else res.json(company.objects);
+    });
+  }
+
+  getOrderers(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    orderer.find({ parentCompany: username }, (err, orderers) => {
+      if (err) console.log(err);
+      else res.json(orderers);
+    });
+  }
+
+  pushBills(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let bill = req.body.bill;
+    let finalPrice = req.body.finalPrice;
+    let fullName = req.body.fullName;
+    let brLK = req.body.brLK;
+    let slip = req.body.slip;
+    let orderer = req.body.orderer;
+    let type = req.body.type;
+    let bills: Bills = new Bills();
+    let taxPrice = req.body.taxPrice;
+    let companyName = req.body.company;
+    bills.bills = bill;
+    bills.finalPrice = finalPrice;
+    bills.fullName = fullName;
+    bills.brLK = brLK;
+    bills.slip = slip;
+    bills.date = new Date();
+    bills.orderer = orderer;
+    bills.type = type;
+    bills.taxPrice = taxPrice;
+    bills.companyName = companyName;
+    Company.updateOne(
+      { username: username },
+      { $push: { bills: bills } },
+      (err, resp) => {
+        if (err) console.log(err);
+        else res.json('bill added');
+      }
+    );
+  }
+
+  getCompanyByUsername(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    Company.findOne({ username: username }, (err, company) => {
+      if (err) console.log(err);
+      else res.json(company);
+    });
+  }
+
+  getBills(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    Company.findOne({ username: username }, (err, company) => {
+      if (err) console.log(err);
+      else res.json(company.bills);
+    });
+  }
+
+  searchGoodsByName(req: express.Request, res: express.Response) {
+    // let searchParam = req.body.searchParam;
+    // let goods : Array<Goods> = []
+    // let selectCompany = req.body.selectedCompany
+    // console.log(selectCompany)
+
+    // Company.findOne({'companyName': selectCompany}, (err, company) => {
+
+    //     if (err) console.log(err)
+    //     else {
+    //         company.goods.forEach(good => {
+    //             if (good.name.includes(searchParam))
+    //                 goods.push(good)
+    //         });
+    //     }
+
+    //     res.json(goods)
+
+    // })
+    res.json(null);
+  }
+  searchGoodsByManufacturer(req: express.Request, res: express.Response) {
     let searchParam = req.body.searchParam;
-    let goods : Array<Goods> = []
-    let selectCompany = req.body.selectedCompany
-    console.log(selectCompany)
+    let goods: Array<Goods> = [];
+    let selectCompany = req.body.selectedCompany;
+    console.log(selectCompany);
 
-    Company.findOne({'companyName': selectCompany}, (err, company) => {
+    Company.findOne({ companyName: selectCompany }, (err, company) => {
+      if (err) console.log(err);
+      else {
+        company.goods.forEach((good) => {
+          if (good.manufacturer != null)
+            if (good.manufacturer.includes(searchParam)) goods.push(good);
+        });
+      }
+      res.json(goods);
+    });
+  }
 
-        if (err) console.log(err)
-        else {
-            company.goods.forEach(good => {
-                if (good.name.includes(searchParam))
-                    goods.push(good)
-            });
+  addTable(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let name = req.body.name;
+    let table = req.body.table;
+    Company.findOne({ username: username }, (err, company) => {
+      if (err) console.log(err);
+      else {
+        company.objects.forEach((object) => {
+          if (object.name == name) {
+            object.tables.push(table);
+            console.log(object.tables);
+          }
+        });
+      }
+      Company.updateOne(
+        { username: username },
+        { objects: company.objects },
+        (err, resp) => {
+          if (err) console.log(err);
+          else res.json('message');
         }
-        
-        res.json(goods)
-      
-    })
+      );
+    });
+  }
 
-   }
-   searchGoodsByManufacturer(req: express.Request, res: express.Response){
-    let searchParam = req.body.searchParam;
-    let goods : Array<Goods> = []
-    let selectCompany = req.body.selectedCompany
-    console.log(selectCompany)
+  getTables(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    let restaurant = req.body.restaurant;
 
-    Company.findOne({'companyName': selectCompany}, (err, company) => {
-
-        if (err) console.log(err)
-        else {
-            company.goods.forEach(good => {
-                if(good.manufacturer!=null)
-                    if (good.manufacturer.includes(searchParam))
-                        goods.push(good)
-            });
-        }
-        res.json(goods)  
-    })
-   }
-   
-   addTable(req: express.Request, res: express.Response){
-    let username = req.body.username
-    let name = req.body.name
-    let table = req.body.table
-    Company.findOne({'username': username}, (err, company) => {
-        if(err) console.log(err)
-        else {
-            
-            company.objects.forEach(object => {
-                
-                if(object.name == name){
-                    object.tables.push(table)
-                    console.log(object.tables)
-                }
-            });
-        }
-        Company.updateOne({'username': username}, {'objects': company.objects}, (err, resp) => {
-            if (err) console.log(err)
-            else res.json("message")
-        })
-
-    })
-   }
-
-   getTables(req: express.Request, res: express.Response){
-    let username = req.body.username
-    let restaurant = req.body.restaurant
-
-    Company.findOne({'username': username}, (err, company) => {
-         if (err) console.log(err)
-         else{
-            company.objects.forEach(object => {
-                
-                if(object.name == restaurant){
-                    
-                    res.json(object.tables)
-                }
-            });
-         }
-    })
-    
-   }
+    Company.findOne({ username: username }, (err, company) => {
+      if (err) console.log(err);
+      else {
+        company.objects.forEach((object) => {
+          if (object.name == restaurant) {
+            res.json(object.tables);
+          }
+        });
+      }
+    });
+  }
 }

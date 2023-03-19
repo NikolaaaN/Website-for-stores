@@ -1,0 +1,178 @@
+[{
+  "_id": {
+    "$oid": "62b23c1f65d6748645a57f78"
+  },
+  "username": "customer",
+  "password": "Custom3r!",
+  "name": "Ivan",
+  "phone": "Ivanovic",
+  "idCard": "1",
+  "bills": [
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 300,
+          "price": 1800
+        },
+        {
+          "name": "cokolada",
+          "amount": 10,
+          "tax": 240,
+          "price": 1040
+        }
+      ],
+      "companyName": "Kompanija",
+      "storeName": "maxi",
+      "finalPrice": 2840,
+      "taxPrice": 540,
+      "type": "cash"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 10,
+          "tax": 600,
+          "price": 3600
+        },
+        {
+          "name": "cokolada",
+          "amount": 10,
+          "tax": 240,
+          "price": 1040
+        }
+      ],
+      "companyName": "Prodavnica",
+      "storeName": "maxi",
+      "finalPrice": 46400,
+      "taxPrice": 840,
+      "type": "check"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 300,
+          "price": 1800
+        },
+        {
+          "name": "cokolada",
+          "amount": 10,
+          "tax": 240,
+          "price": 1040
+        }
+      ],
+      "companyName": "Prodavnica",
+      "storeName": "maxi",
+      "finalPrice": 2840,
+      "taxPrice": 540,
+      "type": "check"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 300,
+          "price": 1800
+        },
+        {
+          "name": "cokolada",
+          "amount": 5,
+          "tax": 120,
+          "price": 520
+        }
+      ],
+      "companyName": "Prodavnica",
+      "storeName": "maxi",
+      "finalPrice": 2320,
+      "taxPrice": 420,
+      "type": "check"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 200,
+          "price": 1200
+        },
+        {
+          "name": "meso",
+          "amount": 10,
+          "tax": 400,
+          "price": 2400
+        }
+      ],
+      "companyName": "Pekara",
+      "storeName": "prodavnica1",
+      "finalPrice": 3600,
+      "taxPrice": 600,
+      "type": "check"
+    },
+    {
+      "bills": [
+        {
+          "name": "supa",
+          "amount": 5,
+          "tax": 50,
+          "price": 300
+        },
+        {
+          "name": "Cevapi",
+          "amount": 20,
+          "tax": 1800,
+          "price": 7800
+        },
+        {
+          "name": "koka-kola",
+          "amount": 5,
+          "tax": 60,
+          "price": 360
+        },
+        {
+          "name": "palacinke",
+          "amount": 5,
+          "tax": 100,
+          "price": 600
+        },
+        {
+          "name": "Cokoladna torta",
+          "amount": 1,
+          "tax": 50,
+          "price": 300
+        }
+      ],
+      "companyName": "Burger restoran",
+      "storeName": "restoran1",
+      "finalPrice": 9360,
+      "taxPrice": 2060,
+      "type": "check"
+    },
+    {
+      "bills": [
+        {
+          "name": "supa",
+          "amount": 5,
+          "tax": 50,
+          "price": 300
+        },
+        {
+          "name": "kafa",
+          "amount": 10,
+          "tax": 200,
+          "price": 1200
+        }
+      ],
+      "companyName": "Burger restoran",
+      "storeName": "restoran2",
+      "finalPrice": 1500,
+      "taxPrice": 250,
+      "type": "card"
+    }
+  ],
+  "__v": 0
+}]

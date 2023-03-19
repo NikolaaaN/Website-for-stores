@@ -1,0 +1,1473 @@
+[{
+  "_id": {
+    "$oid": "62b1ea53807469cddbcd8256"
+  },
+  "fullName": "Pavle",
+  "username": "kompanija",
+  "password": "Kompanij@2",
+  "phone": "065 2225555",
+  "email": "email.email.com",
+  "companyName": "Kompanija",
+  "address": "bulevar kompanije",
+  "taxID": "26",
+  "companyID": "2",
+  "status": "aktivan",
+  "bankAccount": [
+    "3254645"
+  ],
+  "goods": [
+    {
+      "code": "12413536",
+      "name": "supa",
+      "unit": "1",
+      "tax": 10,
+      "type": "hrana",
+      "country": "Srbija",
+      "foreignName": "soup",
+      "barcode": "3252463576",
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": "supa",
+      "declaration": "supa",
+      "storage": "restoran4",
+      "purchasePrice": 200,
+      "sellingPrice": 400,
+      "stock": 20,
+      "minimalAmount": 4000,
+      "maximalAmount": 40000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 200,
+          "sellingPrice": 400,
+          "stock": 20,
+          "minAmount": 4000,
+          "maxAmount": 40000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 200,
+          "sellingPrice": 400,
+          "stock": 20,
+          "minAmount": 4000,
+          "maxAmount": 40000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 200,
+          "sellingPrice": 400,
+          "stock": 20,
+          "minAmount": 4000,
+          "maxAmount": 40000
+        }
+      ]
+    },
+    {
+      "code": "2353645",
+      "name": "vegeterijanski burger",
+      "unit": "1",
+      "tax": 20,
+      "type": "hrana",
+      "country": "austrija",
+      "foreignName": "burger",
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": "burger",
+      "declaration": "burger",
+      "storage": "restoran4",
+      "purchasePrice": 200,
+      "sellingPrice": 100,
+      "stock": 20,
+      "minimalAmount": 100,
+      "maximalAmount": 10000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 20,
+          "minAmount": 100,
+          "maxAmount": 10000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 20,
+          "minAmount": 100,
+          "maxAmount": 10000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 20,
+          "minAmount": 100,
+          "maxAmount": 10000
+        },
+        {
+          "name": "restoran4",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 20,
+          "minAmount": 100,
+          "maxAmount": 10000
+        }
+      ]
+    },
+    {
+      "code": "25213523879",
+      "name": "cevapi",
+      "unit": "20",
+      "tax": 10,
+      "type": "hrana",
+      "country": "srbija",
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": "cevapi",
+      "declaration": "cevapi",
+      "storage": "restoran4",
+      "purchasePrice": 90,
+      "sellingPrice": 20,
+      "stock": 20,
+      "minimalAmount": 3000,
+      "maximalAmount": 30000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 50,
+          "sellingPrice": 40,
+          "stock": 20,
+          "minAmount": 3000,
+          "maxAmount": 30000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 50,
+          "sellingPrice": 40,
+          "stock": 20,
+          "minAmount": 3000,
+          "maxAmount": 30000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 30,
+          "sellingPrice": 20,
+          "stock": 20,
+          "minAmount": 3000,
+          "maxAmount": 30000
+        },
+        {
+          "name": "restoran4",
+          "purchasePrice": 90,
+          "sellingPrice": 20,
+          "stock": 20,
+          "minAmount": 3000,
+          "maxAmount": 30000
+        }
+      ]
+    },
+    {
+      "code": "32523523",
+      "name": "Koka-kola",
+      "unit": "20",
+      "tax": 20,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran4",
+      "purchasePrice": 100,
+      "sellingPrice": 80,
+      "stock": 200,
+      "minimalAmount": 1000,
+      "maximalAmount": 100000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 100,
+          "sellingPrice": 80,
+          "stock": 200,
+          "minAmount": 1000,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 100,
+          "sellingPrice": 80,
+          "stock": 200,
+          "minAmount": 1000,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 100,
+          "sellingPrice": 80,
+          "stock": 200,
+          "minAmount": 1000,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran4",
+          "purchasePrice": 100,
+          "sellingPrice": 80,
+          "stock": 200,
+          "minAmount": 1000,
+          "maxAmount": 100000
+        }
+      ],
+      "image": "data:image/jpeg;base64,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w4w00408MEscM888AAEMPJHC8IEIMA8ssYAXCBtc0IMMM4YUwQ407NTtT3U888880QQ88ugwNoWU88888wQQs86DAApCU888888Uc8w7EVpkqU888888Uc88bMMZ2uU888888AU8cywanaNU888888MQ8865RaYvU888884Yw886Sr8d1U88888QUA48KzEdQkU8888800Q88uTZ8JoUYs88M0IE887KohhyU848884Qw88rseraYU8888cIQA888Mc8Mss888880AU88888888888888//EACoRAQACAgAFAQcFAAAAAAAAAAEAESExMEFRYXFAEIGR0eHw8SBQobHB/9oACAEDAQE/EPT5FH3TvvhO++DEdr4TcRxBaQdYxEuCJl7+kttFkRAi8TRH2KxLVuZ38x4WBjfWsZjq86O/cRWjxNUAF0j4BEDeYhgcXavM0+g9gH9DmgPAf70ispHXEwSCDkLa+9EqAKeBOXVmiNAN+X5Qyhyl35Hi5UPf3fE0Su9py7naOoBi+gcjzziqLTA7uv4gFgBh0L06URClxu+r+Hiaon8FLUS62a+kwaS7FcHeCy9bXq7flAz6P64mqZn2L43apr9AbTNcUOMWmavQCVhlcYsTPbwkost/tP8A/8QAIhEAAgICAgICAwAAAAAAAAAAAAERMSEwEGFBUSBAUHGR/9oACAECAQE/EPrtVs7TvO0SOtjEcjaJgaasTWK0mx0NpOswjQyqJdh0NDG5KZE/sr2Oiw+EV7HQsNofDkkhtsYjMkafoZfwrHI4rwZz2OjGTfgZJEhwT+hfolp2OhZYEDTFyGGQltLY6LD4RXsdFuUV7HXwIr2U+BFex5PGOk6Rekc0v8T/AP/EACkQAQACAQIEBgMBAQEAAAAAAAEAESEQMSBBUWEwcYGhsfBAkdHB4VD/2gAIAQEAAT8Q4DS9L4L4L8PecoeDz1NDWuNhx14vPivW9b0shoa1wVDwbly5cuIOWC11jIS4VlvyGFbV2X+MG5Lof8Tfz0Vl+APP/Z8UX/Yszvb/AIiXU+jlEgYOzJ+IaNQWuy4actXS9bl8DoSs6kZUO5HoRn7n9sNo8zaaxCkKJtZcRZeJYjcYq/Z9yn+wjOUDXlDWvAYZhvGO0x+7hjaJFqqQo98D+om8KAVLFrVpyhaMPOTEe5HsUA4oLVejC4lvluDT0aTHeHiLoDfK5VECkcGrRcHeU/5QEFax1jCG85HF5LxZkvePqxwb1Rr10NalaVocZvxM+l6ohtYBWVK8qrpfaBw/3ksg5lYi8R1BVlQ8tuUcm8dRH1Qg/uVr9IwgFSsKGNsRW1BRMA9EVBSoXdqv0MVlx0Y8umzcmX/AglItqYBO8LrAQRDf0bw8RhosN5ejiG+v3vRnsYDIC5QKC1vygpRkDKb9n7jKMvRAsW805RvCC42o00S4S4sClaIIK861QW28qmUeIjB3DrubR3nsnzCPjM58f2PRns4WSzmXTsjANovBVIqKQXIikUq5P9YuJZgbS21mLMBBh0RPci8qkBLN3P4qNi0Y9lRa/R+o7z2D5h4hvpcYR4vq+jPbwhvNkNTnN09q+YcL4JwvB9n0Z7PQb6COh3jvPYPmHiXL0d9DhZ930Z7PRz4R3nOe3fMPGPAYvr8mc30i4DtN0Y7zZdvzDxjiNGF7rAdqzE5RQoB/Ygb8IIimcIuq/wCTPcp3YbUbA361Bi+N5sjkZFu9RbgFFAJeOX9GHiMIeC663+bCSqnOqw85VQ8So3oOBHnHbTJ8H3YOp6858l6QZJmDA+bhgcgrDAGls37Tn94Z6Hq9ozYKtshqvQfQgLvaV5LR6WHpFrLoejj+IfjMCPeV+UN4erG5D+kru9plXNcpYB2FDL1yvY+y16vsEcG1s5F8ziEOCnd4L9HPlUe3qaEwHrgisbDsOQ7EECLKmrO7eodYrxhG6rllq4NvLPZB47wmrpDcX2Yza0zdivKzKTYgMhm/Nf5Gs7FRyL5Bg9Yg6ozYNnybr1hsmWI2OR8fuCRbQxzV7D/YJRkSixq6xi+tr0mU/ZbIRU6XX0GDoX7QVkA+QY+IPHd+NmOxxDzoiJAYpZUv1ZY2KeApsgGQ2rlUBUHAOlxMmcNxEzZhLtAICKiT5/IX5m6hmodhuqoY6TMQtf8ASHCurLHjUHIu/IMrM270qbDT1XelRsS/S494eO7w4mE3YYd6gMvBkr6W3fKMsLwn2QQ2dHPfye05/wCx0BcB15xAEUPQl1LIjSXL27sYhydm5d0Kz3jILeYrrK5UXEaIxd0znzUX1ij0D139HENj8A3jxNFNz50YYURsTlFwG3DpZdsQLYUWieZSREGeHt7b5+cQeAr6GwHfzhE0qgn5DEJYw9eonSnw8oXp2i8CzXcbJ5S4JZhlu9vfP47MX+1pvcJmMd5vnuvwh4rpUuXwsy+tlpOWpUrQzlmPmfhDxjwGfTdU3tQvQmh3m+e9/CHiVNtecrR1dpj9LKbmhvNsCYaHT7r8IfgY4/uuqb8YTbDbRujp9z+EN9b4jjqVwu0+i6pu6Gk2m2bpzmE91+SGjtobcF8ZDiYq+lhm7OUJthtNs3R30L934Q4b4zfS4w4mfddJvQhNsJt1bo/rcyHDXgngMJBFgc8RZmg50k2vBJMN4XS0r4hwsOJl6JDfiZQp2YiUJm3ntdHfzuGG65sYK9SQ/wAjf6dn+RO36UsHnw/kY+y+UoQa3y/mA7QoKPzWAlKkAu/v0NiBwXGcpf4IFATvE7Y6isBe6fhAGwvZxewZ5puL5n/YWZ9UY2L3WsoD+lEANow8aob/AJF63wkYb/8Agu8N/wA7/9k="
+    }
+  ],
+  "objects": [
+    {
+      "name": "restoran1",
+      "id": "1",
+      "tables": [
+        {
+          "startHeight": 100,
+          "startWidth": 200,
+          "taken": false,
+          "height": 20,
+          "width": 40,
+          "shape": "rectangle",
+          "id": 1
+        },
+        {
+          "startHeight": 20,
+          "startWidth": 60,
+          "taken": false,
+          "height": 40,
+          "width": 60,
+          "shape": "rectangle",
+          "id": 2
+        },
+        {
+          "startHeight": 120,
+          "startWidth": 80,
+          "taken": false,
+          "height": 40,
+          "width": 60,
+          "shape": "round",
+          "radius": 20,
+          "id": 3
+        }
+      ]
+    },
+    {
+      "name": "restoran2",
+      "id": "2",
+      "tables": [
+        ""
+      ]
+    },
+    {
+      "name": "restoran3",
+      "id": "3",
+      "tables": [
+        ""
+      ]
+    },
+    {
+      "name": "restoran4",
+      "id": "4",
+      "tables": [
+        ""
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bills": [
+        {
+          "name": "supa",
+          "amount": 5,
+          "tax": 200,
+          "price": 2200
+        },
+        {
+          "name": "vegeterijanski burger",
+          "amount": 5,
+          "tax": 100,
+          "price": 600
+        }
+      ],
+      "finalPrice": 2800,
+      "fullName": null,
+      "brLK": "1",
+      "slip": null,
+      "date": {
+        "$date": {
+          "$numberLong": "1655831381609"
+        }
+      },
+      "orderer": null,
+      "type": "cash",
+      "taxPrice": 300,
+      "companyName": "Kompanija"
+    }
+  ],
+  "__v": 0,
+  "cashRegisterNumber": 4,
+  "category": "ugostiteljski",
+  "code": "234235",
+  "storageNumber": 4,
+  "tax": true
+},{
+  "_id": {
+    "$oid": "62b21d10c163796eb3dde3db"
+  },
+  "fullName": "Darko",
+  "username": "kompanija2",
+  "password": "Kompanij@1",
+  "phone": "065 235723658",
+  "email": "email@email.com",
+  "companyName": "Prodavnica",
+  "address": "bulevar ",
+  "taxID": "12124",
+  "companyID": "124",
+  "status": "aktivan",
+  "bankAccount": [
+    "4124314"
+  ],
+  "goods": [
+    {
+      "code": "5435253",
+      "name": "meso",
+      "unit": "20",
+      "tax": 20,
+      "type": null,
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "maxi",
+      "purchasePrice": 200,
+      "sellingPrice": 300,
+      "stock": 20,
+      "minimalAmount": 2000,
+      "maximalAmount": 20000,
+      "storages": [
+        {
+          "name": "maxi",
+          "purchasePrice": 200,
+          "sellingPrice": 300,
+          "stock": 20,
+          "minAmount": 2000,
+          "maxAmount": 20000
+        }
+      ]
+    },
+    {
+      "code": "2523523",
+      "name": "cokolada",
+      "unit": "1",
+      "tax": 30,
+      "type": null,
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": "milka",
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "maxi",
+      "purchasePrice": 100,
+      "sellingPrice": 80,
+      "stock": 10000,
+      "minimalAmount": 1,
+      "maximalAmount": 101000,
+      "storages": [
+        {
+          "name": "maxi",
+          "purchasePrice": 100,
+          "sellingPrice": 80,
+          "stock": 10000,
+          "minAmount": 1,
+          "maxAmount": 101000
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "name": "maxi",
+      "id": "1"
+    }
+  ],
+  "bills": [
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 300,
+          "price": 1800
+        },
+        {
+          "name": "cokolada",
+          "amount": 10,
+          "tax": 240,
+          "price": 1040
+        }
+      ],
+      "finalPrice": 2840,
+      "fullName": null,
+      "brLK": "1",
+      "slip": null,
+      "date": {
+        "$date": {
+          "$numberLong": "1655848609970"
+        }
+      },
+      "orderer": null,
+      "type": "cash",
+      "taxPrice": 540,
+      "companyName": "Kompanija"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 300,
+          "price": 1800
+        },
+        {
+          "name": "cokolada",
+          "amount": 10,
+          "tax": 240,
+          "price": 1040
+        }
+      ],
+      "finalPrice": 19400,
+      "fullName": null,
+      "brLK": "2",
+      "slip": "124",
+      "date": {
+        "$date": {
+          "$numberLong": "1655916240166"
+        }
+      },
+      "orderer": null,
+      "type": "card",
+      "taxPrice": 540,
+      "companyName": "Prodavnica"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 10,
+          "tax": 600,
+          "price": 3600
+        },
+        {
+          "name": "cokolada",
+          "amount": 10,
+          "tax": 240,
+          "price": 1040
+        }
+      ],
+      "finalPrice": 46400,
+      "fullName": "pavle pavlovic",
+      "brLK": "1",
+      "slip": null,
+      "date": {
+        "$date": {
+          "$numberLong": "1655916293766"
+        }
+      },
+      "orderer": null,
+      "type": "check",
+      "taxPrice": 840,
+      "companyName": "Prodavnica"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 300,
+          "price": 1800
+        },
+        {
+          "name": "cokolada",
+          "amount": 10,
+          "tax": 240,
+          "price": 1040
+        }
+      ],
+      "finalPrice": 2840,
+      "fullName": "marko markovic",
+      "brLK": "1",
+      "slip": null,
+      "date": {
+        "$date": {
+          "$numberLong": "1655916972775"
+        }
+      },
+      "orderer": null,
+      "type": "check",
+      "taxPrice": 540,
+      "companyName": "Prodavnica"
+    },
+    {
+      "bills": [
+        {
+          "name": "meso",
+          "amount": 5,
+          "tax": 300,
+          "price": 1800
+        },
+        {
+          "name": "cokolada",
+          "amount": 5,
+          "tax": 120,
+          "price": 520
+        }
+      ],
+      "finalPrice": 2320,
+      "fullName": "pera peric",
+      "brLK": "1",
+      "slip": null,
+      "date": {
+        "$date": {
+          "$numberLong": "1655917029582"
+        }
+      },
+      "orderer": null,
+      "type": "check",
+      "taxPrice": 420,
+      "companyName": "Prodavnica"
+    }
+  ],
+  "__v": 0,
+  "cashRegisterNumber": 3,
+  "category": "prodavnica",
+  "code": "21312",
+  "storageNumber": 1,
+  "tax": true
+},{
+  "_id": {
+    "$oid": "62b21e064dde765d8d1845d6"
+  },
+  "fullName": "Aleksa",
+  "username": "kompanija3",
+  "password": "Kompanij@1",
+  "phone": "064 14718647",
+  "email": "email@email.com",
+  "companyName": "Kompanija",
+  "address": "bulevar",
+  "taxID": "51825418",
+  "companyID": "12",
+  "status": "novo",
+  "bankAccount": [],
+  "goods": [],
+  "objects": [],
+  "bills": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b21e979029dda280ce3efa"
+  },
+  "fullName": "Marija",
+  "username": "kompanija4",
+  "password": "Kompanij@1",
+  "phone": "063 417826481",
+  "email": "email@email.com",
+  "companyName": "Kompanija",
+  "address": "bulevar ",
+  "taxID": "141412357",
+  "companyID": "124",
+  "status": "aktivan",
+  "bankAccount": [],
+  "goods": [],
+  "objects": [],
+  "bills": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b228a265d6748645a57f0a"
+  },
+  "fullName": "Stefan",
+  "username": "kompanija6",
+  "password": "Kompanij@1",
+  "phone": "065 427523",
+  "email": "email@email.com",
+  "companyName": "Restoran doo",
+  "address": "bulevar ",
+  "taxID": "214124912",
+  "companyID": "124",
+  "status": "novo",
+  "bankAccount": [],
+  "goods": [],
+  "objects": [],
+  "bills": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b310ab67e3034b01d07c39"
+  },
+  "fullName": "Bogdan",
+  "username": "kompanija8",
+  "password": "Kompanij@1",
+  "phone": "065 23578235678",
+  "email": "kompanija@email.com",
+  "companyName": "Kompanija",
+  "address": "Bulevar ",
+  "taxID": "311935199",
+  "companyID": "123",
+  "status": "aktivan",
+  "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsBAMAAACLU5NGAAAAG1BMVEUAmf////8fpf9fv/8/sv+f2P/f8v9/zP+/5f8U6SNkAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAC0UlEQVR4nO3XP0/bUBSGcWM7hLFu/pDRIZAyOg2VGO00dI4rVHXEqKUrSKhzTCXKx+651w6+tptMl0zPT4r9RraTw7nmJHEcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+9z5PCzj54t2apvMP5bJny9ayZKrIAiG97q+NAhGYT21+XIs+KXjmaSnRrKkM3oM3cuRisnxwv3dq6e29O/CmeRrVWDwGH7IolqypRur7cNKWjQMZZPHZvqPR33VQDbjW9mc92vJrqN38niv0vTGTFvl6hHKxr2rJbu6Ukiy0qlnpq0eQscfFCkykmWelJWGOo7MtNUsdDq6p87B2kiWdWQRyzXIzaR0iyK92LwgdZzDG51k/atk2ViWrVgJtTxV0sdu9W62Ns535ZQDvdRq/atkl3snt8pxkWdRlfTOV/+Xjldb0qmUmuhh53g9I1nlp0/ViyZRlcq9aletWVdq1m6q7hnJou/PwbXsvHLsjO+rVFYt7TKa1XnJBrEqNNZP3WMj2SzrJfsZ7ypLtctoVufleXj99mXJ610OdpblDyf1YTHJV3soS95itassJ8nW9fO9wV7K6vZfb9gk8hu3vBwOwsYFD/HmsJydvMUtr8gceh0LcZU2h2f5beMCGXSbsdA3km2j7eNUzaxidhnkg+btx6kua9uHj55ZSaNdUtYePnxUg4rmuLWkqZnVbJc0qGzO2EyWeb0dX2z0zGq0axbt44vNofy9R/qOHa/NpEvWM6vRrkye6a+vrjpaJVvO1Lu5eaQ+r+XF3Sw2k1FeUuzcr2p7rjo5/aE2/VqyZTq6OJmkeiR8GSxO0349Ca/Y+WFRVvZncfIpUCPBz65ProK4lqy5lN9SA/2W7rd2avNyuUC3zDnL2skaf/n6y/N02U5ty2VYJncZtxIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIB9/wCcL3aL1RMuFwAAAABJRU5ErkJggg==",
+  "bankAccount": [
+    "151235235234"
+  ],
+  "goods": [],
+  "objects": [
+    {
+      "name": "prodavnica1",
+      "id": "1"
+    },
+    {
+      "name": "prodavnica2",
+      "id": "2"
+    }
+  ],
+  "bills": [],
+  "__v": 0,
+  "cashRegisterNumber": 5,
+  "category": "prodavnica",
+  "code": "3357467568",
+  "storageNumber": 2,
+  "tax": true
+},{
+  "_id": {
+    "$oid": "62b461515431150073fcadc7"
+  },
+  "fullName": "Marko",
+  "username": "kompanija20",
+  "password": "Kompanij@1",
+  "phone": "065 23527356",
+  "email": "email@email.com",
+  "companyName": "Kompanija",
+  "address": "Bulevar",
+  "taxID": "218412956",
+  "companyID": "12",
+  "status": "novo",
+  "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAB+CAYAAABhy172AAAYYklEQVR4Xu2deWBMV/vHn+wbYkmI2IXaaVFaS1/aooqUaqyhSomoUrT0rf7sr1ZbVbT2rRoVu0aspWqL0qK2EJFIQiQRWUVkn9/z3MlMZiYzmcmdTCbmPucfJvecc8/5nvO5Z3+OlQwdsGMFWAGtClgxIFwzWAHdCjAgXDtYgRIUYEC4erACDAjXAVZAnALcgojTjUNJRAEGRCIFzdkUpwADIk43DiURBRgQiRQ0Z1OcAgyION04lEQUYEAkUtCcTXEKMCDidONQElGAAZFIQXM2xSnAgIjTjUNJRAEGRCIFzdkUpwADIk43DiURBRgQiRQ0Z1OcAgyION04lEQUYEAkUtCcTXEKMCDidONQElGAAbHwgpZBAViBtYXn0nTZY0BMp63ZY87KjYOQcB94veVZs6fleU0AA/K8lpyedD9I3gu3Hv4PfcmgV+vLFppL02eLATG9xuX+hgsRvvDk2W1wd6oBj54lMiBGlAADYoR4FS1odl4inA3zBjsbW3C1s8PkWSMgyQyIEQXFgBghXkUK+jAlCG7GzoOqDm5gb51XmDQGxNgyYkCMVdDs4WVw6Z4/pGReAjfHajhjpYCDEsaAGFs8DIixCpoxfH7BM/jzVk+ws3YAV3tbYUCu7hgQY4uHATFWQTOGp2ncM2H9oKZTVR2pYECMLR4GxFgFzRieATG9+AyI6TU22RsYEJNJq4yYATG9xiZ7AwNiMmkZENNLa/o3MCCm11iyLUhuXgHY2T7fm/gYEAbEZAqcvfoAurWra7L4TRMxTeNaKaNmQEyjsmqskm1Bvlh9Bhb7dze9wmX0hoysCAiLWwIdGq1jQMpIU0OikSwga/ddhQ/6twZ7OxtDdDKrnzvx30P04wCo7tKRASnnkpAsILGJGXDpdgJ4d/cqZ8kNf12BLBvOhw+DnLwE3GPlDgXWtRgQw+UrE5+SBYTUazhoHUTtm1AmQpZ1JBlZ4fBXxEioZOcKTjb5eC7QBQGpzYCUtdB64pM0IC2Hb4a/N/uCiyNtDa84LizuG4hJCsTzHLVwSJ4tJIwBMU/5SBqQ6ctPQkz8E9j9lbd51Nd4a35BJvx1d4TQparu4CJgoXAMiHmKSNKApD/NgWZDNsL9ID+wtTHvmoi8S+WLXarK2KUqAoMBMQ8YirdKGhASwaPfapg6tD38d3Rns5bEzQdz4ElmiFY4uItlvqKRPCC9puyC0KgkuL/fD6ytixbhyrtICJCMZyHgaF289WBAyrs0it4neUCi4tKg87htsGBCV/Ab2M5sJcGAmE36El8seUBkMhnUGbBGaD2isRWxMVMrwoAwIBVTAUzVjOV/QsDRUJg+oiPM8u1klnQyIGaRXe9LJd+CkEKPUjKhzcgtgljxB/3Byqr8xyIMiN66ahYPDEih7DQOEcYjrWtD0DeDTF4YMhnazLUqmlpmQEwuuagXMCCFsoVcfwiDZu0Xfh1f6QNtvNxFCaovEBmTvn7/c/Cq6Q8uDo2U3k0DiC0ajnvMhuP0FUoJzxkQFXFob9az7DxwdrSFiD3jwbqMu1q5+U/g3B1vyM1Pgy5N95gUkAKwhyQ0Oypj27xG4IGnb3AWR9OYklERPs+BD4ZEwthFR4QsjHqrJXw3pUeZZSfl6SX45954YVduRu4T6OS1zWSAZBXYQXp2ojLtxhqvXoNHAyYOMt8UeJkVgoiIGBAN0Wr3Xw0FBfJvxt+bfKG+RxURsqoGkWGXajYkpB0DNyc33HyYA8nZWSYBRAa2kJyVBvmyXLU0iwWEjgT8xz9QOJp8K3CskTo8n8EZEI1yO3z+HoxZeFj4K62NxAZNFL3CnleQASF33kWDh5lo+dABY5SDV+aAONfAVikXMnPTtdbC0gJCHwjayLn999tCfK293ODEyiHPZw03MtUMiBYBm7y3AfdF5QhP2jVxh2MrfJS+nuVEgpN9Y72yJ2dcgEtRk8DVoQY4KI1Jy4OVNSD6ElMaQK5HPIa3p++BnNx8ZbTe3bxg/Rd99L3GIp8zIFqKlU4aUiVRuK8mdYex/dsofyelB0GNKrq3yN948CXEpR6CyvZuwmEnTZu5FREQsvLSb8ZeuBr+qJgi04fjAuoo8yygmps6BkRHCbwxeSfciHwsPKXJrDNrhkPTetUKfRfAo9TtULPqSK2hT9x8Fei4rMJZW9mCg40jONk6go2VDFKynxo4BqEFS2ucGLaBLOTM3q6+1hOF+ipRSS0IdfoCsStFXSrF2Eszvg3YegzAVkSKjgHRUerUxWqKXS3FFB+dF4nG47m2hba0CtCyenzKFvCs4V8sBk1AtL1C2zRv4pMTOLVsDfkFOUBziwWyfHx/0e5eXUYb9FVcXYDEJz2FPp/sBvq3JHdu3QhoUleXgWx9b3++nzMgJZTf8p2XYfGWv5Q+HB1sIWrveOVWFDr59yjlV6jrPk0tFrGAPEwNLrE2lRUgBN9nP56CgCM3BRD1uTjcflPWa0L63llRnjMgekrihSEbIC1DPmAnR9O+Fzf6Ct0uchnPrkBS+kFoUGs2/pL/saIDsjn4Buz+4w5Ex6dBakY25OUXlAhK/KFJKubqKkrVLZ90MCB6dE5Oz4KWwzepVaD2zWrB4WWDlSFTsGv0OG03NK27SoCkogOimeXLYQnQd1rRpITqc+paxh6YWD61sQK+hQExoFBWYFfrfypdLQrSuRVuavy2aFNjUnowxCdvgZYNdkBsyj68gnlxiTFrG4OUVxdLNWG3o5OFxUCFq1XDBRJUxiRk8SUSu5VSdQyIgSXfaVwARMepL8S93MIDgpfiQmChS8n4He4/+g5aNNgmDLTPhg0Q9kJpcxUBkBu45vHGxzvVknd393g4eTkGxi8+Kvy9bs3KcGnLKANVsjxvDIiBZUr9dDp5qOnaN68Fh5YOVo5J0p+GwL34L6GhxyJwdXkFQsKHwtPsiGLhzA3IuWuxMPjz39TwHfSfprBmVi8hrTNW4CGyI6HQgfL3fVF30kC5LMYbA1KKoozCFqQztiSarln96vDnqqHKLSmZWaEQHvsxAtIFQVkAUYlbIDxhpVqw8gDECtdPOjZaC67O7RDgIhvER/+KgtELDqmlh44a38dtNapHjrtM+BWolVw+7fVSqGRZXhmQUpbnhqDrMHvNmWKhalV3his/jwabQvtauXnJEBozFCucMzSrR4N8K2xNBgtb3cmZGpAqTq2gY+P1kJ19D5wcGiMgtBcM4MddV2Dh5vPF0r/py7egXxf1LTS0cLjrjzAY+mbzUqpkOd4ZEBFl+eHiI3DgbGSxkA5oKf7atjFQtZK8MspkeXD7/mjc1xQPNauNgNrVx2Fr8jO2JitMCIgVvNx4M1R1bg0PEpdBHVyjscLVeHITl/wO+06FF0t38wbV4dTqYSKUsPwgDIjIMu7mtx3C76cUC03rI7sWe0N3lct5Yh4tgZQnR7F1qQLN620GK2snyM1LBUc7D2V4OlFo7CyWW+Wu8FKD5ZCZfRfXZoKgnvunQvzUEtBgPPRekpb0WkHMb35g/5zftiWyGPUGY0D0SqTbQ+sRmyEx9ZlWD34D28L8Cd2UC2yZ2aFwN/YToVVxd/UBTzc/DKd+Jl0sIPa2NbDV2ASOtm44QTAb3FwH4fhHfjlQGppX7fD+VuXuZM3EBsx7G3p1amiECpYdlAExonxzcWarFVqIT8PVaG2ujnslOL16OFRylluPpw2MEbHT8At/G7duOEADj7lQxfkV4Zm4FiQB0jNvQk3XngjqTtxAGYjjnc1oZ1i+b+rCzTjhnH1+4QEwzTT27FAfAhf2N0IByw/KgBhZxtl4boIMYNNZdm2ODl0FzO0Hb7xcX/k47elZiIqfI/ymblezuhtwE2R1uBO3FK892K4zRZp7schjVk4E3HkwCUHrjDNm8/Ev8u0utIeM9pLpci5OdhC+60OzGcozUvZyC86AlIHUdLjoBR+EJEc7JPSKl1t6wP4lA1WsyMuEqWCaEibnZO8FXp7LcKrYGW7GzsHzJHSqUX2RURWQ/IInEP7gI8jOfYjhvoNKTi8K8dB4o8ekHRAWk6wzZ2T36zIu/nliC8euZAUYkDKqIdk5CAlubMzCf3U5OtsdMK8f9GhfT+klC08oRjycjhsG5av01BLUr/kFguIEdxN+guikbcK4pZpLB2hX/1v84jtBdMJCoAVJJ4dm0LTOCpzClXfhwnDbyJtojFv1NKC2tKyc8QYMeaNZGeXcsqNhQMqwfAkSstCY9lT7mETxqlaN3ODo8sFoDKFo8S4t4xREYcVXXJrj4tha6DLZ2Lji2kk62GNX7D5O2yan0wKfDHcPz8Hp5B7K1M/fEAKr9v6rNzeDeuBq+Uz5ajk7/QowIPo1KpUPGhC3H70VNy6WfAiJIv1o8EswZ9yrKvHLcKC9A+KSiq56trWpAa6VukBSGp0VkeGpwto4VbxVuTKeX0ATBVtwGjlLbzrr16qMV85Jd1+VXoG0eGBAxKimJwwdQuozdRdcvVtkm0pXENpOvmPRAOjato5yPxeBEJ/yMySmBOLMl/wsCnWjqEVRzHqRObOth0Jh5k+nDMqBq4sD3NoxlgflBqlV5IkBKaVgpfH+TcBFWPrrPwYFoQq8Ebd7dG9XR61FSXt6Brts56BezZk4PyXvksXhdvS+03ZD3GP9rRT5d8aTkASHo72tQWlhTwxIudWBv26Qzd/fsCUw4GwrpsrN1QnWft4buqmBIk8utRrT8KqG7cduGZx+mma+i9O5NK3LrvQKcAtSes1KHSIT10haDN1Y4gyXZqS0r4tA6fuq3MD137fihUU/Ms9jqKNz5Hd3MxyG6qXNHwNijHqlDDtybjAc/zumVKFozaIyfv3TCw3ZGRrYxtoa/v1lNG6SdDY0CPvTogADUs7V4uC5SBiHp/VMaTOc4Lj08yiojcdn2RmnAANinH6iQmc8y4VueBiJBttl7ajFuY5b7t2rOpV11JKMjwExY7H/evQWDrpPllkK6DTgnZ3jcHOkfZnFKfWIGBAz14As3L/Ve8ruEvdOGZJEVzykdfWX93H7CU/lGqKXoX4YEEOVMrG/U1fu4znxw5ClY1dwSa9vgMbsQtaPUNkIaeLESih6BqQCFTZZTiH7W6v26N9TpUi2d/cmsA6ng8v4trgKpIp5k8KAmFd/rW8nUMioNNmtKsktm9oTRvRpUQFzYDlJYkAqcFkmpT8D70/3wd0HqWqppP1bp9HIgpdELa6XZ5ExIOWptsh3Rcamwqj5hxGUFOGOErJAomq/SmS0HMwABRgQA0SqKF5o3cQDF/8KDctXlGRZdDoYEIsuXs6csQowIMYqyOEtWgEGxKKLlzNnrAIMiLEKcniLVoABseji5cwZq4DFAkIG3VKfZAt7k6q42KP9qVxwxtuSFE7x3MHeRmlsmp7Ryb/EFLk5UbLYruky8FzG06w8PKFni1Ot1moG48i+rbaNgrTwR2sXqo5MlpINK7K6SLc4KdyjlEzhujc3V0e81k1uiIFOA1YqPBGYiM/JUKJm2tLRxCgZr3PE/NC+LGV8yRgf/nCtZK925JYOXpEZIlWXlPYMzQ/JoGplB6ADW5ouAeNS6EJX02k6yqelnT+xSEDovEUzXC+Y7POSYF1kyvd/QP+uXjBxUDuhTMcsPAwd8J7B8Wg/l26N8pl9AE7+NARq4HFXcr//HQ2+cw9CXDDe7oo7ZFVdw0Hr4MWmNWEfGoGjMx3v4iU0r7bxhI/xXRdD4+GzlX/C+Q0j1YAY+n/BsGRSd2hY21UZFYWt3W81EKBR+/yUW0UI0OCzEUBbSEKjkqAnGoFTvWU28mEqTvVWEs6ZqzqC6jV/MqidCg+DJypvpaX3TMfLcL6f0lNtO8owTNNX/t2hkadqmgA8+q2Cnh3qoUnSAcXgaYlmVsN2jBMAIsDqeq+ByD1066/c6+TvTgBdo2BJzuIAGTX/EBo4qAyLsfAVjr7U6367JgDiMzsI6MKbRX7dlM/pq/wSGniO2e8nAHHinxgs7OMwd1wXGNar6G6MfPxCTv3hJMQ+eiIAQo7Om7/2Yh2YNryj8JsMNdC9f5tmF1WUFsM2CVdHh27/QK3ukMX1mPh0GNCtCXw/tYfyWTAequrfVX5XRzM8qjvTtxOMG9BG+D0AV9YPfFd0N6JqhL3RkkpCUiZem1YJDqrcCkW3RS2dUhQ/mSaiyt7IswocWfaeWpoaDFwHOXn58EDjMp0PFh2BQyGRgrlSapEJPA8EPP4g3oBbCMgBBHtANy9L4gMsDpBab6+CBLy2WJfT9fyVD7fBDKzkPmhxkAB5+DgDPsWKpRrXrFWn0fROFTh2IUonIBdD42DUvEMQhucyyJ1How3NEcjmCIlmut5EQHYs8hZu0Q3bORa7eo5CGFVA6F0EPYUli4mn/n0AvV5uoDV7BMhhBMMTr4o7vnIItPFyE/xpAvLvnUdQrYojdBobUCxNbXy3QDpee73hiz5o9b3oPQoLLSUBYlFkFGbGogC5EYmXUk7eqROQm/T841341fMvVpazfjqNXaQ47GoNFQAh86Ce/VdDaOAHUKOKvOvlixW/a1vPEgH5cfcVoPv/ti+QW00f+uUBwe5VvXfWwqrP3lT7whIgVJGnLvsD9uPFNtHYgmkCQr+pKxaIcVxDO1v+77bTua2dADm23Ac2HrgOZGkxat8EoUXUBGTgzP2w/5uB0OS9DUI6yW6wwrVFQCa/1x5W7LoMN/BkIrmzV2OhY4taQK1LSYBsPXwTRvdtZVGcWBQgJy/FAPWtdbUgf16+DyPmBGMfvTggPwRegk3BN+BawPtKQN7CHbU04N2NF+JExaUJY4jVaN5TVwsSgZsK6b7x67+OEQa51LXbcfw2DO/dAn4+eBN+2HlJuKZN4RSA0G/qz4/t3wYWTOiq1oLQM4JuJVbY1/G6gtUlmA1VAEJhqAtFpoNoK7wmIHtOhsPgnk2F7uAWTJdq148AubjJV4CBAKNJjve+CBI0oNZXExDFuI7eSZsnGZAK/H24FZWMls0DdQJCYwOyfK6tBaFKdDU8Eb/oPkpAqC/uNXgDPDwwURiM7/36Ha2AvPiCO0x4py3YIRRk10rhgs7chdPYJbLG2S4ZwkJfWEWlIz+qgNDsFdn1pa/2BRzsK8YgirioctJ1zHQtsy6nCgjNktEFP9cCxgggKMYgNI44iR8KGhPl4UB729FQNb0IEApDOtHkwzwchx27GI0tX2OtgKiOQX7BW3FHvdWyAteQ0ifNoloQyr6uMQZ1v1o3dhOex2N/XnPDX3scpH+FM019OjdSAkI7Zql7s3VuX8jIzAUy/FxSC6Ip/2sTt8PpNcOVf6bLdibgzNnUoR2Ev6kCQr/9vzmO747GAXtPrYDcRuuI1SrLxynanCog9HzBpvN4+OoKjOzTUgmI1+D1EIEzTwpHs1azRneGaYVpUgByPSIR07cLw/UE37fkZ060tSCqgFCLqTnrV/oqWbFCWBwgn+NAmgw5r53VW6k0XUmwGfvl/oNfhGk4C0W/V898U/mcrnd+/aMdWHE+FL6sijEIAbJu/zWYt/GcMJ1JpjsNBYQqy+WwBOy7F/XvqYs3/qtj2E2RD+A1AaEwjbEC0/UEmrNBVDlLCwi9o9G76+FdBJtaEJq9oq6iVx35DVTkqLs4eekJwdgDOQUg9H+6F57uSQ/6Vj5rpg+QVLxpqzIajLCkrfgWBwgV5Ne/XBDWN6YN6yhMowZgN6ILdhcmDJSvg8zbGAJPcGHtk2Ed4BauNdAxV5r9oYVEWuyiq5LpfvCu2Icnowr9ZuyFEziYzsQFwi/XnoVLt+Nh2/x+Qlwjcb2kNc4WTXinHbRr6i78jRYlZ/54Gsb0w6uYVQChwTt11X7BewHdqzqD39fHhL59fZwZU7jrOBCPEqZ+i6ZLafKApne3zn0burT2hMo4zarpIh+mCeOr9f/tjbNX8nSQo0q7EFuSBeO7wic//AHjvdtCp1a1lc/JNOo7OGine0s8cGGUxhtHcaDfsHYVmPTtcVjy0WtCpb98OwH6Tt8jpL033mlI17t5f7YPPsfWR9EaUyv99aTXwM2CTA5ZJCBU+vQ1zsE+tq2NldZZH8Vz+tpprigXq338B4MUUJgftqTz8RYLiEElyp5YAT0KMCBcRViBEhRgQLh6sAIMCNcBVkCcAtyCiNONQ0lEAQZEIgXN2RSnAAMiTjcOJREFGBCJFDRnU5wCDIg43TiURBRgQCRS0JxNcQowIOJ041ASUYABkUhBczbFKcCAiNONQ0lEAQZEIgXN2RSnAAMiTjcOJREFGBCJFDRnU5wCDIg43TiURBRgQCRS0JxNcQowIOJ041ASUYABkUhBczbFKfD/o+B/O03ExnUAAAAASUVORK5CYII=",
+  "bankAccount": [],
+  "cashRegisters": [],
+  "goods": [],
+  "objects": [],
+  "bills": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b463af51d5c196888efe8e"
+  },
+  "fullName": "Pavle",
+  "username": "kompanija99",
+  "password": "Kompanij@1",
+  "phone": "065 23523975",
+  "email": "company@email.com",
+  "companyName": "Burger restoran",
+  "address": "bulevar ",
+  "taxID": "215419511",
+  "companyID": "12",
+  "status": "aktivan",
+  "image": "data:image/png;base64,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",
+  "bankAccount": [
+    "124151235245"
+  ],
+  "cashRegisters": [
+    {
+      "object": "restoran1",
+      "type": "tablet kasa"
+    },
+    {
+      "object": "restoran2",
+      "type": "cloud bazirana"
+    },
+    {
+      "object": "restoran3",
+      "type": "pos kasa"
+    }
+  ],
+  "goods": [
+    {
+      "code": "254635374756",
+      "name": "kafa",
+      "unit": "ml",
+      "tax": 20,
+      "type": "pice",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 200,
+      "sellingPrice": 100,
+      "stock": 2000,
+      "minimalAmount": 1,
+      "maximalAmount": 100000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 2000,
+          "minAmount": 1,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 2000,
+          "minAmount": 1,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 2000,
+          "minAmount": 1,
+          "maxAmount": 100000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "254614546457",
+      "name": "supa",
+      "unit": "ml",
+      "tax": 20,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 60,
+      "sellingPrice": 50,
+      "stock": 2000,
+      "minimalAmount": 1,
+      "maximalAmount": 100000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 100,
+          "sellingPrice": 50,
+          "stock": 2000,
+          "minAmount": 1,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 77,
+          "sellingPrice": 50,
+          "stock": 2000,
+          "minAmount": 1,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 60,
+          "sellingPrice": 50,
+          "stock": 2000,
+          "minAmount": 1,
+          "maxAmount": 100000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "3411984198",
+      "name": "Cevapi",
+      "unit": "g",
+      "tax": 30,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 400,
+      "sellingPrice": 300,
+      "stock": 20000,
+      "minimalAmount": 100,
+      "maximalAmount": 100000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 500,
+          "sellingPrice": 400,
+          "stock": 20000,
+          "minAmount": 100,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 400,
+          "sellingPrice": 300,
+          "stock": 20000,
+          "minAmount": 100,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 400,
+          "sellingPrice": 300,
+          "stock": 20000,
+          "minAmount": 100,
+          "maxAmount": 100000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "34636746674",
+      "name": "Pomfrit",
+      "unit": "g",
+      "tax": 10,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 200,
+      "sellingPrice": 100,
+      "stock": 20000,
+      "minimalAmount": 100,
+      "maximalAmount": 100000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 20000,
+          "minAmount": 100,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 20000,
+          "minAmount": 100,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 200,
+          "sellingPrice": 100,
+          "stock": 20000,
+          "minAmount": 100,
+          "maxAmount": 100000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "357458568",
+      "name": "Pirinac",
+      "unit": "g",
+      "tax": 10,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran2",
+      "purchasePrice": 160,
+      "sellingPrice": 60,
+      "stock": 20000,
+      "minimalAmount": 1000,
+      "maximalAmount": 100000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 120,
+          "sellingPrice": 60,
+          "stock": 20000,
+          "minAmount": 1000,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 140,
+          "sellingPrice": 60,
+          "stock": 20000,
+          "minAmount": 1000,
+          "maxAmount": 100000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "42637458468",
+      "name": "Prasetina",
+      "unit": "g",
+      "tax": 30,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 900,
+      "sellingPrice": 500,
+      "stock": 200,
+      "minimalAmount": 1,
+      "maximalAmount": 100000,
+      "storages": [
+        {
+          "name": "restoran2",
+          "purchasePrice": 1000,
+          "sellingPrice": 600,
+          "stock": 200,
+          "minAmount": 1,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran1",
+          "purchasePrice": 800,
+          "sellingPrice": 600,
+          "stock": 200,
+          "minAmount": 1,
+          "maxAmount": 100000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 900,
+          "sellingPrice": 500,
+          "stock": 200,
+          "minAmount": 1,
+          "maxAmount": 100000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "5789569695",
+      "name": "Cokoladna torta",
+      "unit": "g",
+      "tax": 20,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 350,
+      "sellingPrice": 250,
+      "stock": 100,
+      "minimalAmount": 1,
+      "maximalAmount": 20,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 300,
+          "sellingPrice": 200,
+          "stock": 100,
+          "minAmount": 1,
+          "maxAmount": 20
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 350,
+          "sellingPrice": 250,
+          "stock": 100,
+          "minAmount": 1,
+          "maxAmount": 20
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "13524645",
+      "name": "vino",
+      "unit": "ml",
+      "tax": 40,
+      "type": "pice",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 500,
+      "sellingPrice": 300,
+      "stock": 100,
+      "minimalAmount": 1,
+      "maximalAmount": 10000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 600,
+          "sellingPrice": 400,
+          "stock": 100,
+          "minAmount": 1,
+          "maxAmount": 10000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 500,
+          "sellingPrice": 300,
+          "stock": 100,
+          "minAmount": 1,
+          "maxAmount": 10000
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 500,
+          "sellingPrice": 300,
+          "stock": 100,
+          "minAmount": 1,
+          "maxAmount": 10000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "47474236",
+      "name": "salata",
+      "unit": "g",
+      "tax": 5,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 100,
+      "sellingPrice": 50,
+      "stock": 1000,
+      "minimalAmount": 1,
+      "maximalAmount": 10000,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 100,
+          "sellingPrice": 50,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 10000
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 100,
+          "sellingPrice": 50,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 10000
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "4754685685678",
+      "name": "Piletina",
+      "unit": "g",
+      "tax": 20,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 300,
+      "sellingPrice": 100,
+      "stock": 1000,
+      "minimalAmount": 1,
+      "maximalAmount": 20,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 300,
+          "sellingPrice": 100,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 20
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 300,
+          "sellingPrice": 100,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 20
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 300,
+          "sellingPrice": 100,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 20
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "2352346457",
+      "name": "palacinke",
+      "unit": "g",
+      "tax": 20,
+      "type": "hrana",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": null,
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran2",
+      "purchasePrice": 300,
+      "sellingPrice": 100,
+      "stock": 1000,
+      "minimalAmount": 1,
+      "maximalAmount": 20,
+      "storages": [
+        {
+          "name": "restoran3",
+          "purchasePrice": 300,
+          "sellingPrice": 100,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 20
+        },
+        {
+          "name": "restoran1",
+          "purchasePrice": 300,
+          "sellingPrice": 100,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 20
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 300,
+          "sellingPrice": 100,
+          "stock": 1000,
+          "minAmount": 1,
+          "maxAmount": 20
+        }
+      ],
+      "image": ""
+    },
+    {
+      "code": "12354235234",
+      "name": "koka-kola",
+      "unit": "ml",
+      "tax": 20,
+      "type": "pice",
+      "country": null,
+      "foreignName": null,
+      "barcode": null,
+      "manufacturer": "Koka-Kola",
+      "tariff": null,
+      "taxType": null,
+      "amount": null,
+      "description": null,
+      "declaration": null,
+      "storage": "restoran3",
+      "purchasePrice": 120,
+      "sellingPrice": 60,
+      "stock": 10000,
+      "minimalAmount": 1,
+      "maximalAmount": 40,
+      "storages": [
+        {
+          "name": "restoran1",
+          "purchasePrice": 200,
+          "sellingPrice": 300,
+          "stock": 10000,
+          "minAmount": 1,
+          "maxAmount": 40
+        },
+        {
+          "name": "restoran2",
+          "purchasePrice": 100,
+          "sellingPrice": 60,
+          "stock": 10000,
+          "minAmount": 1,
+          "maxAmount": 40
+        },
+        {
+          "name": "restoran3",
+          "purchasePrice": 120,
+          "sellingPrice": 60,
+          "stock": 10000,
+          "minAmount": 1,
+          "maxAmount": 40
+        }
+      ],
+      "image": "data:image/jpeg;base64,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w4w00408MEscM888AAEMPJHC8IEIMA8ssYAXCBtc0IMMM4YUwQ407NTtT3U888880QQ88ugwNoWU88888wQQs86DAApCU888888Uc8w7EVpkqU888888Uc88bMMZ2uU888888AU8cywanaNU888888MQ8865RaYvU888884Yw886Sr8d1U88888QUA48KzEdQkU8888800Q88uTZ8JoUYs88M0IE887KohhyU848884Qw88rseraYU8888cIQA888Mc8Mss888880AU88888888888888//EACoRAQACAgAFAQcFAAAAAAAAAAEAESExMEFRYXFAEIGR0eHw8SBQobHB/9oACAEDAQE/EPT5FH3TvvhO++DEdr4TcRxBaQdYxEuCJl7+kttFkRAi8TRH2KxLVuZ38x4WBjfWsZjq86O/cRWjxNUAF0j4BEDeYhgcXavM0+g9gH9DmgPAf70ispHXEwSCDkLa+9EqAKeBOXVmiNAN+X5Qyhyl35Hi5UPf3fE0Su9py7naOoBi+gcjzziqLTA7uv4gFgBh0L06URClxu+r+Hiaon8FLUS62a+kwaS7FcHeCy9bXq7flAz6P64mqZn2L43apr9AbTNcUOMWmavQCVhlcYsTPbwkost/tP8A/8QAIhEAAgICAgICAwAAAAAAAAAAAAERMSEwEGFBUSBAUHGR/9oACAECAQE/EPrtVs7TvO0SOtjEcjaJgaasTWK0mx0NpOswjQyqJdh0NDG5KZE/sr2Oiw+EV7HQsNofDkkhtsYjMkafoZfwrHI4rwZz2OjGTfgZJEhwT+hfolp2OhZYEDTFyGGQltLY6LD4RXsdFuUV7HXwIr2U+BFex5PGOk6Rekc0v8T/AP/EACkQAQACAQIEBgMBAQEAAAAAAAEAESEQMSBBUWEwcYGhsfBAkdHB4VD/2gAIAQEAAT8Q4DS9L4L4L8PecoeDz1NDWuNhx14vPivW9b0shoa1wVDwbly5cuIOWC11jIS4VlvyGFbV2X+MG5Lof8Tfz0Vl+APP/Z8UX/Yszvb/AIiXU+jlEgYOzJ+IaNQWuy4actXS9bl8DoSs6kZUO5HoRn7n9sNo8zaaxCkKJtZcRZeJYjcYq/Z9yn+wjOUDXlDWvAYZhvGO0x+7hjaJFqqQo98D+om8KAVLFrVpyhaMPOTEe5HsUA4oLVejC4lvluDT0aTHeHiLoDfK5VECkcGrRcHeU/5QEFax1jCG85HF5LxZkvePqxwb1Rr10NalaVocZvxM+l6ohtYBWVK8qrpfaBw/3ksg5lYi8R1BVlQ8tuUcm8dRH1Qg/uVr9IwgFSsKGNsRW1BRMA9EVBSoXdqv0MVlx0Y8umzcmX/AglItqYBO8LrAQRDf0bw8RhosN5ejiG+v3vRnsYDIC5QKC1vygpRkDKb9n7jKMvRAsW805RvCC42o00S4S4sClaIIK861QW28qmUeIjB3DrubR3nsnzCPjM58f2PRns4WSzmXTsjANovBVIqKQXIikUq5P9YuJZgbS21mLMBBh0RPci8qkBLN3P4qNi0Y9lRa/R+o7z2D5h4hvpcYR4vq+jPbwhvNkNTnN09q+YcL4JwvB9n0Z7PQb6COh3jvPYPmHiXL0d9DhZ930Z7PRz4R3nOe3fMPGPAYvr8mc30i4DtN0Y7zZdvzDxjiNGF7rAdqzE5RQoB/Ygb8IIimcIuq/wCTPcp3YbUbA361Bi+N5sjkZFu9RbgFFAJeOX9GHiMIeC663+bCSqnOqw85VQ8So3oOBHnHbTJ8H3YOp6858l6QZJmDA+bhgcgrDAGls37Tn94Z6Hq9ozYKtshqvQfQgLvaV5LR6WHpFrLoejj+IfjMCPeV+UN4erG5D+kru9plXNcpYB2FDL1yvY+y16vsEcG1s5F8ziEOCnd4L9HPlUe3qaEwHrgisbDsOQ7EECLKmrO7eodYrxhG6rllq4NvLPZB47wmrpDcX2Yza0zdivKzKTYgMhm/Nf5Gs7FRyL5Bg9Yg6ozYNnybr1hsmWI2OR8fuCRbQxzV7D/YJRkSixq6xi+tr0mU/ZbIRU6XX0GDoX7QVkA+QY+IPHd+NmOxxDzoiJAYpZUv1ZY2KeApsgGQ2rlUBUHAOlxMmcNxEzZhLtAICKiT5/IX5m6hmodhuqoY6TMQtf8ASHCurLHjUHIu/IMrM270qbDT1XelRsS/S494eO7w4mE3YYd6gMvBkr6W3fKMsLwn2QQ2dHPfye05/wCx0BcB15xAEUPQl1LIjSXL27sYhydm5d0Kz3jILeYrrK5UXEaIxd0znzUX1ij0D139HENj8A3jxNFNz50YYURsTlFwG3DpZdsQLYUWieZSREGeHt7b5+cQeAr6GwHfzhE0qgn5DEJYw9eonSnw8oXp2i8CzXcbJ5S4JZhlu9vfP47MX+1pvcJmMd5vnuvwh4rpUuXwsy+tlpOWpUrQzlmPmfhDxjwGfTdU3tQvQmh3m+e9/CHiVNtecrR1dpj9LKbmhvNsCYaHT7r8IfgY4/uuqb8YTbDbRujp9z+EN9b4jjqVwu0+i6pu6Gk2m2bpzmE91+SGjtobcF8ZDiYq+lhm7OUJthtNs3R30L934Q4b4zfS4w4mfddJvQhNsJt1bo/rcyHDXgngMJBFgc8RZmg50k2vBJMN4XS0r4hwsOJl6JDfiZQp2YiUJm3ntdHfzuGG65sYK9SQ/wAjf6dn+RO36UsHnw/kY+y+UoQa3y/mA7QoKPzWAlKkAu/v0NiBwXGcpf4IFATvE7Y6isBe6fhAGwvZxewZ5puL5n/YWZ9UY2L3WsoD+lEANow8aob/AJF63wkYb/8Agu8N/wA7/9k="
+    }
+  ],
+  "objects": [
+    {
+      "name": "restoran1",
+      "id": "1",
+      "tables": [
+        {
+          "startHeight": 20,
+          "startWidth": 60,
+          "taken": false,
+          "height": 40,
+          "width": 60,
+          "shape": "rectangle",
+          "id": 1
+        },
+        {
+          "startHeight": 120,
+          "startWidth": 200,
+          "taken": false,
+          "height": 40,
+          "width": 60,
+          "shape": "round",
+          "radius": 20,
+          "id": 2
+        },
+        {
+          "startHeight": 40,
+          "startWidth": 200,
+          "taken": false,
+          "height": 40,
+          "width": 40,
+          "shape": "rectangle",
+          "radius": 20,
+          "id": 3
+        }
+      ]
+    },
+    {
+      "name": "restoran2",
+      "id": "2",
+      "tables": [
+        {
+          "startHeight": 80,
+          "startWidth": 40,
+          "taken": false,
+          "height": 40,
+          "width": 40,
+          "shape": "rectangle",
+          "id": 10
+        },
+        {
+          "startHeight": 120,
+          "startWidth": 140,
+          "taken": false,
+          "height": 40,
+          "width": 40,
+          "shape": "round",
+          "radius": 20,
+          "id": 11
+        },
+        {
+          "startHeight": 40,
+          "startWidth": 180,
+          "taken": false,
+          "height": 40,
+          "width": 40,
+          "shape": "rectangle",
+          "radius": 20,
+          "id": 12
+        }
+      ]
+    },
+    {
+      "name": "restoran3",
+      "id": "3",
+      "tables": [
+        {
+          "startHeight": 20,
+          "startWidth": 20,
+          "taken": false,
+          "height": 60,
+          "width": 60,
+          "shape": "rectangle",
+          "id": 20
+        },
+        {
+          "startHeight": 20,
+          "startWidth": 180,
+          "taken": false,
+          "height": 40,
+          "width": 40,
+          "shape": "rectangle",
+          "id": 21
+        },
+        {
+          "startHeight": 100,
+          "startWidth": 140,
+          "taken": false,
+          "height": 40,
+          "width": 40,
+          "shape": "rectangle",
+          "id": 22
+        }
+      ]
+    }
+  ],
+  "bills": [
+    {
+      "bills": [
+        {
+          "name": "supa",
+          "amount": 5,
+          "tax": 50,
+          "price": 300
+        },
+        {
+          "name": "Cevapi",
+          "amount": 20,
+          "tax": 1800,
+          "price": 7800
+        },
+        {
+          "name": "koka-kola",
+          "amount": 5,
+          "tax": 60,
+          "price": 360
+        },
+        {
+          "name": "palacinke",
+          "amount": 5,
+          "tax": 100,
+          "price": 600
+        },
+        {
+          "name": "Cokoladna torta",
+          "amount": 1,
+          "tax": 50,
+          "price": 300
+        }
+      ],
+      "finalPrice": 9360,
+      "fullName": "Pavle Pavlovic",
+      "brLK": "1",
+      "slip": null,
+      "date": {
+        "$date": {
+          "$numberLong": "1655991556215"
+        }
+      },
+      "orderer": null,
+      "type": "check",
+      "taxPrice": 2060,
+      "companyName": "Burger restoran"
+    },
+    {
+      "bills": [
+        {
+          "name": "supa",
+          "amount": 5,
+          "tax": 50,
+          "price": 300
+        },
+        {
+          "name": "kafa",
+          "amount": 10,
+          "tax": 200,
+          "price": 1200
+        }
+      ],
+      "finalPrice": 1500,
+      "fullName": null,
+      "brLK": "1",
+      "slip": "1512524",
+      "date": {
+        "$date": {
+          "$numberLong": "1655991584590"
+        }
+      },
+      "orderer": null,
+      "type": "card",
+      "taxPrice": 250,
+      "companyName": "Burger restoran"
+    }
+  ],
+  "__v": 0,
+  "category": "ugostiteljski",
+  "code": "23246346",
+  "storageNumber": 3,
+  "tax": true
+}]

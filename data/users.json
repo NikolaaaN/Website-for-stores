@@ -1,0 +1,160 @@
+[{
+  "_id": {
+    "$oid": "62b1e9d4807469cddbcd8249"
+  },
+  "username": "kompanija",
+  "password": "Kompanij@2",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b21d10c163796eb3dde3dd"
+  },
+  "username": "kompanija2",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b21d8169bd3cfe44f02d5a"
+  },
+  "username": "kompanij3",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b21e064dde765d8d1845d8"
+  },
+  "username": "kompanija3",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b21e979029dda280ce3efc"
+  },
+  "username": "kompanija4",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b22142f157523ee77976fb"
+  },
+  "username": "admin",
+  "password": "Administr@1",
+  "type": 3
+},{
+  "_id": {
+    "$oid": "62b228a265d6748645a57f0c"
+  },
+  "username": "kompanija6",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b23c1f65d6748645a57f7b"
+  },
+  "username": "customer",
+  "password": "Custom3r!",
+  "type": 2,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b310ab67e3034b01d07c3b"
+  },
+  "username": "kompanija8",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b37baee8f3b9deede6ece5"
+  },
+  "username": "kompanija11",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b4537a73b95eb28184cddf"
+  },
+  "username": "kompanija20",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b4602d73b95eb28184cde7"
+  },
+  "username": "kompanija20",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b461515431150073fcadc9"
+  },
+  "username": "kompanija20",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b461855431150073fcadd1"
+  },
+  "username": "kompanija21",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b46201fdebf26983907d0e"
+  },
+  "username": "kompanija212",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b462364ef997076cf420ef"
+  },
+  "username": "kompanija23",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b4625810b3425696297532"
+  },
+  "username": "asasfasf",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b462d110b342569629753a"
+  },
+  "username": "kompanija101",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b4634d51d5c196888efe8a"
+  },
+  "username": "kompanija25",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b463af51d5c196888efe90"
+  },
+  "username": "kompanija99",
+  "password": "Kompanij@1",
+  "type": 1,
+  "__v": 0
+}]
