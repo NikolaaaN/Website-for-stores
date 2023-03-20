@@ -345,25 +345,25 @@ export class CompanyController {
   }
 
   searchGoodsByName(req: express.Request, res: express.Response) {
-    // let searchParam = req.body.searchParam;
-    // let goods : Array<Goods> = []
-    // let selectCompany = req.body.selectedCompany
-    // console.log(selectCompany)
+    let searchParam = req.body.searchParam;
+    let goods: Array<Goods> = [];
+    let selectCompany = req.body.selectedCompany;
+    console.log(selectCompany);
 
-    // Company.findOne({'companyName': selectCompany}, (err, company) => {
+    Company.findOne({ companyName: selectCompany }, (err, company) => {
+      if (err) console.log(err);
+      else {
+        console.log(company);
+        company.goods.forEach((good) => {
+          if (good.name.includes(searchParam)) {
+            goods.push(good);
+            console.log('push');
+          }
+        });
+      }
 
-    //     if (err) console.log(err)
-    //     else {
-    //         company.goods.forEach(good => {
-    //             if (good.name.includes(searchParam))
-    //                 goods.push(good)
-    //         });
-    //     }
-
-    //     res.json(goods)
-
-    // })
-    res.json(null);
+      res.json(goods);
+    });
   }
   searchGoodsByManufacturer(req: express.Request, res: express.Response) {
     let searchParam = req.body.searchParam;

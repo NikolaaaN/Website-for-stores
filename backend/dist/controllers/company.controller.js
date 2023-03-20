@@ -336,21 +336,24 @@ class CompanyController {
         });
     }
     searchGoodsByName(req, res) {
-        // let searchParam = req.body.searchParam;
-        // let goods : Array<Goods> = []
-        // let selectCompany = req.body.selectedCompany
-        // console.log(selectCompany)
-        // Company.findOne({'companyName': selectCompany}, (err, company) => {
-        //     if (err) console.log(err)
-        //     else {
-        //         company.goods.forEach(good => {
-        //             if (good.name.includes(searchParam))
-        //                 goods.push(good)
-        //         });
-        //     }
-        //     res.json(goods)
-        // })
-        res.json(null);
+        let searchParam = req.body.searchParam;
+        let goods = [];
+        let selectCompany = req.body.selectedCompany;
+        console.log(selectCompany);
+        company_1.default.findOne({ companyName: selectCompany }, (err, company) => {
+            if (err)
+                console.log(err);
+            else {
+                console.log(company);
+                company.goods.forEach((good) => {
+                    if (good.name.includes(searchParam)) {
+                        goods.push(good);
+                        console.log('push');
+                    }
+                });
+            }
+            res.json(goods);
+        });
     }
     searchGoodsByManufacturer(req, res) {
         let searchParam = req.body.searchParam;
