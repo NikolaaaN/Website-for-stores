@@ -1,51 +1,67 @@
 <div class="wrapper">
-    <div class="menu">
-        <app-sidemenu></app-sidemenu>
-    </div>
-    <div class="content">
-        <table>
-            <tr>
-                Odaberite prodavnicu:<select [(ngModel)]="selectedStore">
-                    <option *ngFor="let store of stores">{{store.name}}</option>
-                </select>
-            </tr>
-            <tr>
-                Odaberite sto:<select [(ngModel)]="tableID" *ngIf="isRestaurant">
-                    <option *ngFor="let t of tables">{{t.id}}</option>
-                </select>
-            </tr>
-            <tr>
-                <button (click)="loadGoods()">Potvrdi</button>
-            </tr>
-        </table>
-        <br/>
-        <table>
-            <tr>
-                <th>naziv</th>
-                <th>prodajna cena</th>
-                <th>kupovna cena</th>
-                <th>kolicina</th>
-            </tr>
-            <tr *ngFor="let good of selectedGoods" >
-                <td>{{good.name}}</td>
-                <td>{{good.purchasePrice}}</td>
-                <td>{{good.sellingPrice}}</td>
-                <td><button (click)="goodChosen(good.name, good.sellingPrice, good.tax)">izaberi</button></td>  
-
-            </tr>
-        </table>
-        <br/>
-        <select [(ngModel)]="chosenAmount" *ngIf="amount">
-            <option value=0>0</option>
-            <option value=1>1</option>
-            <option value=5>5</option>
-            <option value=10>10</option>
-            <option value=20>20</option> 
+  <div class="menu">
+    <app-sidemenu></app-sidemenu>
+  </div>
+  <div class="content">
+    <table>
+      <tr>
+        Odaberite prodavnicu:<select [(ngModel)]="selectedStore">
+          <option *ngFor="let store of stores">{{ store.name }}</option>
         </select>
-        <br/>
-        <button (click)="submitGood()" *ngIf="amount">izaberi kolicinu</button>
-        <br/>
-        <button (click)="submit()">zatvori racun</button>
-
-    </div>
+      </tr>
+      <tr>
+        Odaberite sto:<select [(ngModel)]="tableID" *ngIf="isRestaurant">
+          <option *ngFor="let t of tables" (click)="tableChanged()">
+            {{ t.id }}
+          </option>
+        </select>
+      </tr>
+      <tr>
+        <button (click)="loadGoods()">Potvrdi</button>
+      </tr>
+    </table>
+    <br />
+    <table>
+      <tr>
+        <th>naziv</th>
+        <th>prodajna cena</th>
+        <th>kupovna cena</th>
+        <th>kolicina</th>
+      </tr>
+      <tr *ngFor="let good of selectedGoods">
+        <td>{{ good.name }}</td>
+        <td>{{ good.purchasePrice }}</td>
+        <td>{{ good.sellingPrice }}</td>
+        <td>
+          <button (click)="goodChosen(good.name, good.sellingPrice, good.tax)">
+            izaberi
+          </button>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <select [(ngModel)]="chosenAmount" *ngIf="amount">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+    <br />
+    <button (click)="submitGood()" *ngIf="amount">izaberi kolicinu</button>
+    <br />
+    <button (click)="submit()">zatvori racun</button>
+    <table>
+      <tr>
+        <th>naziv</th>
+        <th>kolicina</th>
+        <th>cena</th>
+      </tr>
+      <tr *ngFor="let good of bills">
+        <td>{{ good.name }}</td>
+        <td>{{ good.amount }}</td>
+        <td>{{ good.price }}</td>
+      </tr>
+    </table>
+  </div>
 </div>

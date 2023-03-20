@@ -23,20 +23,29 @@ class CustomerController {
         bills.taxPrice = taxPrice;
         bills.type = type;
         console.log(bills.companyName);
-        customer_1.default.updateOne({ 'idCard': lk }, { $push: { 'bills': bills } }, (err, resp) => {
+        customer_1.default.updateOne({ idCard: lk }, { $push: { bills: bills } }, (err, resp) => {
             if (err)
                 console.log(err);
             else
-                res.json("updated");
+                res.json('updated');
         });
     }
     getAllBills(req, res) {
         let searchParam = req.body.searchParam;
-        customer_1.default.findOne({ 'idCard': searchParam }, (err, customer) => {
+        customer_1.default.findOne({ idCard: searchParam }, (err, customer) => {
             if (err)
                 console.log(err);
             else
                 res.json(customer.bills);
+        });
+    }
+    getCustomer(req, res) {
+        let username = req.body.username;
+        customer_1.default.findOne({ username: username }, (err, customer) => {
+            if (err)
+                console.log(err);
+            else
+                res.json(customer);
         });
     }
 }

@@ -54,7 +54,7 @@ export class BillComponent implements OnInit {
   tableBills: Array<Bills> = [];
 
   loadGoods() {
-    // this.selectedGoods.splice(0)
+    this.selectedGoods.splice(0);
     console.log(this.selectedStore);
 
     if (this.company.category == 'ugostiteljski') {
@@ -113,10 +113,15 @@ export class BillComponent implements OnInit {
   saveToSession(bill) {
     if (sessionStorage.getItem(this.tableID.toString()) != null)
       this.bills = JSON.parse(sessionStorage.getItem(this.tableID.toString()));
-    console.log(this.tableID.toString());
+
     this.bills.push(bill);
     sessionStorage.setItem(this.tableID.toString(), JSON.stringify(this.bills));
-    console.log(this.bills);
     sessionStorage.setItem('tableBills', JSON.stringify(this.tableBills));
+  }
+
+  tableChanged() {
+    if (sessionStorage.getItem(this.tableID.toString()) != null)
+      this.bills = JSON.parse(sessionStorage.getItem(this.tableID.toString()));
+    else this.bills = [];
   }
 }

@@ -1,10 +1,10 @@
-import { Bill } from "./bill"
+import { Bills } from './bills';
 
-export class Customer{
-    username: string
-    password: string
-    name: string
-    phone: string
-    idCard: string
-    bills: Array<Bill>
+export class Customer {
+  username: string;
+  password: string;
+  name: string;
+  phone: string;
+  idCard: string;
+  bills: Array<Bills>;
 }

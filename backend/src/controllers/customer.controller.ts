@@ -31,11 +31,18 @@ export class CustomerController {
   }
 
   getAllBills(req: express.Request, res: express.Response) {
-    // let searchParam = req.body.searchParam
-    // Customer.findOne({'idCard': searchParam}, (err, customer) => {
-    //     if (err) console.log(err)
-    //     else res.json(customer.bills)
-    // })
-    res.json(null);
+    let searchParam = req.body.searchParam;
+    Customer.findOne({ idCard: searchParam }, (err, customer) => {
+      if (err) console.log(err);
+      else res.json(customer.bills);
+    });
+  }
+
+  getCustomer(req: express.Request, res: express.Response) {
+    let username = req.body.username;
+    Customer.findOne({ username: username }, (err, customer) => {
+      if (err) console.log(err);
+      else res.json(customer);
+    });
   }
 }
